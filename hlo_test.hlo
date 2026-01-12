@@ -1,0 +1,22 @@
+HloModule TestDCE
+
+ENTRY main {
+  // 定义两个输入参数
+  p0 = f32[4] parameter(0)
+  p1 = f32[4] parameter(1)
+
+  
+
+  // 【活代码】
+  // 计算 p0 * p1
+  real_mul = f32[4] multiply(p0, p1)
+
+  // 【ROOT】
+  // 程序的最终返回值。它只引用了 real_mul。
+  // 编译器会从这里开始往回倒推：
+  // 1. result 是活的。
+  // 2. real_mul 被 result 用了，所以 real_mul 是活的。
+  // 3. p0, p1 被 real_mul 用了，所以 p0, p1 是活的。
+  // 4. 其他没点到名的，全部杀掉。
+  ROOT result = f32[4] copy(real_mul)
+}
