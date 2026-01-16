@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                
+                "${workspaceFolder}/bazel-xla/external/com_google_absl",
+                "${workspaceFolder}/bazel-xla/external/tsl",
+                "${workspaceFolder}/bazel-xla/external/eigen_archive",
+                
+                
+                "${workspaceFolder}/bazel-xla/external",
+
+               
+                "${workspaceFolder}/bazel-bin"
+                
+              
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc", 
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
