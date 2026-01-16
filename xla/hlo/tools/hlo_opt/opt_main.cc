@@ -84,14 +84,23 @@ namespace {
 // Convention separator as set by mlir-opt tool.
 const char* kOptSeparator = "// -----";
 
-std::string GetHloPath(const HloOptConfig& opts, int argc, char** argv) {
+//HloOptConfig是一个结构体（数据结构），包含了HLO优化工具的配置选项。
+std::string GetHloPath(const HloOptConfig& opts, int argc, char** argv) { //char** 表示一个指向字符指针的指针，通常用于表示命令行参数数组。
   if (!opts.input_file.empty()) {
     return opts.input_file;
   }
   QCHECK(argc == 2) << "Must specify a single input file";
-  return argv[1];
+  return argv[1]; //argv[0]通常是程序的名称，argv[1]是第一个命令行参数，这里假设它是输入文件的路径。
 }
 
+
+/* GetHloContents 函数
+作用: 获取 HLO 内容
+逻辑:
+如果路径为 "-"，从标准输入读取
+否则从文件读取内容
+返回: HLO 内容
+*/
 absl::StatusOr<std::string> GetHloContents(const HloOptConfig& opts, int argc,
                                            char** argv) {
   std::string hlo_path = GetHloPath(opts, argc, argv);
@@ -103,29 +112,36 @@ absl::StatusOr<std::string> GetHloContents(const HloOptConfig& opts, int argc,
 
   std::string data;
   TF_RETURN_IF_ERROR(
-      tsl::ReadFileToString(tsl::Env::Default(), hlo_path, &data));
+      tsl::ReadFileToString(tsl::Env::Default(), hlo_path, &data)); //读取文件内容到字符串
   return data;
 }
 
+
+/*GetModules 函数
+作用: 解析输入内容并创建 HLO 模块列表
+逻辑:
+支持单个文件或多个用 // ----- 分隔的模块
+根据文件扩展名自动判断格式
+使用 LoadModuleFromData 加载模块*/
 absl::StatusOr<std::vector<std::unique_ptr<HloModule>>> GetModules(
     const HloOptConfig& opts, int argc, char** argv) {
   TF_ASSIGN_OR_RETURN(std::string module_data,
-                      GetHloContents(opts, argc, argv));
-
-  std::vector<std::string> hlos;
+                      GetHloContents(opts, argc, argv)); //获取 HLO 内容到 module_data 字符串
+ 
+  std::vector<std::string> hlos; //存储 HLO 模块的字符串表示
   if (opts.split_input_file) {
     hlos = absl::StrSplit(module_data, kOptSeparator);
   } else {
     hlos.push_back(module_data);
-  }
+  }  //支持单个文件或多个用 // ----- 将module_data分隔的模块
 
   std::string format = opts.input_format;
   if (format.empty()) {
     format = std::string(tsl::io::Extension(GetHloPath(opts, argc, argv)));
-  }
+  } //根据文件扩展名自动判断输入文件格式
 
   std::vector<std::unique_ptr<HloModule>> out;
-  out.reserve(hlos.size());
+  out.reserve(hlos.size()); //预分配内存以提高效率
 
   for (const std::string& hlo : hlos) {
     if (absl::StrContains(hlo, "// ---")) {
@@ -140,7 +156,7 @@ absl::StatusOr<std::vector<std::unique_ptr<HloModule>>> GetModules(
       }
     }
     TF_ASSIGN_OR_RETURN(std::unique_ptr<HloModule> module,
-                        LoadModuleFromData(hlo, format));
+                        LoadModuleFromData(hlo, format));//加载模块
     out.push_back(std::move(module));
   }
   return out;
@@ -164,7 +180,8 @@ absl::StatusOr<std::string> TranslateToStage(int argc, char** argv,
 
   if (opts.list_stages) {
     return absl::StrJoin(provider->SupportedStages(), "\n");
-  }
+  }//如果启用了列出阶段选项，返回支持的阶段列表
+
   // Use a dummy module for "list-passes" because pipelines compilation
   // requires a module.
   if (opts.list_passes) {
@@ -175,6 +192,8 @@ absl::StatusOr<std::string> TranslateToStage(int argc, char** argv,
 
   TF_ASSIGN_OR_RETURN(std::vector<std::unique_ptr<HloModule>> modules,
                       GetModules(opts, argc, argv));
+
+  //opt_emit_proto选项启用时，返回HLO模块的文本proto表示
   if (opts.emit_proto) {
     std::string proto_str_combined;
     for (const auto& module : modules) {
@@ -187,7 +206,7 @@ absl::StatusOr<std::string> TranslateToStage(int argc, char** argv,
   // Registration can be done using HloModuleConfig, but some
   // GPU pipelines APIs expects HloModule.
   // Assumption: All input modules have same HloModuleConfig.
-  provider->RegisterProviderPasses(*modules[0].get());
+  provider->RegisterProviderPasses(*modules[0].get()); // 注册提供程序的传递
 
   std::string out_combined;
 
@@ -203,12 +222,16 @@ absl::StatusOr<std::string> TranslateToStage(int argc, char** argv,
     if (!out.has_value()) {
       return absl::UnimplementedError("Stage not supported");
     }
-    absl::StrAppend(&out_combined, *out, "\n");
+    absl::StrAppend(&out_combined, *out, "\n");//添加换行符
   }
 
   return out_combined;
 }
 
+
+/*调用 TranslateToStage 得到字符串 output（或错误）。
+若 opts.output_file == "-" 则 std::cout << output << std::endl;，
+否则用 tsl::WriteStringToFile 将 output 写入指定文件。*/
 absl::Status RunOpt(int argc, char** argv, const HloOptConfig& opts) {
   TF_ASSIGN_OR_RETURN(std::string output, TranslateToStage(argc, argv, opts));
   if (opts.output_file == "-") {

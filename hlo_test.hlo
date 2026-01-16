@@ -1,22 +1,37 @@
-HloModule TestDCE
+HloModule DeadCodeElimination
 
 ENTRY main {
-  // 定义两个输入参数
+  // ==================== 输入参数 ====================
   p0 = f32[4] parameter(0)
   p1 = f32[4] parameter(1)
+  p2 = f32[4] parameter(2)
 
-  
+  // ==================== 【死代码】完全未使用的计算 ====================
+  // 这些操作的结果从未被任何其他操作或 ROOT 使用
+  dead_mul = f32[4] multiply(p0, p1)
+  dead_add = f32[4] add(p0, p2)
+  dead_sub = f32[4] subtract(p1, p2)
+  dead_exp = f32[4] exponential(p0)
+  dead_log = f32[4] log(p1)
 
-  // 【活代码】
-  // 计算 p0 * p1
-  real_mul = f32[4] multiply(p0, p1)
+  // ==================== 【死代码】中间未使用的计算链 ====================
+  // 这条链的中间结果未被使用
+  unused_chain_1 = f32[4] negate(p0)
+  unused_chain_2 = f32[4] multiply(unused_chain_1, p1)
+  unused_chain_3 = f32[4] add(unused_chain_2, p2)
 
-  // 【ROOT】
-  // 程序的最终返回值。它只引用了 real_mul。
-  // 编译器会从这里开始往回倒推：
-  // 1. result 是活的。
-  // 2. real_mul 被 result 用了，所以 real_mul 是活的。
-  // 3. p0, p1 被 real_mul 用了，所以 p0, p1 是活的。
-  // 4. 其他没点到名的，全部杀掉。
-  ROOT result = f32[4] copy(real_mul)
+  // ==================== 【活代码】被 ROOT 使用的计算 ====================
+  // 这些操作会被保留
+  active_add = f32[4] add(p0, p1)
+  active_mul = f32[4] multiply(active_add, p2)
+
+  // ==================== 【死代码】只有部分分支被使用的情况 ====================
+  // 两个分支，但只有其中一个会被 ROOT 使用
+  branch_add = f32[4] add(p0, p1)
+  branch_mul = f32[4] multiply(p0, p2)  // 这是死代码，未被使用
+
+  // ==================== 【活代码】最终的计算图 ====================
+  // 只使用了 active_mul 和 branch_add，branch_mul 被 DCE 消除
+  temp = f32[4] add(active_mul, branch_add)
+  ROOT result = f32[4] copy(temp)
 }
