@@ -1,0 +1,52 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug HLO Opt (Algebraic Simplifier)",
+            "type": "cppdbg",
+            "request": "launch",
+            
+            // 1. 指向编译好的二进制文件
+            "program": "${workspaceFolder}/bazel-bin/xla/tools/hlo-opt",
+            
+            // 2. 这里填写运行时参数
+            // 意味着执行命令：hlo-opt --hlo_passes=algebraic-simplifier hlo_test.hlo
+            "args": [
+                "--hlo_passes=algebraic-simplifier", 
+                "${workspaceFolder}/hlo_test.hlo"
+            ],
+            
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            
+            // 3. 【关键修复】设置环境变量解决找不到 libcudart 的问题
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    // 注意：如果你的 CUDA 安装在不同位置（如 /usr/local/cuda-11.8），请修改此路径
+                    "value": "/usr/local/cuda/lib64:${env:LD_LIBRARY_PATH}"
+                }
+            ],
+            
+            "externalConsole": false,
+            "MIMode": "gdb",
+            
+            // 4. 启用 GDB 美化打印（这对调试 C++ STL 容器非常重要）
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set disassembly flavor to intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            
+            // 5. 调试前先运行 tasks.json 中定义的编译任务
+            "preLaunchTask": "Build hlo-opt"
+        }
+    ]
+}
