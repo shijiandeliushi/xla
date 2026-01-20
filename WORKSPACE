@@ -162,3 +162,19 @@ nightly_timestamp_repo(name = "nightly_timestamp")
 load("//build_tools/pjrt_wheels:release_candidate.bzl", "rc_number_repo")
 
 rc_number_repo(name = "rc_number")
+
+
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "hedron_compile_commands",
+    # 使用 2024 年 5 月的一个稳定 Commit ID
+    url = "https://github.com/hedronvision/bazel-compile-commands-extractor/archive/4f28899228fb3ad0126897876f147ca15026151e.tar.gz",
+    strip_prefix = "bazel-compile-commands-extractor-4f28899228fb3ad0126897876f147ca15026151e",
+    # 暂时注释掉 sha256，避免校验失败，Bazel 会自动计算并提示正确的 sha256
+    # sha256 = "...", 
+)
+
+load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
+hedron_compile_commands_setup()

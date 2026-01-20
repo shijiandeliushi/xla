@@ -1,4 +1,6 @@
+exports_files(["requirements_lock_3_11.txt"])
 load("@rules_license//rules:license.bzl", "license")
+load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
 
 package(
     default_applicable_licenses = [":license"],
@@ -11,4 +13,12 @@ license(
     name = "license",
     package_name = "xla",
     license_kinds = ["@rules_license//licenses/spdx:Apache-2.0"],
+)
+
+refresh_compile_commands(
+    name = "xla_compile_commands",
+    # 重点在这里：我们指定只扫描 xla 目录，避开 windows 工具链
+    targets = {
+        "//xla/...": "",
+    },
 )
