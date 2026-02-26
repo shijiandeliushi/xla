@@ -642,6 +642,100 @@ absl::StatusOr<std::unique_ptr<Executable>> Service::BuildExecutable(
   return executable;
 }
 
+
+// 返回值：absl::StatusOr<ExecutionHandle>
+// 含义：函数执行结果。
+//      - 如果成功，返回一个 ExecutionHandle（这是一个整数 ID，相当于“取餐号”）。
+//      - 如果失败，返回错误原因（Status）。
+absl::StatusOr<ExecutionHandle> Service::Compile(
+    const XlaComputation& computation,           // 输入：用户传来的计算图（Protobuf 的封装）
+    absl::Span<const Shape> argument_shapes,     // 输入：输入参数的形状（例如 [F32[10,10], S32[]]）
+    const ExecutionOptions& execution_options) { // 输入：编译选项（比如是否开启 Debug，用什么设备）
+
+  // [语法] VLOG(1)：详细日志。
+  // 只有在运行程序时设置了 --vmodule=service=1 时才会打印。
+  // 相比 LOG(INFO)，VLOG 用于打印只有开发者关心的调试信息。
+  VLOG(1) << "running compile request";
+
+  // --- 步骤 1：参数校验 ---
+  
+  // 检查 computation 里是否包含了程序的形状信息（输入输出类型）。
+  // computation.proto() 获取底层的 Protobuf 对象。
+  if (!computation.proto().has_host_program_shape()) {
+    // [语法] InvalidArgument：这是一个辅助函数，
+    // 它构造并返回一个 absl::Status 对象，错误码为 INVALID_ARGUMENT。
+    // 这相当于抛出异常，但在 Google C++ 中我们通过返回值传递错误。
+    return InvalidArgument("program shape may not be empty");
+  }
+
+  // 检查是否请求了多个设备句柄。目前 Compile 接口只支持单设备编译。
+  if (execution_options.device_handles_size() > 1) {
+    return InvalidArgument(
+        "The compile request does not support multiple device handles.");
+  }
+
+  // --- 步骤 2：数据结构转换 ---
+
+  // [逻辑] 将 Span 转为 vector<指针>。
+  // 为什么要这么做？因为旧的 API (CreateModuleConfig) 可能需要指针数组。
+  std::vector<const Shape*> argument_shape_ptrs;
+  for (const Shape& shape : argument_shapes) {
+    argument_shape_ptrs.push_back(&shape);
+  }
+
+  // --- 步骤 3：准备配置对象 (ModuleConfig) ---
+
+  // [语法核心] TF_ASSIGN_OR_RETURN (重点！)
+  // 宏展开后的逻辑：
+  // 1. 调用 ProgramShape::FromProto(...)。
+  // 2. 如果返回错误 (Status != OK)，立刻 return 这个错误。
+  // 3. 如果成功，将结果赋值给 program_shape 变量，并继续执行。
+  // 作用：从 protobuf 中解析出程序的形状（输入输出参数的维度、类型）。
+  TF_ASSIGN_OR_RETURN(
+      ProgramShape program_shape,
+      ProgramShape::FromProto(computation.proto().host_program_shape()));
+
+  // 创建 HloModuleConfig。这是告诉编译器如何编译的核心配置对象。
+  // 包含了：程序形状、输入参数形状、Debug 选项等。
+  TF_ASSIGN_OR_RETURN(std::unique_ptr<HloModuleConfig> module_config,
+                      CreateModuleConfig(program_shape, argument_shape_ptrs,
+                                         &execution_options));
+
+  // 打印日志：看看配置好的计算布局长什么样。
+  VLOG(3) << "Compile created HloModuleConfig computation layout: "
+          << module_config->entry_computation_layout().ToString();
+
+  // --- 步骤 4：核心编译 (BuildExecutable) ---
+
+  // 调用 BuildExecutable。这是真正的“干活”函数。
+  // 它会运行 HLO 优化流水线，并调用后端生成机器码。
+  // [语法] std::move(module_config)：
+  // 所有权转移。module_config 是 unique_ptr，不能拷贝。
+  // 这里表示：Service::Compile 函数不再拥有 config，把它彻底交给 BuildExecutable 函数。
+  TF_ASSIGN_OR_RETURN(
+      std::unique_ptr<Executable> executable,
+      BuildExecutable(computation.proto(), std::move(module_config),
+                      execute_backend_.get(),                      // 获取后端的裸指针
+                      execute_backend_->default_stream_executor(), // 获取默认的执行流
+                      {/*device_allocator=*/nullptr}));            // C++11 初始化列表，构造 CompileOptions
+
+  VLOG(1) << "successfully completed 'compile' request";
+
+  // --- 步骤 5：缓存并返回句柄 ---
+  
+  // [逻辑] XLA 不会把几百兆的 Executable 对象直接返给用户（太大了，也没法通过网络传）。
+  // 而是把它存入 compilation_cache_（一个哈希表）。
+  // 然后返回一个 Handle（其实就是一个 int64_t 整数 key）。
+  // 下次用户想运行时，只要拿着这个 Handle 来找 Service::Execute 即可。
+  return compilation_cache_.Insert(std::move(executable));
+}
+
+
+
+
+
+
+/*
 absl::StatusOr<ExecutionHandle> Service::Compile(
     const XlaComputation& computation, absl::Span<const Shape> argument_shapes,
     const ExecutionOptions& execution_options) {
@@ -675,12 +769,12 @@ absl::StatusOr<ExecutionHandle> Service::Compile(
       BuildExecutable(computation.proto(), std::move(module_config),
                       execute_backend_.get(),
                       execute_backend_->default_stream_executor(),
-                      {/*device_allocator=*/nullptr}));
+                      {nullptr}));
 
   VLOG(1) << "successfully completed 'compile' request";
   return compilation_cache_.Insert(std::move(executable));
 }
-
+*/
 absl::StatusOr<std::unique_ptr<GlobalData>> Service::Execute(
     const ExecutionHandle& handle, absl::Span<GlobalData* const> arguments,
     ExecutionProfile* execution_profile) {
