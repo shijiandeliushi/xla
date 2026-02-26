@@ -168,14 +168,16 @@ class Shape {
 
   // Returns whether all elements in the shape are integers.
   // Tuple shapes are traversed recursively.
-  bool AreAllLeavesIntegers() const;
+  bool AreAllLeavesIntegers() const;0
 
   // Returns true if no array dimension in the shape is dynamically sized. Tuple
+  //如果形状中没有动态调整大小的数组维度，则返回true。
   // shapes are traversed recursively.
+  //被递归遍历
   bool is_static() const;
 
   // Returns true if the shape contains at least one dynamic dimension. Tuple
-  // shapes are traversed recursively.
+  // shapes are traversed recursively.元组//形状被递归遍历。
   bool is_dynamic() const { return !is_static(); }
 
   // Unbounded dynamism.

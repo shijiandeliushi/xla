@@ -1011,8 +1011,9 @@ std::vector<HloInstruction*> HloComputation::MakeInstructionPostOrder() const {
   return MakeInstructionPostOrder(ComputeChannelDependencies());
 }
 
-std::vector<HloInstruction*> HloComputation::MakeInstructionPostOrder(
-    const ChannelDependencies& channel_dependencies) const {
+std::vector<HloInstruction*> HloComputation::MakeInstructionPostOrder(const ChannelDependencies& channel_dependencies) const 
+{
+
   std::vector<HloInstruction*> post_order;
   post_order.reserve(instruction_count());
   VisitMap visited(instructions_.size());

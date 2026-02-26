@@ -590,6 +590,9 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
   bool use_shardy_partitioner = module->config().use_shardy_partitioner();
   bool flatten_before_fusion = !options::FlattenAfterFusion(module->config());
 
+
+
+  //第一阶段：并行与分区
   if (num_partitions > 1) {
     if (!module->config().use_spmd_partitioning()) {
       return InvalidArgument(
@@ -628,8 +631,11 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
           }
           return CallInliner::InlineOverridePolicy::kProhibitInline;
         });
+
+    //前面的代码都在构造流水线spmd_pipeline，最后就爱那个module“原料”投入，最后才真正运行，对原料进行加工
     TF_RETURN_IF_ERROR(spmd_pipeline.Run(module).status());
-  } else {
+  } 
+  else {
     HloPassPipeline sharding_removal_pipeline("sharding-removal");
     AddHloVerifier(&sharding_removal_pipeline);
     if (flatten_before_fusion) {
@@ -646,6 +652,9 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
     TF_RETURN_IF_ERROR(sharding_removal_pipeline.Run(module).status());
   }
 
+
+
+  //第二阶段：子字节处理
   {
     // SubbytePacker must be run before the rest of the pipeline since it
     // modifies the layout of the entry computation inputs/outputs, which is
@@ -656,6 +665,9 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
     TF_RETURN_IF_ERROR(subbyte_packer_pipeline.Run(module).status());
   }
 
+
+
+  //第三阶段：算子拆解与标准化 
   HloPassPipeline pipeline("HLO passes through layout assignment");
   AddHloVerifier(&pipeline);
   pipeline.AddPass<BatchedGatherScatterNormalizer>();
@@ -724,6 +736,10 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
   pipeline.AddPass<BatchDotSimplification>();
   pipeline.AddPass<DotDecomposer>();
 
+
+
+
+  //第四阶段：数据类型归一化 
   // Rewrite to custom calls with target as oneDNN library calls.
   bool use_onednn_custom_call =
       module->config()
@@ -850,6 +866,11 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
         F16, F32, HloPredicateIsOp<HloOpcode::kDot, HloOpcode::kConvolution>);
   }
 
+
+
+
+
+  //第五阶段：核心优化循环 
   pipeline.AddPass(CreateSimplificationPipeline(
       "simplification", module, is_fusion_emitters, use_onednn_custom_call));
 
@@ -898,6 +919,13 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
     pipeline.AddPass<FlattenCallGraph>();
   }
 
+
+
+
+
+
+
+  //第六阶段：布局分配 (Layout Assignment) —— 终极目标
   ChannelLayoutConstraints layout_constraints;
   pipeline.AddPass<CpuLayoutAssignment>(
       module->mutable_entry_computation_layout(), target_machine_features,
@@ -917,6 +945,11 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
 
   return pipeline.Run(module).status();
 }
+
+
+//RunHloPassesThroughLayoutAssn结束
+//------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------
 
 absl::Status CpuCompiler::RunHloPassesAfterLayoutAssn(
     HloModule* module, bool is_aot_compile,

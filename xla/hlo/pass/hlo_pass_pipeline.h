@@ -53,7 +53,7 @@ class HloPassPipeline : public HloPassInterface {
   T& AddPass(std::unique_ptr<T> pass) {
     CHECK(!run_called_) << "AddPass cannot be called after Run";
     T* underlying_ptr = pass.get();
-    passes_.push_back(std::move(pass));
+    passes_.push_back(std::move(pass));     
     return *underlying_ptr;
   }
 
