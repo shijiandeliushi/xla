@@ -652,8 +652,8 @@ class HloComputation {
     return !(*this == other);
   }
 
-  // Replaces old instruction with newly created instruction. Removes old
-  // instruction from computation. Updates uses and root instruction.
+  // Replaces old instruction with newly created instruction. Removes old instruction from computation. Updates uses and root instruction.
+  ////用新创建的指令替换旧指令。从计算中删除旧指令。更新使用和根指令。
   absl::Status ReplaceWithNewInstruction(
       HloInstruction* old_instruction,
       std::unique_ptr<HloInstruction> new_instruction);
@@ -804,6 +804,17 @@ class HloComputation {
   // but the transformation must guarantee the invariants relevant to the
   // instructions still hold (e.g., Send and Recv must be removed together to
   // make each channel complete).
+  //如果给定的指令可以从计算中删除，则返回true。
+  // //在不违反以下不变量的情况下，无法删除参数指令/
+  // /HLO计算，但控制流微不足道的计算除外
+  // //（融合、调用、异步调用）。这是通过检查调用图来确定的
+  // //通过计算调用程序。预计这相当于
+  // //CallGraph：：GetComputationCallers（）。
+  // ////请注意，IsSafelyRemovable（）是删除
+  // //指示而不是充分条件。例如，说明
+  // //副作用（例如，发送、馈送）可以从计算中删除，
+  // //但是转换必须保证与//指令仍然有效（例如，发送和接收必须同时删除
+  // //使每个频道完整）。
   bool IsSafelyRemovable(
       const HloInstruction* instruction, bool ignore_control_dependency = false,
       std::optional<absl::FunctionRef<
