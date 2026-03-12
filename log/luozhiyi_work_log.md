@@ -31,9 +31,7 @@ xla/
 ```
 
 - **主要模块调用流程：**
-
-![alt text](image-1.png)
-
+![alt text](image1.png)
 ## 二、开发环境搭建
 
 由于 Windows 上的 WSL 虚拟 Ubuntu 存在系统兼容性与功能限制，已在电脑上安装 Ubuntu 物理机，并配置 1TB 硬盘用于 XLA 编译部署。
