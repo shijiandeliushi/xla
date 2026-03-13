@@ -226,7 +226,7 @@ absl::StatusOr<bool> DotDecomposer::RunImpl(
     HloModule* module,
     const absl::flat_hash_set<absl::string_view>& execution_threads) {
   // Gather all Non-canonical Dot operations.
-  std::vector<HloInstruction*> non_canonical_dots;
+  std::vector<HloInstruction*> non_canonical_dots; //用来存储不规范的Dot命令
   for (auto* computation :
        module->MakeNonfusionComputations(execution_threads)) {
     for (auto* instruction : computation->instructions()) {
@@ -239,20 +239,25 @@ absl::StatusOr<bool> DotDecomposer::RunImpl(
         non_canonical_dots.push_back(instruction);
         continue;
       }
+      
       // A dot is not canonical if it has more than one non-contracting
       // dimension.
       if (dnums.lhs_batch_dimensions_size() + 2 <
               instruction->operand(0)->shape().dimensions().size() ||
           dnums.rhs_batch_dimensions_size() + 2 <
-              instruction->operand(1)->shape().dimensions().size()) {
+              instruction->operand(1)->shape().dimensions().size()) 
+      {
         non_canonical_dots.push_back(instruction);
         continue;
       }
+
       if (dnums.lhs_batch_dimensions().empty() &&
-          dnums.lhs_contracting_dimensions().empty()) {
+          dnums.lhs_contracting_dimensions().empty()) 
+      {
         non_canonical_dots.push_back(instruction);
         continue;
       }
+
       // Check that batch dims, if present, are canonical.
       std::vector<int64_t> canonical_batch_dims(
           dnums.lhs_batch_dimensions_size());
@@ -263,8 +268,10 @@ absl::StatusOr<bool> DotDecomposer::RunImpl(
       }
     }
   }
+
   bool changed = false;
-  for (auto* dot : non_canonical_dots) {
+  for (auto* dot : non_canonical_dots) 
+  {
     TF_RETURN_IF_ERROR(CanonicalizeDot(Cast<HloDotInstruction>(dot)));
     changed = true;
   }
