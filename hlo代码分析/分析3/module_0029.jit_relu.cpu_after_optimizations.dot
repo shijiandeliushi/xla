@@ -1,0 +1,73 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0029.jit_relu.cpu_after_optimizations<br/>Computation main.5</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node2:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust1:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23clust1:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23clust1:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+95122811533200 [label=<<b>Parameter 0</b><br/>f32[64,512]{1,0}>, shape=rect, tooltip="x", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+subgraph cluster_95122813335392 {
+style="rounded,filled,bold"; fillcolor="#f5f5f5"; color="#c2c2c2;"
+label = <Fused expression for <b>broadcast_maximum_fusion</b><br/>loop fusion<br/>kind=kLoop>;
+labelloc = t;
+tooltip = " ";
+95122812296912 [label=<<b>maximum.0</b><br/>f32[64,512]{1,0}<br/><b>operand 1</b> = f32[64,512] 0>, shape=rect, tooltip="jit(relu)/jit(main)/max
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:17
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:17
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init:2453
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:38", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122812227664 [label=<<b>Parameter 0</b><br/>f32[64,512]{1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+
+}  // cluster_95122813335392
+
+cluster_95122813368944 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+95122812227664 -> 95122812296912 [arrowhead=normal tooltip="param_0 -> maximum.0"  headlabel="0", labeldistance=2];
+95122811533200 -> 95122812227664 [arrowhead=normal tooltip="Arg_0.1 -> param_0" ];
+95122812296912 -> cluster_95122813368944 [tooltip=" "];
+}

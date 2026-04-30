@@ -1,0 +1,2 @@
+xla_hlo_profile: true
+xla_dump_to: "hlo代码分析/分析2/xla_profile"

@@ -1,0 +1,10 @@
+HloModule demo
+
+// OperandUpcaster:
+// 将 Dot 的 bf16 操作数提升为 f32 以利用更高精度累加
+// 在操作数前插入 Convert(bf16->f32)，结果后插入 Convert(f32->bf16)
+ENTRY main {
+  p0 = bf16[8,8] parameter(0)
+  p1 = bf16[8,8] parameter(1)
+  ROOT dot = f32[8,8] dot(p0, p1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+}

@@ -1,0 +1,43 @@
+BufferAssignment:
+allocation 0: size 2097152, parameter 1, shape |f32[1024,512]| at ShapeIndex {}:
+ value: <1 Arg_1.2 @0> (size=2097152,offset=0): f32[1024,512]{1,0}
+allocation 1: size 262144, parameter 0, shape |f32[64,1024]| at ShapeIndex {}:
+ value: <0 Arg_0.1 @0> (size=262144,offset=0): f32[64,1024]{1,0}
+allocation 2: size 131072, output shape is |f32[64,512]|, maybe-live-out:
+ value: <2 dot.3 @0> (size=131072,offset=0): f32[64,512]{1,0}
+
+Total bytes used: 2490368 (2.38MiB)
+
+Used values:
+<0 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+ uses:
+  dot.3, operand 0
+ from instruction: %Arg_0.1 = f32[64,1024]{1,0} parameter(0), metadata={op_name="args[0]"}
+<1 Arg_1.2 @0>
+ positions:
+  Arg_1.2
+ uses:
+  dot.3, operand 1
+ from instruction: %Arg_1.2 = f32[1024,512]{1,0} parameter(1), metadata={op_name="args[1]"}
+<2 dot.3 @0>
+ positions:
+  dot.3
+ uses:
+ from instruction: %dot.3 = f32[64,512]{1,0} dot(%Arg_0.1, %Arg_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(dot_general)/jit(main)/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+
+
+HloLiveRange (max 3):
+  InstructionSequence:
+    0:Arg_0.1
+    1:Arg_1.2
+    2:dot.3
+  BufferLiveRange:
+    Arg_0.1{}:0-3
+    Arg_1.2{}:0-3
+    dot.3{}:2-3
+  Live ranges at 2 (peak):
+    Arg_1.2{}: 2097152 bytes (cumulative: 2097152 bytes)
+    Arg_0.1{}: 262144 bytes (cumulative: 2359296 bytes)
+    dot.3{}: 131072 bytes (cumulative: 2490368 bytes)

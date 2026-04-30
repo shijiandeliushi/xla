@@ -1,0 +1,22 @@
+HloModule jit_add, is_scheduled=true, entry_computation_layout={(f32[32,512,4096]{2,1,0}, f32[1,1,4096]{2,1,0})->f32[32,512,4096]{2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation.clone (param_0.1: f32[32,512,4096], param_1.3: f32[1,1,4096]) -> f32[32,512,4096] {
+  %param_0.1 = f32[32,512,4096]{2,1,0} parameter(0)
+  %param_1.3 = f32[1,1,4096]{2,1,0} parameter(1)
+  %bitcast.2 = f32[4096]{0} bitcast(%param_1.3), metadata={op_name="y"}
+  %broadcast.1 = f32[32,512,4096]{2,1,0} broadcast(%bitcast.2), dimensions={2}, metadata={op_name="jit(add)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  ROOT %add.1 = f32[32,512,4096]{2,1,0} add(%param_0.1, %broadcast.1), metadata={op_name="jit(add)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+}
+
+%parallel_broadcast_add_fusion (p: f32[32,512,4096], p.1: f32[1,1,4096]) -> f32[32,512,4096] {
+  %p = f32[32,512,4096]{2,1,0} parameter(0)
+  %p.1 = f32[1,1,4096]{2,1,0} parameter(1)
+  ROOT %broadcast_add_fusion.clone = f32[32,512,4096]{2,1,0} fusion(%p, %p.1), kind=kLoop, calls=%fused_computation.clone, metadata={op_name="jit(add)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}, backend_config={"outer_dimension_partitions":["4"]}
+}
+
+ENTRY %main.7 (Arg_0.1: f32[32,512,4096], Arg_1.2: f32[1,1,4096]) -> f32[32,512,4096] {
+  %Arg_0.1 = f32[32,512,4096]{2,1,0} parameter(0), metadata={op_name="x"}
+  %Arg_1.2 = f32[1,1,4096]{2,1,0} parameter(1), metadata={op_name="y"}
+  ROOT %call = f32[32,512,4096]{2,1,0} call(%Arg_0.1, %Arg_1.2), to_apply=%parallel_broadcast_add_fusion
+}
+

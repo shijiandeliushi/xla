@@ -1,0 +1,21 @@
+HloModule jit_true_divide, is_scheduled=true, entry_computation_layout={(f32[32,16,512,512]{3,2,1,0}, f32[])->f32[32,16,512,512]{3,2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation.clone (param_0.1: f32[32,16,512,512], param_1.2: f32[]) -> f32[32,16,512,512] {
+  %param_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0)
+  %param_1.2 = f32[] parameter(1)
+  %broadcast.1 = f32[32,16,512,512]{3,2,1,0} broadcast(%param_1.2), dimensions={}, metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+  ROOT %divide.1 = f32[32,16,512,512]{3,2,1,0} divide(%param_0.1, %broadcast.1), metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+}
+
+%parallel_broadcast_divide_fusion (p: f32[32,16,512,512], p.1: f32[]) -> f32[32,16,512,512] {
+  %p = f32[32,16,512,512]{3,2,1,0} parameter(0)
+  %p.1 = f32[] parameter(1)
+  ROOT %broadcast_divide_fusion.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p, %p.1), kind=kLoop, calls=%fused_computation.clone, metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+}
+
+ENTRY %main.5 (Arg_0.1: f32[32,16,512,512], Arg_1.2: f32[]) -> f32[32,16,512,512] {
+  %Arg_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0), metadata={op_name="x1"}
+  %Arg_1.2 = f32[] parameter(1), metadata={op_name="x2"}
+  ROOT %call = f32[32,16,512,512]{3,2,1,0} call(%Arg_0.1, %Arg_1.2), to_apply=%parallel_broadcast_divide_fusion
+}
+

@@ -1,0 +1,62 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0015.jit_true_divide.before_optimizations<br/>Computation main.4</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node3:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+107297895442496 [label=<<b>Parameter 0</b><br/>f32[]>, shape=rect, tooltip="x1", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+107297896455760 [label=<<b>Parameter 1</b><br/>f32[]>, shape=rect, tooltip="x2", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+107297900615824 [label=<<b>divide.3</b><br/>f32[]>, shape=rect, tooltip="jit(true_divide)/jit(main)/div
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+cluster_107297900591408 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+107297895442496 -> 107297900615824 [arrowhead=empty tooltip="Arg_0.1 -> divide.3"  headlabel="0", labeldistance=2];
+107297896455760 -> 107297900615824 [arrowhead=empty tooltip="Arg_1.2 -> divide.3"  headlabel="1", labeldistance=2];
+107297900615824 -> cluster_107297900591408 [tooltip=" "];
+}

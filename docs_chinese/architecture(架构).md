@@ -1,3 +1,5 @@
+> 本文翻译自 docs/architecture.md
+
 # XLA 架构
 
 XLA（加速线性代数，Accelerated Linear Algebra）是一个针对线性代数进行优化的机器学习（ML）编译器，能够提升执行速度和内存使用效率。本文简要概述了 XLA 编译器的目标和架构。

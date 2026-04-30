@@ -1,0 +1,37 @@
+BufferAssignment:
+allocation 0: size 536870912, output shape is |f32[32,16,512,512]|, maybe-live-out:
+ value: <0 exponential.2.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+allocation 1: size 536870912, parameter 0, shape |f32[32,16,512,512]| at ShapeIndex {}:
+ value: <1 Arg_0.1 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+
+Total bytes used: 1073741824 (1.00GiB)
+
+Used values:
+<0 exponential.2.clone @0>
+ positions:
+  exponential.2.clone
+  call
+ uses:
+ from instruction: %exponential.2.clone = f32[32,16,512,512]{3,2,1,0} exponential(%p), metadata={op_name="jit(exp)/jit(main)/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<1 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+  p
+ uses:
+  call, operand 0
+  exponential.2.clone, operand 0
+ from instruction: %Arg_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0), metadata={op_name="x"}
+
+
+HloLiveRange (max 4):
+  InstructionSequence:
+    0:Arg_0.1
+    1:p
+    2:exponential.2.clone
+    3:call
+  BufferLiveRange:
+    exponential.2.clone{}:2-4
+    Arg_0.1{}:0-4
+  Live ranges at 2 (peak):
+    Arg_0.1{}: 536870912 bytes (cumulative: 536870912 bytes)
+    exponential.2.clone{}: 536870912 bytes (cumulative: 1073741824 bytes)

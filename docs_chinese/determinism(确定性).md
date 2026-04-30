@@ -1,3 +1,5 @@
+> 本文翻译自 docs/determinism.md
+
 # 确定性 (GPU)
 
 ## 编译

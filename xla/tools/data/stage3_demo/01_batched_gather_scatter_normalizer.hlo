@@ -1,0 +1,18 @@
+HloModule demo
+
+// BatchedGatherScatterNormalizer:
+// 将带批量维度的 gather/scatter 拆分为非批量形式
+// 输入: gather 带有显式的 operand_batching_dims
+ENTRY main {
+  operand = f32[2,10,16] parameter(0)
+  indices = s32[2,4] parameter(1)
+  ROOT gather = f32[2,4,16] gather(operand, indices),
+    offset_dims={2},
+    collapsed_slice_dims={0},
+    start_index_map={0},
+    index_vector_dim=1,
+    slice_sizes={1,16},
+    operand_batching_dims={0},
+    start_indices_batching_dims={0},
+    indices_are_sorted=false
+}

@@ -1,0 +1,2 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1773732663.337422   27524 parse_flags_from_env.cc:234] Unknown flag in XLA_FLAGS: --xla_hlo_profile_sort_by_time

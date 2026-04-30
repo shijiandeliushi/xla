@@ -1,3 +1,5 @@
+> 本文翻译自 docs/build_from_source.md
+
 # 从源代码构建
 
 本文档介绍如何构建 XLA 组件。

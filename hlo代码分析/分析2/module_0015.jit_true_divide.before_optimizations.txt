@@ -1,0 +1,8 @@
+HloModule jit_true_divide, entry_computation_layout={(f32[], f32[])->f32[]}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.4 (Arg_0.1: f32[], Arg_1.2: f32[]) -> f32[] {
+  %Arg_0.1 = f32[] parameter(0), metadata={op_name="x1"}
+  %Arg_1.2 = f32[] parameter(1), metadata={op_name="x2"}
+  ROOT %divide.3 = f32[] divide(%Arg_0.1, %Arg_1.2), metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+

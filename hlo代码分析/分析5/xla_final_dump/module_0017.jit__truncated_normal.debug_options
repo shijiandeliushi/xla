@@ -1,0 +1,4 @@
+xla_cpu_enable_fast_min_max: false
+xla_hlo_profile: true
+xla_dump_to: "/home/xianghonghui/xla/hlo代码分析/分析5/xla_final_dump"
+xla_dump_hlo_as_dot: true

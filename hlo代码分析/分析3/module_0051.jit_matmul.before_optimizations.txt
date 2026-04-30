@@ -1,0 +1,8 @@
+HloModule jit_matmul, entry_computation_layout={(f32[32,16,512,512]{3,2,1,0}, f32[32,16,512,64]{3,2,1,0})->f32[32,16,512,64]{3,2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.4 (Arg_0.1: f32[32,16,512,512], Arg_1.2: f32[32,16,512,64]) -> f32[32,16,512,64] {
+  %Arg_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0), metadata={op_name="a"}
+  %Arg_1.2 = f32[32,16,512,64]{3,2,1,0} parameter(1), metadata={op_name="b"}
+  ROOT %dot.3 = f32[32,16,512,64]{3,2,1,0} dot(%Arg_0.1, %Arg_1.2), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(matmul)/jit(main)/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+}
+

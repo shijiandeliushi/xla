@@ -1,0 +1,15 @@
+HloModule jit_multiply, is_scheduled=true, entry_computation_layout={(f32[256,128]{1,0}, f32[])->f32[256,128]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0: f32[256,128], param_1.1: f32[]) -> f32[256,128] {
+  %param_0 = f32[256,128]{1,0} parameter(0)
+  %param_1.1 = f32[] parameter(1)
+  %broadcast.0 = f32[256,128]{1,0} broadcast(%param_1.1), dimensions={}, metadata={op_name="jit(multiply)/jit(main)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %multiply.0 = f32[256,128]{1,0} multiply(%param_0, %broadcast.0), metadata={op_name="jit(multiply)/jit(main)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+ENTRY %main.5 (Arg_0.1: f32[256,128], Arg_1.2: f32[]) -> f32[256,128] {
+  %Arg_0.1 = f32[256,128]{1,0} parameter(0), metadata={op_name="x"}
+  %Arg_1.2 = f32[] parameter(1), metadata={op_name="y"}
+  ROOT %broadcast_multiply_fusion = f32[256,128]{1,0} fusion(%Arg_0.1, %Arg_1.2), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(multiply)/jit(main)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+

@@ -1,0 +1,56 @@
+Total bytes used: 67109824 (64.00MiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+  48.00MiB( 75%);   16.00MiB; allocation 9: size 48.00MiB, preallocated-temp:
+  64.00MiB(100%);        60B; allocation 0: size 16.00MiB, output shape is |f32[1024,4096]|, maybe-live-out:
+  64.00MiB(100%);        44B; allocation 2: size 16B, constant:
+  64.00MiB(100%);        28B; allocation 3: size 16B, constant:
+  64.00MiB(100%);        20B; allocation 4: size 8B, parameter 0, shape |u32[2]| at ShapeIndex {}:
+  64.00MiB(100%);        16B; allocation 1: size 4B, constant:
+  64.00MiB(100%);        12B; allocation 5: size 4B, parameter 2, shape |s32[]| at ShapeIndex {}:
+  64.00MiB(100%);         8B; allocation 6: size 4B, parameter 1, shape |s32[]| at ShapeIndex {}:
+  64.00MiB(100%);         4B; allocation 7: size 4B, constant:
+  64.00MiB(100%);         0B; allocation 8: size 4B, constant:
+
+
+Allocations sorted by size with their values:
+allocation 9: size 48.00MiB, preallocated-temp:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	 16.00MiB( 33%);   16.00MiB;     16777280;                5; 5×u32[1024,4096]
+	 32.00MiB( 67%);   16.00MiB;           64;                5; 5×u32[1024,4096]
+	 48.00MiB(100%);   16.00MiB;     33554496;                1; u32[1024,4096]
+	 48.00MiB(100%);        64B;            0;                5; 5×(s32[], u32[1024,4096], u32[1024,4096], u32[], u32[], /*index=5*/u32[], u32[4], u32[4])
+	 48.00MiB(100%);        16B;     50331776;                1; u32[4]
+	 48.00MiB(100%);        16B;     50331904;                5; 5×u32[4]
+	 48.00MiB(100%);        16B;     50331712;                1; u32[4]
+	 48.00MiB(100%);        16B;     50331840;                5; 5×u32[4]
+	 48.00MiB(100%);         4B;     50332032;                1; f32[]
+	 48.00MiB(100%);         4B;     50332416;                5; 5×s32[]
+	 48.00MiB(100%);         4B;     50332224;                5; 5×u32[]
+	 48.00MiB(100%);         4B;     50332544;                1; u32[]
+	 48.00MiB(100%);         4B;     50332160;                5; 5×u32[]
+	 48.00MiB(100%);         4B;     50332352;                1; s32[]
+	 48.00MiB(100%);         4B;     50332480;                1; u32[]
+	 48.00MiB(100%);         4B;     50332288;                5; 5×u32[]
+	 48.00MiB(100%);         4B;     50332096;                1; u32[]
+	 48.00MiB(100%);         4B;     50331968;                1; f32[]
+
+allocation 0: size 16.00MiB, output shape is |f32[1024,4096]|, maybe-live-out:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	 16.00MiB(100%);   16.00MiB;            0;                3; f32[1024,4096], u32[1024,4096], pred[]
+
+allocation 2: size 16B, constant:
+allocation 3: size 16B, constant:
+allocation 4: size 8B, parameter 0, shape |u32[2]| at ShapeIndex {}:
+allocation 1: size 4B, constant:
+allocation 5: size 4B, parameter 2, shape |s32[]| at ShapeIndex {}:
+allocation 6: size 4B, parameter 1, shape |s32[]| at ShapeIndex {}:
+allocation 7: size 4B, constant:
+allocation 8: size 4B, constant:

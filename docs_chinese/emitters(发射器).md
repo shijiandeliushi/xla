@@ -1,3 +1,5 @@
+> 本文翻译自 docs/emitters.md
+
 # XLA:GPU 发射器
 XLA:GPU 中有三种为 HLO 生成代码的方式。
 

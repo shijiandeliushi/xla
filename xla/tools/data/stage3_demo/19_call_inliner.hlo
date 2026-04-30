@@ -1,0 +1,15 @@
+HloModule demo
+
+// CallInliner:
+// 将只有单一调用点的 call 指令内联展开
+// call(sub) → 子计算体的指令被直接插入调用者
+// 类比传统编译器中的函数内联
+called_computation {
+  p = f32[] parameter(0)
+  ROOT add = f32[] add(p, p)
+}
+
+ENTRY main {
+  p0 = f32[] parameter(0)
+  ROOT call = f32[] call(p0), to_apply=called_computation
+}

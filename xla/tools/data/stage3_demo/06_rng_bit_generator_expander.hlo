@@ -1,0 +1,8 @@
+HloModule demo
+
+// RngBitGeneratorExpander:
+// 将 kRngBitGenerator 展开为 Philox 算法的底层位运算
+ENTRY main {
+  state = u64[2] parameter(0)
+  ROOT rng = (u64[2], u32[4,4]) rng-bit-generator(state), algorithm=rng_philox
+}

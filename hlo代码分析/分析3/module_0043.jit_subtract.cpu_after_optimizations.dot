@@ -1,0 +1,171 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0043.jit_subtract.cpu_after_optimizations<br/>Computation main.7</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node10:hover ~ %23edge10 text { fill: %231976d2; }
+  %23node10:hover ~ %23edge10 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node10:hover ~ %23edge10 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge10 text { fill: %23d32f2f; }
+  %23node11:hover ~ %23edge10 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node11:hover ~ %23edge10 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge8 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge8 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge8 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge8 text { fill: %23d32f2f; }
+  %23node10:hover ~ %23edge8 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node10:hover ~ %23edge8 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge6 text { fill: %231976d2; }
+  %23node7:hover ~ %23edge6 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node7:hover ~ %23edge6 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge6 text { fill: %23d32f2f; }
+  %23node6:hover ~ %23edge6 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node6:hover ~ %23edge6 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge7 text { fill: %231976d2; }
+  %23node9:hover ~ %23edge7 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node9:hover ~ %23edge7 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge7 text { fill: %23d32f2f; }
+  %23node7:hover ~ %23edge7 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node7:hover ~ %23edge7 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust2:hover ~ %23edge7 text { fill: %23d32f2f; }
+  %23clust2:hover ~ %23edge7 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23clust2:hover ~ %23edge7 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge5 text { fill: %231976d2; }
+  %23node6:hover ~ %23edge5 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node6:hover ~ %23edge5 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge5 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge5 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge5 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge9 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge9 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge9 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge9 text { fill: %23d32f2f; }
+  %23node10:hover ~ %23edge9 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node10:hover ~ %23edge9 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge4 text { fill: %231976d2; }
+  %23node8:hover ~ %23edge4 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node8:hover ~ %23edge4 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust2:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23clust2:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23clust2:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node5:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node5:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node4:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node4:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node10:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node10:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust2:hover ~ %23edge1 text { fill: %231976d2; }
+  %23clust2:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23clust2:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+>
+
+100946514005552 [label=<<b>Parameter 0</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="x", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+100946514464416 [label=<<b>Parameter 1</b><br/>f32[32,16,512,1]{3,2,1,0}>, shape=rect, tooltip="y", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+subgraph cluster_100946514806880 {
+style=rounded; color=black;
+label = <Subcomputation for <b>call</b><br/>parallel_broadcast_subtract_fusion>;
+labelloc = t;
+tooltip = " ";
+subgraph cluster_100946514322352 {
+style="rounded,filled,bold"; fillcolor="#f5f5f5"; color="#c2c2c2;"
+label = <Fused expression for <b>broadcast_subtract_fusion.clone</b><br/>loop fusion<br/>kind=kLoop>;
+labelloc = t;
+tooltip = " ";
+100946514761280 [label=<<b>subtract.1</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="jit(subtract)/jit(main)/sub
+source: /home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:35
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:35
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:62
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+100946514244768 [label=<<b>Parameter 0</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+100946514696080 [label=<<b>broadcast.1</b><br/>dimensions={0,1,2}<br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="jit(subtract)/jit(main)/sub
+source: /home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:35
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:35
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:62
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+100946514680688 [label=<<b>bitcast.2</b><br/>f32[32,16,512]{2,1,0}>, shape=rect, tooltip="y", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+100946515438512 [label=<<b>Parameter 1</b><br/>f32[32,16,512,1]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+
+}  // cluster_100946514322352
+
+100946515467520 [label=<<b>Parameter 0</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+100946515468112 [label=<<b>Parameter 1</b><br/>f32[32,16,512,1]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+
+}  // cluster_100946514806880
+
+100946514694960 [label=<<b>call</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+cluster_100946515425760 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+100946514761280 -> 100946514694960 [ltail="cluster_100946514806880", style="dashed" tooltip="parallel_broadcast_subtract_fusion -> call"];
+100946514244768 -> 100946514761280 [arrowhead=normal tooltip="param_0.1 -> subtract.1"  headlabel="0", labeldistance=2];
+100946514696080 -> 100946514761280 [arrowhead=normal tooltip="broadcast.1 -> subtract.1"  headlabel="1", labeldistance=2];
+100946515467520 -> 100946514244768 [arrowhead=normal tooltip="p -> param_0.1" ];
+100946514680688 -> 100946514696080 [arrowhead=normal tooltip="bitcast.2 -> broadcast.1" ];
+100946515438512 -> 100946514680688 [arrowhead=normal tooltip="param_1.3 -> bitcast.2" ];
+100946515468112 -> 100946515438512 [arrowhead=normal tooltip="p.1 -> param_1.3" ];
+100946514005552 -> 100946514694960 [arrowhead=normal tooltip="Arg_0.1 -> call"  headlabel="0", labeldistance=2];
+100946514464416 -> 100946514694960 [arrowhead=normal tooltip="Arg_1.2 -> call"  headlabel="1", labeldistance=2];
+100946514694960 -> cluster_100946515425760 [tooltip=" "];
+}

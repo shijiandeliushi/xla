@@ -118,8 +118,15 @@ limitations under the License.
 #include "xla/hlo/transforms/simplifiers/zero_sized_hlo_elimination.h"
 #include "xla/hlo/transforms/while_loop_trip_count_annotator.h"
 #include "xla/literal_pool.h"
+#include "xla/service/all_to_all_decomposer.h"
+#include "xla/service/batched_gather_scatter_normalizer.h"
 #include "xla/service/buffer_value.h"
+#include "xla/service/call_inliner.h"
+#include "xla/service/conditional_to_select.h"
 #include "xla/service/dump.h"
+#include "xla/service/map_inliner.h"
+#include "xla/service/topk_rewriter.h"
+#include "xla/service/triangular_solve_expander.h"
 #include "xla/service/float_support.h"
 #include "xla/service/platform_util.h"
 #include "xla/shape_util.h"
@@ -240,6 +247,7 @@ void OptProvider::RegisterAllHardwareIndependentPasses() {
                                   /*combine_threshold_count=*/1024);
   RegisterPass<AllReduceContiguous>();
   RegisterPass<AllReduceFolder>();
+  RegisterPass<AllToAllDecomposer>();
   RegisterPass<ArCrsCombiner>(/*num_spatial_partitions=*/0,
                               /*spmd_partition=*/1);
   RegisterPass<AssumeGatherIndicesInBoundRewriteToCopy>();
@@ -250,13 +258,16 @@ void OptProvider::RegisterAllHardwareIndependentPasses() {
   RegisterPass<BFloat16MixedPrecisionRemoval>();
   RegisterPass<BFloat16Propagation>(/*bfloat16_support=*/bfloat16_support);
   RegisterPass<BatchDotSimplification>();
+  RegisterPass<BatchedGatherScatterNormalizer>();
   RegisterPass<BroadcastCanonicalizer>();
+  RegisterPass<CallInliner>(/*single_call_site=*/true);
   RegisterPass<CholeskyExpander>();
   RegisterPass<CollectiveQuantizer>();
   RegisterPass<CollectiveTransformationReorder>();
   RegisterPass<CollectivesScheduleLinearizer>();
   RegisterPass<ComparisonExpander>();
   RegisterPass<ConditionalCanonicalizer>();
+  RegisterPass<ConditionalToSelect>();
   RegisterPass<ControlDepRemover>();
   RegisterPass<ConvertAsyncCollectivesToSync>();
   RegisterPass<ConvertMemoryPlacementToInternalAnnotations>();
@@ -299,6 +310,7 @@ void OptProvider::RegisterAllHardwareIndependentPasses() {
   RegisterPass<LiteralCanonicalizer>(
       /*literal_pool=*/literal_pool, /*min_size_bytes=*/0);
   RegisterPass<LogisticExpander>();
+  RegisterPass<MapInliner>();
   RegisterPass<MemorySpacePropagation>();
   RegisterPass<OperandUpcaster>();
   RegisterPass<OptimizationBarrierExpander>();
@@ -321,7 +333,9 @@ void OptProvider::RegisterAllHardwareIndependentPasses() {
   RegisterPass<StableSortExpander>();
   RegisterPass<StochasticConvertDecomposer>();
   RegisterPass<SubByteNormalization>(SubByteNormalization::SET_ELEMENT_SIZE);
+  RegisterPass<TopkDecomposer>();
   RegisterPass<TreeReductionRewriter>();
+  RegisterPass<TriangularSolveExpander>();
   RegisterPass<TupleSimplifier>();
   RegisterPass<WhileLoopTripCountAnnotator>();
   RegisterPass<ZeroSizedHloElimination>();

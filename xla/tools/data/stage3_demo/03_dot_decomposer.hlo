@@ -1,0 +1,11 @@
+HloModule demo
+
+// DotDecomposer:
+// 将非规范 Dot（LHS 有多个非收缩维度）拆解为：
+// reshape(规范2D dot(reshape(p0), reshape(p1)))
+// 规范形式: batch dims 在最外层, contracting dims 集中, non-contracting dims 集中
+ENTRY main {
+  p0 = f32[64,63,512] parameter(0)
+  p1 = f32[512,512] parameter(1)
+  ROOT dot = f32[64,63,512] dot(p0, p1), lhs_contracting_dims={2}, rhs_contracting_dims={0}
+}

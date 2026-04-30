@@ -168,7 +168,7 @@ class Shape {
 
   // Returns whether all elements in the shape are integers.
   // Tuple shapes are traversed recursively.
-  bool AreAllLeavesIntegers() const;0
+  bool AreAllLeavesIntegers() const;
 
   // Returns true if no array dimension in the shape is dynamically sized. Tuple
   //如果形状中没有动态调整大小的数组维度，则返回true。

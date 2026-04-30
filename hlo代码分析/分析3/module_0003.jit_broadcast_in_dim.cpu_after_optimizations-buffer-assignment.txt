@@ -1,0 +1,37 @@
+BufferAssignment:
+allocation 0: size 67108864, output shape is |f32[32,512,1024]|, maybe-live-out:
+ value: <0 broadcast.2.clone @0> (size=67108864,offset=0): f32[32,512,1024]{2,1,0}
+allocation 1: size 4, parameter 0, shape |f32[]| at ShapeIndex {}:
+ value: <1 Arg_0.1 @0> (size=4,offset=0): f32[]
+
+Total bytes used: 67108868 (64.00MiB)
+
+Used values:
+<0 broadcast.2.clone @0>
+ positions:
+  broadcast.2.clone
+  call
+ uses:
+ from instruction: %broadcast.2.clone = f32[32,512,1024]{2,1,0} broadcast(%p), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/jit(main)/broadcast_in_dim" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=76}, backend_config={"outer_dimension_partitions":["4"]}
+<1 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+  p
+ uses:
+  call, operand 0
+  broadcast.2.clone, operand 0
+ from instruction: %Arg_0.1 = f32[] parameter(0), metadata={op_name="args[0]"}
+
+
+HloLiveRange (max 4):
+  InstructionSequence:
+    0:Arg_0.1
+    1:p
+    2:broadcast.2.clone
+    3:call
+  BufferLiveRange:
+    broadcast.2.clone{}:2-4
+    Arg_0.1{}:0-4
+  Live ranges at 2 (peak):
+    broadcast.2.clone{}: 67108864 bytes (cumulative: 67108864 bytes)
+    Arg_0.1{}: 4 bytes (cumulative: 67108868 bytes)

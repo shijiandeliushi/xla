@@ -1,0 +1,71 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0003.jit_broadcast_in_dim.cpu_after_optimizations<br/>Computation main.3</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node4:hover ~ %23edge4 text { fill: %231976d2; }
+  %23node4:hover ~ %23edge4 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node4:hover ~ %23edge4 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+96942373392464 [label=<<b>Parameter 0</b><br/>f32[]>, shape=rect, tooltip="args[0]", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+subgraph cluster_96942373340256 {
+style=rounded; color=black;
+label = <Subcomputation for <b>call</b><br/>parallel_broadcast.2>;
+labelloc = t;
+tooltip = " ";
+96942374990256 [label=<<b>broadcast.2.clone</b><br/>dimensions={}<br/>f32[128,2048]{1,0}>, shape=rect, tooltip="jit(broadcast_in_dim)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/hlo代码分析/分析5/final_profiling.py:42
+/home/xianghonghui/xla/hlo代码分析/分析5/final_profiling.py:<module>:42", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+96942374715360 [label=<<b>Parameter 0</b><br/>f32[]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+
+}  // cluster_96942373340256
+
+96942375420736 [label=<<b>call</b><br/>f32[128,2048]{1,0}>, shape=rect, tooltip="", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+cluster_96942375456544 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+96942374990256 -> 96942375420736 [ltail="cluster_96942373340256", style="dashed" tooltip="parallel_broadcast.2 -> call"];
+96942374715360 -> 96942374990256 [arrowhead=empty tooltip="p -> broadcast.2.clone" ];
+96942373392464 -> 96942375420736 [arrowhead=empty tooltip="Arg_0.1 -> call" ];
+96942375420736 -> cluster_96942375456544 [tooltip=" "];
+}

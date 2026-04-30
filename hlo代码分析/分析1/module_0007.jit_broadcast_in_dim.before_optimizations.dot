@@ -1,0 +1,43 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0007.jit_broadcast_in_dim.before_optimizations<br/>Computation main.3</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node2:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+102020488182192 [label=<<b>Parameter 0</b><br/>f32[]>, shape=rect, tooltip="args[0]", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+102020486727760 [label=<<b>broadcast.2</b><br/>dimensions={}<br/>f32[64]>, shape=rect, tooltip="jit(broadcast_in_dim)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/hlo代码分析/分析1/generate_hlo.py:26
+/home/xianghonghui/xla/hlo代码分析/分析1/generate_hlo.py:<module>:26", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+cluster_102020489359696 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+102020488182192 -> 102020486727760 [arrowhead=empty tooltip="Arg_0.1 -> broadcast.2" ];
+102020486727760 -> cluster_102020489359696 [tooltip=" "];
+}

@@ -1,3 +1,5 @@
+> 本文翻译自 docs/async_ops.md
+
 # 异步 HLO 指令
 
 1. 向 HLO 添加异步操作较为繁琐（例如 `all-reduce-start` 和 `all-reduce-done`）。

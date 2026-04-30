@@ -1,0 +1,52 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0053.jit_reshape.before_optimizations<br/>Computation main.3</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node2:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+107297922532752 [label=<<b>Parameter 0</b><br/>f32[128]>, shape=rect, tooltip="args[0]", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+107297924453072 [label=<<b>reshape.2</b><br/>f32[1,128]{1,0}>, shape=rect, tooltip="jit(reshape)/jit(main)/reshape
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:295
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:295
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:20
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+cluster_107297929026080 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+107297922532752 -> 107297924453072 [arrowhead=empty tooltip="Arg_0.1 -> reshape.2" ];
+107297924453072 -> cluster_107297929026080 [tooltip=" "];
+}

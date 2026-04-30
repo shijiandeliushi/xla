@@ -1,0 +1,112 @@
+BufferAssignment:
+allocation 0: size 536870912, parameter 0, shape |f32[32,16,512,512]| at ShapeIndex {}:
+ value: <12 Arg_0.1 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+allocation 1: size 1048576, output shape is |f32[32,16,512,1]|, maybe-live-out:
+ value: <11 bitcast_copy_fusion.clone @0> (size=1048576,offset=0): f32[32,16,512,1]{3,2,1,0}
+allocation 2: size 4, constant:
+ value: <13 constant.2 @0> (size=4,offset=0): f32[]
+allocation 3: size 4, thread-local:
+ value: <2 add.5 @0> (size=4,offset=0): f32[]
+allocation 4: size 4, thread-local:
+ value: <3 Arg_0.0 @0> (size=4,offset=0): f32[]
+allocation 5: size 4, thread-local:
+ value: <4 Arg_1.0 @0> (size=4,offset=0): f32[]
+allocation 6: size 4, thread-local:
+ value: <5 add.0 @0> (size=4,offset=0): f32[]
+allocation 7: size 4, thread-local:
+ value: <0 Arg_0.3 @0> (size=4,offset=0): f32[]
+allocation 8: size 4, thread-local:
+ value: <1 Arg_1.4 @0> (size=4,offset=0): f32[]
+allocation 9: size 16777216, preallocated-temp:
+ value: <6 reduce-window.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+
+Total bytes used: 554696732 (529.00MiB)
+
+Used values:
+<0 Arg_0.3 @0>
+ positions:
+  Arg_0.3
+ uses:
+  add.5, operand 0
+ from instruction: %Arg_0.3 = f32[] parameter(0), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum"}
+<1 Arg_1.4 @0>
+ positions:
+  Arg_1.4
+ uses:
+  add.5, operand 1
+ from instruction: %Arg_1.4 = f32[] parameter(1), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum"}
+<2 add.5 @0>
+ positions:
+  add.5
+ uses:
+ from instruction: %add.5 = f32[] add(%Arg_0.3, %Arg_1.4), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<3 Arg_0.0 @0>
+ positions:
+  Arg_0.0
+ uses:
+  add.0, operand 0
+ from instruction: %Arg_0.0 = f32[] parameter(0), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum"}
+<4 Arg_1.0 @0>
+ positions:
+  Arg_1.0
+ uses:
+  add.0, operand 1
+ from instruction: %Arg_1.0 = f32[] parameter(1), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum"}
+<5 add.0 @0>
+ positions:
+  add.0
+ uses:
+ from instruction: %add.0 = f32[] add(%Arg_0.0, %Arg_1.0), metadata={op_name="jit(_reduce_sum)/jit(main)/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<6 reduce-window.clone @0>
+ positions:
+  reduce-window.clone
+  call
+  p.2
+ uses:
+  call.1, operand 0
+  bitcast_copy_fusion.clone, operand 0
+ from instruction: %reduce-window.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p, %p.1), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_0.6, backend_config={"outer_dimension_partitions":["4"]}
+<11 bitcast_copy_fusion.clone @0>
+ positions:
+  bitcast_copy_fusion.clone
+  call.1
+ uses:
+ from instruction: %bitcast_copy_fusion.clone = f32[32,16,512,1]{3,2,1,0} fusion(%p.2), kind=kLoop, calls=%fused_computation.clone, metadata={op_name="jit(_reduce_sum)/jit(main)/broadcast_in_dim" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<12 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+  p
+ uses:
+  call, operand 0
+  reduce-window.clone, operand 0
+ from instruction: %Arg_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0), metadata={op_name="a"}
+<13 constant.2 @0>
+ positions:
+  constant.2
+  p.1
+ uses:
+  call, operand 1
+  reduce-window.clone, operand 1
+ from instruction: %constant.2 = f32[] constant(0)
+
+
+HloLiveRange (max 9):
+  InstructionSequence:
+    0:Arg_0.1
+    1:constant.2
+    2:p
+    3:p.1
+    4:reduce-window.clone
+    5:call
+    6:p.2
+    7:bitcast_copy_fusion.clone
+    8:call.1
+  BufferLiveRange:
+    reduce-window.clone{}:4-7
+    bitcast_copy_fusion.clone{}:7-9
+    Arg_0.1{}:0-9
+    constant.2{}:1-4
+  Live ranges at 7 (peak):
+    Arg_0.1{}: 536870912 bytes (cumulative: 536870912 bytes)
+    reduce-window.clone{}: 16777216 bytes (cumulative: 553648128 bytes)
+    bitcast_copy_fusion.clone{}: 1048576 bytes (cumulative: 554696704 bytes)

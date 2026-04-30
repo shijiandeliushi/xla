@@ -1,3 +1,5 @@
+> 本文翻译自 docs/errors_overview.md
+
 # XLA Errors Overview
 
 XLA errors are categorized into different XLA error sources. Each source has a

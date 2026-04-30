@@ -1,0 +1,3348 @@
+BufferAssignment:
+allocation 0: size 67108864, output shape is |f32[32,512,1024]|, maybe-live-out:
+ value: <72 reduce-window.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <74 reduce-window.1.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <76 reduce-window.2.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <78 reduce-window.3.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <80 reduce-window.4.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <82 reduce-window.5.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <84 reduce-window.6.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <86 reduce-window.7.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <88 reduce-window.8.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <90 reduce-window.9.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <92 reduce-window.10.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <94 reduce-window.11.clone @0> (size=16777216,offset=0): f32[32,16,512,16]{3,2,1,0}
+ value: <102 add_add_fusion.clone @0> (size=67108864,offset=0): f32[32,512,1024]{2,1,0}
+ value: <168 transpose_copy_fusion.1.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <248 transpose_copy_fusion.4.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <328 transpose_copy_fusion.7.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <408 transpose_copy_fusion.10.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <488 transpose_copy_fusion.13.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <568 transpose_copy_fusion.16.clone @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+ value: <580 dot @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <590 dot.136 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <592 dot.3 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <598 dot.5 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <602 dot.6 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <610 dot.216 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <612 dot.9 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <618 dot.11 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <622 dot.12 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <630 dot.296 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <632 dot.15 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <638 dot.17 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <642 dot.18 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <650 dot.376 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <652 dot.21 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <658 dot.23 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <662 dot.24 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <670 dot.456 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <672 dot.27 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <678 dot.29 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <682 dot.30 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <690 dot.536 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+ value: <692 dot.33 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+allocation 1: size 67108864, parameter 72, shape |f32[32,512,1024]| at ShapeIndex {}:
+ value: <576 Arg_72.73 @0> (size=67108864,offset=0): f32[32,512,1024]{2,1,0}
+allocation 2: size 16777216, parameter 9, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <595 Arg_9.10 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 3: size 16777216, parameter 11, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <597 Arg_11.12 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 4: size 16777216, parameter 21, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <615 Arg_21.22 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 5: size 16777216, parameter 23, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <617 Arg_23.24 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 6: size 16777216, parameter 33, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <635 Arg_33.34 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 7: size 16777216, parameter 35, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <637 Arg_35.36 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 8: size 16777216, parameter 45, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <655 Arg_45.46 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 9: size 16777216, parameter 47, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <657 Arg_47.48 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 10: size 16777216, parameter 57, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <675 Arg_57.58 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 11: size 16777216, parameter 59, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <677 Arg_59.60 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 12: size 16777216, parameter 69, shape |f32[1024,4096]| at ShapeIndex {}:
+ value: <695 Arg_69.70 @0> (size=16777216,offset=0): f32[1024,4096]{1,0}
+allocation 13: size 16777216, parameter 71, shape |f32[4096,1024]| at ShapeIndex {}:
+ value: <697 Arg_71.72 @0> (size=16777216,offset=0): f32[4096,1024]{1,0}
+allocation 14: size 4194304, parameter 1, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <579 Arg_1.2 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 15: size 4194304, parameter 3, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <582 Arg_3.4 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 16: size 4194304, parameter 5, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <588 Arg_5.6 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 17: size 4194304, parameter 7, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <591 Arg_7.8 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 18: size 4194304, parameter 13, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <601 Arg_13.14 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 19: size 4194304, parameter 15, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <604 Arg_15.16 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 20: size 4194304, parameter 17, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <608 Arg_17.18 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 21: size 4194304, parameter 19, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <611 Arg_19.20 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 22: size 4194304, parameter 25, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <621 Arg_25.26 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 23: size 4194304, parameter 27, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <624 Arg_27.28 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 24: size 4194304, parameter 29, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <628 Arg_29.30 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 25: size 4194304, parameter 31, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <631 Arg_31.32 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 26: size 4194304, parameter 37, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <641 Arg_37.38 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 27: size 4194304, parameter 39, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <644 Arg_39.40 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 28: size 4194304, parameter 41, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <648 Arg_41.42 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 29: size 4194304, parameter 43, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <651 Arg_43.44 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 30: size 4194304, parameter 49, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <661 Arg_49.50 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 31: size 4194304, parameter 51, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <664 Arg_51.52 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 32: size 4194304, parameter 53, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <668 Arg_53.54 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 33: size 4194304, parameter 55, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <671 Arg_55.56 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 34: size 4194304, parameter 61, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <681 Arg_61.62 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 35: size 4194304, parameter 63, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <684 Arg_63.64 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 36: size 4194304, parameter 65, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <688 Arg_65.66 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 37: size 4194304, parameter 67, shape |f32[1024,1024]| at ShapeIndex {}:
+ value: <691 Arg_67.68 @0> (size=4194304,offset=0): f32[1024,1024]{1,0}
+allocation 38: size 16384, parameter 8, shape |f32[4096]| at ShapeIndex {}:
+ value: <594 Arg_8.9 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 39: size 16384, parameter 20, shape |f32[4096]| at ShapeIndex {}:
+ value: <614 Arg_20.21 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 40: size 16384, parameter 32, shape |f32[4096]| at ShapeIndex {}:
+ value: <634 Arg_32.33 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 41: size 16384, parameter 44, shape |f32[4096]| at ShapeIndex {}:
+ value: <654 Arg_44.45 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 42: size 16384, parameter 56, shape |f32[4096]| at ShapeIndex {}:
+ value: <674 Arg_56.57 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 43: size 16384, parameter 68, shape |f32[4096]| at ShapeIndex {}:
+ value: <694 Arg_68.69 @0> (size=16384,offset=0): f32[4096]{0}
+allocation 44: size 4096, parameter 6, shape |f32[1024]| at ShapeIndex {}:
+ value: <577 Arg_6.7 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 45: size 4096, parameter 0, shape |f32[1024]| at ShapeIndex {}:
+ value: <578 Arg_0.1 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 46: size 4096, parameter 2, shape |f32[1024]| at ShapeIndex {}:
+ value: <581 Arg_2.3 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 47: size 4096, parameter 4, shape |f32[1024]| at ShapeIndex {}:
+ value: <587 Arg_4.5 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 48: size 4096, parameter 10, shape |f32[1024]| at ShapeIndex {}:
+ value: <593 Arg_10.11 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 49: size 4096, parameter 18, shape |f32[1024]| at ShapeIndex {}:
+ value: <599 Arg_18.19 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 50: size 4096, parameter 12, shape |f32[1024]| at ShapeIndex {}:
+ value: <600 Arg_12.13 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 51: size 4096, parameter 14, shape |f32[1024]| at ShapeIndex {}:
+ value: <603 Arg_14.15 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 52: size 4096, parameter 16, shape |f32[1024]| at ShapeIndex {}:
+ value: <607 Arg_16.17 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 53: size 4096, parameter 22, shape |f32[1024]| at ShapeIndex {}:
+ value: <613 Arg_22.23 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 54: size 4096, parameter 30, shape |f32[1024]| at ShapeIndex {}:
+ value: <619 Arg_30.31 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 55: size 4096, parameter 24, shape |f32[1024]| at ShapeIndex {}:
+ value: <620 Arg_24.25 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 56: size 4096, parameter 26, shape |f32[1024]| at ShapeIndex {}:
+ value: <623 Arg_26.27 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 57: size 4096, parameter 28, shape |f32[1024]| at ShapeIndex {}:
+ value: <627 Arg_28.29 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 58: size 4096, parameter 34, shape |f32[1024]| at ShapeIndex {}:
+ value: <633 Arg_34.35 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 59: size 4096, parameter 42, shape |f32[1024]| at ShapeIndex {}:
+ value: <639 Arg_42.43 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 60: size 4096, parameter 36, shape |f32[1024]| at ShapeIndex {}:
+ value: <640 Arg_36.37 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 61: size 4096, parameter 38, shape |f32[1024]| at ShapeIndex {}:
+ value: <643 Arg_38.39 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 62: size 4096, parameter 40, shape |f32[1024]| at ShapeIndex {}:
+ value: <647 Arg_40.41 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 63: size 4096, parameter 46, shape |f32[1024]| at ShapeIndex {}:
+ value: <653 Arg_46.47 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 64: size 4096, parameter 54, shape |f32[1024]| at ShapeIndex {}:
+ value: <659 Arg_54.55 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 65: size 4096, parameter 48, shape |f32[1024]| at ShapeIndex {}:
+ value: <660 Arg_48.49 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 66: size 4096, parameter 50, shape |f32[1024]| at ShapeIndex {}:
+ value: <663 Arg_50.51 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 67: size 4096, parameter 52, shape |f32[1024]| at ShapeIndex {}:
+ value: <667 Arg_52.53 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 68: size 4096, parameter 58, shape |f32[1024]| at ShapeIndex {}:
+ value: <673 Arg_58.59 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 69: size 4096, parameter 66, shape |f32[1024]| at ShapeIndex {}:
+ value: <679 Arg_66.67 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 70: size 4096, parameter 60, shape |f32[1024]| at ShapeIndex {}:
+ value: <680 Arg_60.61 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 71: size 4096, parameter 62, shape |f32[1024]| at ShapeIndex {}:
+ value: <683 Arg_62.63 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 72: size 4096, parameter 64, shape |f32[1024]| at ShapeIndex {}:
+ value: <687 Arg_64.65 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 73: size 4096, parameter 70, shape |f32[1024]| at ShapeIndex {}:
+ value: <693 Arg_70.71 @0> (size=4096,offset=0): f32[1024]{0}
+allocation 74: size 4, constant:
+ value: <585 constant.87 @0> (size=4,offset=0): f32[]
+allocation 75: size 4, constant:
+ value: <586 constant.86 @0> (size=4,offset=0): f32[]
+allocation 76: size 4, thread-local:
+ value: <2 maximum.116 @0> (size=4,offset=0): f32[]
+allocation 77: size 4, thread-local:
+ value: <69 Arg_0.12 @0> (size=4,offset=0): f32[]
+allocation 78: size 4, thread-local:
+ value: <70 Arg_1.12 @0> (size=4,offset=0): f32[]
+allocation 79: size 4, thread-local:
+ value: <71 add.5 @0> (size=4,offset=0): f32[]
+allocation 80: size 4, thread-local:
+ value: <33 Arg_0.526 @0> (size=4,offset=0): f32[]
+allocation 81: size 4, thread-local:
+ value: <34 Arg_1.527 @0> (size=4,offset=0): f32[]
+allocation 82: size 4, thread-local:
+ value: <35 add.528 @0> (size=4,offset=0): f32[]
+allocation 83: size 4, thread-local:
+ value: <66 Arg_0.11 @0> (size=4,offset=0): f32[]
+allocation 84: size 4, thread-local:
+ value: <67 Arg_1.11 @0> (size=4,offset=0): f32[]
+allocation 85: size 4, thread-local:
+ value: <68 maximum.5 @0> (size=4,offset=0): f32[]
+allocation 86: size 4, thread-local:
+ value: <30 Arg_0.514 @0> (size=4,offset=0): f32[]
+allocation 87: size 4, thread-local:
+ value: <31 Arg_1.515 @0> (size=4,offset=0): f32[]
+allocation 88: size 4, thread-local:
+ value: <32 maximum.516 @0> (size=4,offset=0): f32[]
+allocation 89: size 4, thread-local:
+ value: <63 Arg_0.10 @0> (size=4,offset=0): f32[]
+allocation 90: size 4, thread-local:
+ value: <64 Arg_1.10 @0> (size=4,offset=0): f32[]
+allocation 91: size 4, thread-local:
+ value: <65 add.4 @0> (size=4,offset=0): f32[]
+allocation 92: size 4, thread-local:
+ value: <27 Arg_0.446 @0> (size=4,offset=0): f32[]
+allocation 93: size 4, thread-local:
+ value: <28 Arg_1.447 @0> (size=4,offset=0): f32[]
+allocation 94: size 4, thread-local:
+ value: <29 add.448 @0> (size=4,offset=0): f32[]
+allocation 95: size 4, thread-local:
+ value: <60 Arg_0.9 @0> (size=4,offset=0): f32[]
+allocation 96: size 4, thread-local:
+ value: <61 Arg_1.9 @0> (size=4,offset=0): f32[]
+allocation 97: size 4, thread-local:
+ value: <62 maximum.4 @0> (size=4,offset=0): f32[]
+allocation 98: size 4, thread-local:
+ value: <24 Arg_0.434 @0> (size=4,offset=0): f32[]
+allocation 99: size 4, thread-local:
+ value: <25 Arg_1.435 @0> (size=4,offset=0): f32[]
+allocation 100: size 4, thread-local:
+ value: <26 maximum.436 @0> (size=4,offset=0): f32[]
+allocation 101: size 4, thread-local:
+ value: <57 Arg_0.8 @0> (size=4,offset=0): f32[]
+allocation 102: size 4, thread-local:
+ value: <58 Arg_1.8 @0> (size=4,offset=0): f32[]
+allocation 103: size 4, thread-local:
+ value: <59 add.3 @0> (size=4,offset=0): f32[]
+allocation 104: size 4, thread-local:
+ value: <21 Arg_0.366 @0> (size=4,offset=0): f32[]
+allocation 105: size 4, thread-local:
+ value: <22 Arg_1.367 @0> (size=4,offset=0): f32[]
+allocation 106: size 4, thread-local:
+ value: <23 add.368 @0> (size=4,offset=0): f32[]
+allocation 107: size 4, thread-local:
+ value: <54 Arg_0.7 @0> (size=4,offset=0): f32[]
+allocation 108: size 4, thread-local:
+ value: <55 Arg_1.7 @0> (size=4,offset=0): f32[]
+allocation 109: size 4, thread-local:
+ value: <56 maximum.3 @0> (size=4,offset=0): f32[]
+allocation 110: size 4, thread-local:
+ value: <18 Arg_0.354 @0> (size=4,offset=0): f32[]
+allocation 111: size 4, thread-local:
+ value: <19 Arg_1.355 @0> (size=4,offset=0): f32[]
+allocation 112: size 4, thread-local:
+ value: <20 maximum.356 @0> (size=4,offset=0): f32[]
+allocation 113: size 4, thread-local:
+ value: <51 Arg_0.6 @0> (size=4,offset=0): f32[]
+allocation 114: size 4, thread-local:
+ value: <52 Arg_1.6 @0> (size=4,offset=0): f32[]
+allocation 115: size 4, thread-local:
+ value: <53 add.2 @0> (size=4,offset=0): f32[]
+allocation 116: size 4, thread-local:
+ value: <15 Arg_0.286 @0> (size=4,offset=0): f32[]
+allocation 117: size 4, thread-local:
+ value: <16 Arg_1.287 @0> (size=4,offset=0): f32[]
+allocation 118: size 4, thread-local:
+ value: <17 add.288 @0> (size=4,offset=0): f32[]
+allocation 119: size 4, thread-local:
+ value: <48 Arg_0.5 @0> (size=4,offset=0): f32[]
+allocation 120: size 4, thread-local:
+ value: <49 Arg_1.5 @0> (size=4,offset=0): f32[]
+allocation 121: size 4, thread-local:
+ value: <50 maximum.2 @0> (size=4,offset=0): f32[]
+allocation 122: size 4, thread-local:
+ value: <12 Arg_0.274 @0> (size=4,offset=0): f32[]
+allocation 123: size 4, thread-local:
+ value: <13 Arg_1.275 @0> (size=4,offset=0): f32[]
+allocation 124: size 4, thread-local:
+ value: <14 maximum.276 @0> (size=4,offset=0): f32[]
+allocation 125: size 4, thread-local:
+ value: <45 Arg_0.4 @0> (size=4,offset=0): f32[]
+allocation 126: size 4, thread-local:
+ value: <46 Arg_1.4 @0> (size=4,offset=0): f32[]
+allocation 127: size 4, thread-local:
+ value: <47 add.1 @0> (size=4,offset=0): f32[]
+allocation 128: size 4, thread-local:
+ value: <9 Arg_0.206 @0> (size=4,offset=0): f32[]
+allocation 129: size 4, thread-local:
+ value: <10 Arg_1.207 @0> (size=4,offset=0): f32[]
+allocation 130: size 4, thread-local:
+ value: <11 add.208 @0> (size=4,offset=0): f32[]
+allocation 131: size 4, thread-local:
+ value: <42 Arg_0.3 @0> (size=4,offset=0): f32[]
+allocation 132: size 4, thread-local:
+ value: <43 Arg_1.3 @0> (size=4,offset=0): f32[]
+allocation 133: size 4, thread-local:
+ value: <44 maximum.1 @0> (size=4,offset=0): f32[]
+allocation 134: size 4, thread-local:
+ value: <6 Arg_0.194 @0> (size=4,offset=0): f32[]
+allocation 135: size 4, thread-local:
+ value: <7 Arg_1.195 @0> (size=4,offset=0): f32[]
+allocation 136: size 4, thread-local:
+ value: <8 maximum.196 @0> (size=4,offset=0): f32[]
+allocation 137: size 4, thread-local:
+ value: <39 Arg_0.2 @0> (size=4,offset=0): f32[]
+allocation 138: size 4, thread-local:
+ value: <40 Arg_1.1 @0> (size=4,offset=0): f32[]
+allocation 139: size 4, thread-local:
+ value: <41 add.0 @0> (size=4,offset=0): f32[]
+allocation 140: size 4, thread-local:
+ value: <3 Arg_0.126 @0> (size=4,offset=0): f32[]
+allocation 141: size 4, thread-local:
+ value: <4 Arg_1.127 @0> (size=4,offset=0): f32[]
+allocation 142: size 4, thread-local:
+ value: <5 add.128 @0> (size=4,offset=0): f32[]
+allocation 143: size 4, thread-local:
+ value: <36 Arg_0.0 @0> (size=4,offset=0): f32[]
+allocation 144: size 4, thread-local:
+ value: <37 Arg_1.0 @0> (size=4,offset=0): f32[]
+allocation 145: size 4, thread-local:
+ value: <38 maximum.0 @0> (size=4,offset=0): f32[]
+allocation 146: size 4, thread-local:
+ value: <0 Arg_0.114 @0> (size=4,offset=0): f32[]
+allocation 147: size 4, thread-local:
+ value: <1 Arg_1.115 @0> (size=4,offset=0): f32[]
+allocation 148: size 1209008128, preallocated-temp:
+ value: <73 reduce.118.clone @0> (size=1048576,offset=1140850688): f32[32,16,512]{2,1,0}
+ value: <75 reduce.130.clone @0> (size=1048576,offset=1140850688): f32[32,16,512]{2,1,0}
+ value: <77 reduce.198.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <79 reduce.210.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <81 reduce.278.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <83 reduce.290.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <85 reduce.358.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <87 reduce.370.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <89 reduce.438.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <91 reduce.450.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <93 reduce.518.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <95 reduce.530.clone @0> (size=1048576,offset=1207959552): f32[32,16,512]{2,1,0}
+ value: <124 multiply_bitcast_fusion.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <131 add_add_fusion.1.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <135 copy_bitcast_fusion.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <142 transpose_copy_fusion.clone @0> (size=67108864,offset=1140850688): f32[32,16,512,64]{3,2,1,0}
+ value: <147 broadcast_divide_fusion.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <156 subtract_exponential_fusion.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <161 broadcast_multiply_fusion.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <175 transpose_copy_fusion.2.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <182 add_add_fusion.2.clone @0> (size=67108864,offset=1073741824): f32[32,512,1024]{2,1,0}
+ value: <204 multiply_bitcast_fusion.1.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <211 add_add_fusion.3.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <215 copy_bitcast_fusion.1.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <222 transpose_copy_fusion.3.clone @0> (size=67108864,offset=1140850688): f32[32,16,512,64]{3,2,1,0}
+ value: <227 broadcast_divide_fusion.1.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <236 subtract_exponential_fusion.1.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <241 broadcast_multiply_fusion.1.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <255 transpose_copy_fusion.5.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <262 add_add_fusion.4.clone @0> (size=67108864,offset=1073741824): f32[32,512,1024]{2,1,0}
+ value: <284 multiply_bitcast_fusion.2.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <291 add_add_fusion.5.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <295 copy_bitcast_fusion.2.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <302 transpose_copy_fusion.6.clone @0> (size=67108864,offset=1140850688): f32[32,16,512,64]{3,2,1,0}
+ value: <307 broadcast_divide_fusion.2.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <316 subtract_exponential_fusion.2.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <321 broadcast_multiply_fusion.2.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <335 transpose_copy_fusion.8.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <342 add_add_fusion.6.clone @0> (size=67108864,offset=1073741824): f32[32,512,1024]{2,1,0}
+ value: <364 multiply_bitcast_fusion.3.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <371 add_add_fusion.7.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <375 copy_bitcast_fusion.3.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <382 transpose_copy_fusion.9.clone @0> (size=67108864,offset=1140850688): f32[32,16,512,64]{3,2,1,0}
+ value: <387 broadcast_divide_fusion.3.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <396 subtract_exponential_fusion.3.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <401 broadcast_multiply_fusion.3.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <415 transpose_copy_fusion.11.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <422 add_add_fusion.8.clone @0> (size=67108864,offset=1073741824): f32[32,512,1024]{2,1,0}
+ value: <444 multiply_bitcast_fusion.4.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <451 add_add_fusion.9.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <455 copy_bitcast_fusion.4.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <462 transpose_copy_fusion.12.clone @0> (size=67108864,offset=1140850688): f32[32,16,512,64]{3,2,1,0}
+ value: <467 broadcast_divide_fusion.4.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <476 subtract_exponential_fusion.4.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <481 broadcast_multiply_fusion.4.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <495 transpose_copy_fusion.14.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <502 add_add_fusion.10.clone @0> (size=67108864,offset=1073741824): f32[32,512,1024]{2,1,0}
+ value: <524 multiply_bitcast_fusion.5.clone @0> (size=268435456,offset=0): f32[16384,4096]{1,0}
+ value: <531 add_add_fusion.11.clone @0> (size=67108864,offset=536870912): f32[32,512,1024]{2,1,0}
+ value: <535 copy_bitcast_fusion.5.clone @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <542 transpose_copy_fusion.15.clone @0> (size=67108864,offset=1073741824): f32[32,16,512,64]{3,2,1,0}
+ value: <547 broadcast_divide_fusion.5.clone @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <556 subtract_exponential_fusion.5.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <561 broadcast_multiply_fusion.5.clone @0> (size=536870912,offset=536870912): f32[32,16,512,512]{3,2,1,0}
+ value: <575 transpose_copy_fusion.17.clone @0> (size=67108864,offset=536870912): f32[32,16,512,64]{3,2,1,0}
+ value: <583 dot.1 @0> (size=67108864,offset=0): f32[16384,1024]{1,0}
+ value: <584 dot.112 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <589 dot.2 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <596 dot.4 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <605 dot.7 @0> (size=67108864,offset=671088640): f32[16384,1024]{1,0}
+ value: <606 dot.192 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <609 dot.8 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <616 dot.10 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <625 dot.13 @0> (size=67108864,offset=671088640): f32[16384,1024]{1,0}
+ value: <626 dot.272 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <629 dot.14 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <636 dot.16 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <645 dot.19 @0> (size=67108864,offset=671088640): f32[16384,1024]{1,0}
+ value: <646 dot.352 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <649 dot.20 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <656 dot.22 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <665 dot.25 @0> (size=67108864,offset=671088640): f32[16384,1024]{1,0}
+ value: <666 dot.432 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <669 dot.26 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <676 dot.28 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <685 dot.31 @0> (size=67108864,offset=671088640): f32[16384,1024]{1,0}
+ value: <686 dot.512 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+ value: <689 dot.32 @0> (size=67108864,offset=603979776): f32[16384,1024]{1,0}
+ value: <696 dot.34 @0> (size=268435456,offset=268435456): f32[16384,4096]{1,0}
+ value: <698 dot.35 @0> (size=67108864,offset=268435456): f32[16384,1024]{1,0}
+
+Total bytes used: 1645437224 (1.53GiB)
+
+Used values:
+<0 Arg_0.114 @0>
+ positions:
+  Arg_0.114
+ uses:
+  maximum.116, operand 0
+ from instruction: %Arg_0.114 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max"}
+<1 Arg_1.115 @0>
+ positions:
+  Arg_1.115
+ uses:
+  maximum.116, operand 1
+ from instruction: %Arg_1.115 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max"}
+<2 maximum.116 @0>
+ positions:
+  maximum.116
+ uses:
+ from instruction: %maximum.116 = f32[] maximum(%Arg_0.114, %Arg_1.115), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<3 Arg_0.126 @0>
+ positions:
+  Arg_0.126
+ uses:
+  add.128, operand 0
+ from instruction: %Arg_0.126 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum"}
+<4 Arg_1.127 @0>
+ positions:
+  Arg_1.127
+ uses:
+  add.128, operand 1
+ from instruction: %Arg_1.127 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum"}
+<5 add.128 @0>
+ positions:
+  add.128
+ uses:
+ from instruction: %add.128 = f32[] add(%Arg_0.126, %Arg_1.127), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<6 Arg_0.194 @0>
+ positions:
+  Arg_0.194
+ uses:
+  maximum.196, operand 0
+ from instruction: %Arg_0.194 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max"}
+<7 Arg_1.195 @0>
+ positions:
+  Arg_1.195
+ uses:
+  maximum.196, operand 1
+ from instruction: %Arg_1.195 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max"}
+<8 maximum.196 @0>
+ positions:
+  maximum.196
+ uses:
+ from instruction: %maximum.196 = f32[] maximum(%Arg_0.194, %Arg_1.195), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<9 Arg_0.206 @0>
+ positions:
+  Arg_0.206
+ uses:
+  add.208, operand 0
+ from instruction: %Arg_0.206 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum"}
+<10 Arg_1.207 @0>
+ positions:
+  Arg_1.207
+ uses:
+  add.208, operand 1
+ from instruction: %Arg_1.207 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum"}
+<11 add.208 @0>
+ positions:
+  add.208
+ uses:
+ from instruction: %add.208 = f32[] add(%Arg_0.206, %Arg_1.207), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<12 Arg_0.274 @0>
+ positions:
+  Arg_0.274
+ uses:
+  maximum.276, operand 0
+ from instruction: %Arg_0.274 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max"}
+<13 Arg_1.275 @0>
+ positions:
+  Arg_1.275
+ uses:
+  maximum.276, operand 1
+ from instruction: %Arg_1.275 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max"}
+<14 maximum.276 @0>
+ positions:
+  maximum.276
+ uses:
+ from instruction: %maximum.276 = f32[] maximum(%Arg_0.274, %Arg_1.275), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<15 Arg_0.286 @0>
+ positions:
+  Arg_0.286
+ uses:
+  add.288, operand 0
+ from instruction: %Arg_0.286 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum"}
+<16 Arg_1.287 @0>
+ positions:
+  Arg_1.287
+ uses:
+  add.288, operand 1
+ from instruction: %Arg_1.287 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum"}
+<17 add.288 @0>
+ positions:
+  add.288
+ uses:
+ from instruction: %add.288 = f32[] add(%Arg_0.286, %Arg_1.287), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<18 Arg_0.354 @0>
+ positions:
+  Arg_0.354
+ uses:
+  maximum.356, operand 0
+ from instruction: %Arg_0.354 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max"}
+<19 Arg_1.355 @0>
+ positions:
+  Arg_1.355
+ uses:
+  maximum.356, operand 1
+ from instruction: %Arg_1.355 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max"}
+<20 maximum.356 @0>
+ positions:
+  maximum.356
+ uses:
+ from instruction: %maximum.356 = f32[] maximum(%Arg_0.354, %Arg_1.355), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<21 Arg_0.366 @0>
+ positions:
+  Arg_0.366
+ uses:
+  add.368, operand 0
+ from instruction: %Arg_0.366 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum"}
+<22 Arg_1.367 @0>
+ positions:
+  Arg_1.367
+ uses:
+  add.368, operand 1
+ from instruction: %Arg_1.367 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum"}
+<23 add.368 @0>
+ positions:
+  add.368
+ uses:
+ from instruction: %add.368 = f32[] add(%Arg_0.366, %Arg_1.367), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<24 Arg_0.434 @0>
+ positions:
+  Arg_0.434
+ uses:
+  maximum.436, operand 0
+ from instruction: %Arg_0.434 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max"}
+<25 Arg_1.435 @0>
+ positions:
+  Arg_1.435
+ uses:
+  maximum.436, operand 1
+ from instruction: %Arg_1.435 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max"}
+<26 maximum.436 @0>
+ positions:
+  maximum.436
+ uses:
+ from instruction: %maximum.436 = f32[] maximum(%Arg_0.434, %Arg_1.435), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<27 Arg_0.446 @0>
+ positions:
+  Arg_0.446
+ uses:
+  add.448, operand 0
+ from instruction: %Arg_0.446 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum"}
+<28 Arg_1.447 @0>
+ positions:
+  Arg_1.447
+ uses:
+  add.448, operand 1
+ from instruction: %Arg_1.447 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum"}
+<29 add.448 @0>
+ positions:
+  add.448
+ uses:
+ from instruction: %add.448 = f32[] add(%Arg_0.446, %Arg_1.447), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<30 Arg_0.514 @0>
+ positions:
+  Arg_0.514
+ uses:
+  maximum.516, operand 0
+ from instruction: %Arg_0.514 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max"}
+<31 Arg_1.515 @0>
+ positions:
+  Arg_1.515
+ uses:
+  maximum.516, operand 1
+ from instruction: %Arg_1.515 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max"}
+<32 maximum.516 @0>
+ positions:
+  maximum.516
+ uses:
+ from instruction: %maximum.516 = f32[] maximum(%Arg_0.514, %Arg_1.515), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<33 Arg_0.526 @0>
+ positions:
+  Arg_0.526
+ uses:
+  add.528, operand 0
+ from instruction: %Arg_0.526 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum"}
+<34 Arg_1.527 @0>
+ positions:
+  Arg_1.527
+ uses:
+  add.528, operand 1
+ from instruction: %Arg_1.527 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum"}
+<35 add.528 @0>
+ positions:
+  add.528
+ uses:
+ from instruction: %add.528 = f32[] add(%Arg_0.526, %Arg_1.527), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<36 Arg_0.0 @0>
+ positions:
+  Arg_0.0
+ uses:
+  maximum.0, operand 0
+ from instruction: %Arg_0.0 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max"}
+<37 Arg_1.0 @0>
+ positions:
+  Arg_1.0
+ uses:
+  maximum.0, operand 1
+ from instruction: %Arg_1.0 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max"}
+<38 maximum.0 @0>
+ positions:
+  maximum.0
+ uses:
+ from instruction: %maximum.0 = f32[] maximum(%Arg_0.0, %Arg_1.0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<39 Arg_0.2 @0>
+ positions:
+  Arg_0.2
+ uses:
+  add.0, operand 0
+ from instruction: %Arg_0.2 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum"}
+<40 Arg_1.1 @0>
+ positions:
+  Arg_1.1
+ uses:
+  add.0, operand 1
+ from instruction: %Arg_1.1 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum"}
+<41 add.0 @0>
+ positions:
+  add.0
+ uses:
+ from instruction: %add.0 = f32[] add(%Arg_0.2, %Arg_1.1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<42 Arg_0.3 @0>
+ positions:
+  Arg_0.3
+ uses:
+  maximum.1, operand 0
+ from instruction: %Arg_0.3 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max"}
+<43 Arg_1.3 @0>
+ positions:
+  Arg_1.3
+ uses:
+  maximum.1, operand 1
+ from instruction: %Arg_1.3 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max"}
+<44 maximum.1 @0>
+ positions:
+  maximum.1
+ uses:
+ from instruction: %maximum.1 = f32[] maximum(%Arg_0.3, %Arg_1.3), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<45 Arg_0.4 @0>
+ positions:
+  Arg_0.4
+ uses:
+  add.1, operand 0
+ from instruction: %Arg_0.4 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum"}
+<46 Arg_1.4 @0>
+ positions:
+  Arg_1.4
+ uses:
+  add.1, operand 1
+ from instruction: %Arg_1.4 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum"}
+<47 add.1 @0>
+ positions:
+  add.1
+ uses:
+ from instruction: %add.1 = f32[] add(%Arg_0.4, %Arg_1.4), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<48 Arg_0.5 @0>
+ positions:
+  Arg_0.5
+ uses:
+  maximum.2, operand 0
+ from instruction: %Arg_0.5 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max"}
+<49 Arg_1.5 @0>
+ positions:
+  Arg_1.5
+ uses:
+  maximum.2, operand 1
+ from instruction: %Arg_1.5 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max"}
+<50 maximum.2 @0>
+ positions:
+  maximum.2
+ uses:
+ from instruction: %maximum.2 = f32[] maximum(%Arg_0.5, %Arg_1.5), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<51 Arg_0.6 @0>
+ positions:
+  Arg_0.6
+ uses:
+  add.2, operand 0
+ from instruction: %Arg_0.6 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum"}
+<52 Arg_1.6 @0>
+ positions:
+  Arg_1.6
+ uses:
+  add.2, operand 1
+ from instruction: %Arg_1.6 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum"}
+<53 add.2 @0>
+ positions:
+  add.2
+ uses:
+ from instruction: %add.2 = f32[] add(%Arg_0.6, %Arg_1.6), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<54 Arg_0.7 @0>
+ positions:
+  Arg_0.7
+ uses:
+  maximum.3, operand 0
+ from instruction: %Arg_0.7 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max"}
+<55 Arg_1.7 @0>
+ positions:
+  Arg_1.7
+ uses:
+  maximum.3, operand 1
+ from instruction: %Arg_1.7 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max"}
+<56 maximum.3 @0>
+ positions:
+  maximum.3
+ uses:
+ from instruction: %maximum.3 = f32[] maximum(%Arg_0.7, %Arg_1.7), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<57 Arg_0.8 @0>
+ positions:
+  Arg_0.8
+ uses:
+  add.3, operand 0
+ from instruction: %Arg_0.8 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum"}
+<58 Arg_1.8 @0>
+ positions:
+  Arg_1.8
+ uses:
+  add.3, operand 1
+ from instruction: %Arg_1.8 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum"}
+<59 add.3 @0>
+ positions:
+  add.3
+ uses:
+ from instruction: %add.3 = f32[] add(%Arg_0.8, %Arg_1.8), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<60 Arg_0.9 @0>
+ positions:
+  Arg_0.9
+ uses:
+  maximum.4, operand 0
+ from instruction: %Arg_0.9 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max"}
+<61 Arg_1.9 @0>
+ positions:
+  Arg_1.9
+ uses:
+  maximum.4, operand 1
+ from instruction: %Arg_1.9 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max"}
+<62 maximum.4 @0>
+ positions:
+  maximum.4
+ uses:
+ from instruction: %maximum.4 = f32[] maximum(%Arg_0.9, %Arg_1.9), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<63 Arg_0.10 @0>
+ positions:
+  Arg_0.10
+ uses:
+  add.4, operand 0
+ from instruction: %Arg_0.10 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum"}
+<64 Arg_1.10 @0>
+ positions:
+  Arg_1.10
+ uses:
+  add.4, operand 1
+ from instruction: %Arg_1.10 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum"}
+<65 add.4 @0>
+ positions:
+  add.4
+ uses:
+ from instruction: %add.4 = f32[] add(%Arg_0.10, %Arg_1.10), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<66 Arg_0.11 @0>
+ positions:
+  Arg_0.11
+ uses:
+  maximum.5, operand 0
+ from instruction: %Arg_0.11 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max"}
+<67 Arg_1.11 @0>
+ positions:
+  Arg_1.11
+ uses:
+  maximum.5, operand 1
+ from instruction: %Arg_1.11 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max"}
+<68 maximum.5 @0>
+ positions:
+  maximum.5
+ uses:
+ from instruction: %maximum.5 = f32[] maximum(%Arg_0.11, %Arg_1.11), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<69 Arg_0.12 @0>
+ positions:
+  Arg_0.12
+ uses:
+  add.5, operand 0
+ from instruction: %Arg_0.12 = f32[] parameter(0), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum"}
+<70 Arg_1.12 @0>
+ positions:
+  Arg_1.12
+ uses:
+  add.5, operand 1
+ from instruction: %Arg_1.12 = f32[] parameter(1), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum"}
+<71 add.5 @0>
+ positions:
+  add.5
+ uses:
+ from instruction: %add.5 = f32[] add(%Arg_0.12, %Arg_1.12), metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+<72 reduce-window.clone @0>
+ positions:
+  reduce-window.clone
+  call
+  p.2
+ uses:
+  call.1, operand 0
+  reduce.118.clone, operand 0
+ from instruction: %reduce-window.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p, %p.1), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_0.117, backend_config={"outer_dimension_partitions":["4"]}
+<73 reduce.118.clone @0>
+ positions:
+  reduce.118.clone
+  call.1
+  p.161
+ uses:
+  call.80, operand 0
+  subtract_exponential_fusion.5.clone, operand 0
+ from instruction: %reduce.118.clone = f32[32,16,512]{2,1,0} reduce(%p.2, %p.3), dimensions={3}, to_apply=%region_0.117.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<74 reduce-window.1.clone @0>
+ positions:
+  reduce-window.1.clone
+  call.2
+  p.6
+ uses:
+  call.3, operand 0
+  reduce.130.clone, operand 0
+ from instruction: %reduce-window.1.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.4, %p.5), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_1.129, backend_config={"outer_dimension_partitions":["4"]}
+<75 reduce.130.clone @0>
+ positions:
+  reduce.130.clone
+  call.3
+  p.160
+ uses:
+  call.79, operand 1
+  broadcast_divide_fusion.5.clone, operand 1
+ from instruction: %reduce.130.clone = f32[32,16,512]{2,1,0} reduce(%p.6, %p.7), dimensions={3}, to_apply=%region_1.129.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<76 reduce-window.2.clone @0>
+ positions:
+  reduce-window.2.clone
+  call.4
+  p.10
+ uses:
+  call.5, operand 0
+  reduce.198.clone, operand 0
+ from instruction: %reduce-window.2.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.8, %p.9), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_2.197, backend_config={"outer_dimension_partitions":["4"]}
+<77 reduce.198.clone @0>
+ positions:
+  reduce.198.clone
+  call.5
+  p.141
+ uses:
+  call.70, operand 0
+  subtract_exponential_fusion.4.clone, operand 0
+ from instruction: %reduce.198.clone = f32[32,16,512]{2,1,0} reduce(%p.10, %p.11), dimensions={3}, to_apply=%region_2.197.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<78 reduce-window.3.clone @0>
+ positions:
+  reduce-window.3.clone
+  call.6
+  p.14
+ uses:
+  call.7, operand 0
+  reduce.210.clone, operand 0
+ from instruction: %reduce-window.3.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.12, %p.13), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_3.209, backend_config={"outer_dimension_partitions":["4"]}
+<79 reduce.210.clone @0>
+ positions:
+  reduce.210.clone
+  call.7
+  p.140
+ uses:
+  call.69, operand 1
+  broadcast_divide_fusion.4.clone, operand 1
+ from instruction: %reduce.210.clone = f32[32,16,512]{2,1,0} reduce(%p.14, %p.15), dimensions={3}, to_apply=%region_3.209.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<80 reduce-window.4.clone @0>
+ positions:
+  reduce-window.4.clone
+  call.8
+  p.18
+ uses:
+  call.9, operand 0
+  reduce.278.clone, operand 0
+ from instruction: %reduce-window.4.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.16, %p.17), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_4.277, backend_config={"outer_dimension_partitions":["4"]}
+<81 reduce.278.clone @0>
+ positions:
+  reduce.278.clone
+  call.9
+  p.121
+ uses:
+  call.60, operand 0
+  subtract_exponential_fusion.3.clone, operand 0
+ from instruction: %reduce.278.clone = f32[32,16,512]{2,1,0} reduce(%p.18, %p.19), dimensions={3}, to_apply=%region_4.277.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<82 reduce-window.5.clone @0>
+ positions:
+  reduce-window.5.clone
+  call.10
+  p.22
+ uses:
+  call.11, operand 0
+  reduce.290.clone, operand 0
+ from instruction: %reduce-window.5.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.20, %p.21), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_5.289, backend_config={"outer_dimension_partitions":["4"]}
+<83 reduce.290.clone @0>
+ positions:
+  reduce.290.clone
+  call.11
+  p.120
+ uses:
+  call.59, operand 1
+  broadcast_divide_fusion.3.clone, operand 1
+ from instruction: %reduce.290.clone = f32[32,16,512]{2,1,0} reduce(%p.22, %p.23), dimensions={3}, to_apply=%region_5.289.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<84 reduce-window.6.clone @0>
+ positions:
+  reduce-window.6.clone
+  call.12
+  p.26
+ uses:
+  call.13, operand 0
+  reduce.358.clone, operand 0
+ from instruction: %reduce-window.6.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.24, %p.25), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_6.357, backend_config={"outer_dimension_partitions":["4"]}
+<85 reduce.358.clone @0>
+ positions:
+  reduce.358.clone
+  call.13
+  p.101
+ uses:
+  call.50, operand 0
+  subtract_exponential_fusion.2.clone, operand 0
+ from instruction: %reduce.358.clone = f32[32,16,512]{2,1,0} reduce(%p.26, %p.27), dimensions={3}, to_apply=%region_6.357.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<86 reduce-window.7.clone @0>
+ positions:
+  reduce-window.7.clone
+  call.14
+  p.30
+ uses:
+  call.15, operand 0
+  reduce.370.clone, operand 0
+ from instruction: %reduce-window.7.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.28, %p.29), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_7.369, backend_config={"outer_dimension_partitions":["4"]}
+<87 reduce.370.clone @0>
+ positions:
+  reduce.370.clone
+  call.15
+  p.100
+ uses:
+  call.49, operand 1
+  broadcast_divide_fusion.2.clone, operand 1
+ from instruction: %reduce.370.clone = f32[32,16,512]{2,1,0} reduce(%p.30, %p.31), dimensions={3}, to_apply=%region_7.369.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<88 reduce-window.8.clone @0>
+ positions:
+  reduce-window.8.clone
+  call.16
+  p.34
+ uses:
+  call.17, operand 0
+  reduce.438.clone, operand 0
+ from instruction: %reduce-window.8.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.32, %p.33), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_8.437, backend_config={"outer_dimension_partitions":["4"]}
+<89 reduce.438.clone @0>
+ positions:
+  reduce.438.clone
+  call.17
+  p.81
+ uses:
+  call.40, operand 0
+  subtract_exponential_fusion.1.clone, operand 0
+ from instruction: %reduce.438.clone = f32[32,16,512]{2,1,0} reduce(%p.34, %p.35), dimensions={3}, to_apply=%region_8.437.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<90 reduce-window.9.clone @0>
+ positions:
+  reduce-window.9.clone
+  call.18
+  p.38
+ uses:
+  call.19, operand 0
+  reduce.450.clone, operand 0
+ from instruction: %reduce-window.9.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.36, %p.37), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_9.449, backend_config={"outer_dimension_partitions":["4"]}
+<91 reduce.450.clone @0>
+ positions:
+  reduce.450.clone
+  call.19
+  p.80
+ uses:
+  call.39, operand 1
+  broadcast_divide_fusion.1.clone, operand 1
+ from instruction: %reduce.450.clone = f32[32,16,512]{2,1,0} reduce(%p.38, %p.39), dimensions={3}, to_apply=%region_9.449.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<92 reduce-window.10.clone @0>
+ positions:
+  reduce-window.10.clone
+  call.20
+  p.42
+ uses:
+  call.21, operand 0
+  reduce.518.clone, operand 0
+ from instruction: %reduce-window.10.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.40, %p.41), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_10.517, backend_config={"outer_dimension_partitions":["4"]}
+<93 reduce.518.clone @0>
+ positions:
+  reduce.518.clone
+  call.21
+  p.61
+ uses:
+  call.30, operand 0
+  subtract_exponential_fusion.clone, operand 0
+ from instruction: %reduce.518.clone = f32[32,16,512]{2,1,0} reduce(%p.42, %p.43), dimensions={3}, to_apply=%region_10.517.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<94 reduce-window.11.clone @0>
+ positions:
+  reduce-window.11.clone
+  call.22
+  p.46
+ uses:
+  call.23, operand 0
+  reduce.530.clone, operand 0
+ from instruction: %reduce-window.11.clone = f32[32,16,512,16]{3,2,1,0} reduce-window(%p.44, %p.45), window={size=1x1x1x32 stride=1x1x1x32}, to_apply=%region_11.529, backend_config={"outer_dimension_partitions":["4"]}
+<95 reduce.530.clone @0>
+ positions:
+  reduce.530.clone
+  call.23
+  p.60
+ uses:
+  call.29, operand 1
+  broadcast_divide_fusion.clone, operand 1
+ from instruction: %reduce.530.clone = f32[32,16,512]{2,1,0} reduce(%p.46, %p.47), dimensions={3}, to_apply=%region_11.529.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/reduce_sum" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<102 add_add_fusion.clone @0>
+ positions:
+  add_add_fusion.clone
+  call.24
+ uses:
+ from instruction: %add_add_fusion.clone = f32[32,512,1024]{2,1,0} fusion(%p.48, %p.49, %p.50), kind=kLoop, calls=%fused_computation.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<124 multiply_bitcast_fusion.clone @0>
+ positions:
+  multiply_bitcast_fusion.clone
+  call.25
+ uses:
+  dot.35, operand 0
+ from instruction: %multiply_bitcast_fusion.clone = f32[16384,4096]{1,0} fusion(%p.51, %p.52), kind=kLoop, calls=%fused_computation.1.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<131 add_add_fusion.1.clone @0>
+ positions:
+  add_add_fusion.1.clone
+  bitcast.74
+  call.26
+  p.48
+ uses:
+  dot.34, operand 0
+  bitcast.74, operand 0
+  call.24, operand 0
+  add_add_fusion.clone, operand 0
+ from instruction: %add_add_fusion.1.clone = f32[32,512,1024]{2,1,0} fusion(%p.53, %p.54, %p.55), kind=kLoop, calls=%fused_computation.2.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<135 copy_bitcast_fusion.clone @0>
+ positions:
+  copy_bitcast_fusion.clone
+  call.27
+ uses:
+  dot.33, operand 0
+ from instruction: %copy_bitcast_fusion.clone = f32[16384,1024]{1,0} fusion(%p.56), kind=kLoop, calls=%fused_computation.3.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<142 transpose_copy_fusion.clone @0>
+ positions:
+  transpose_copy_fusion.clone
+  call.28
+ uses:
+  dot.536, operand 1
+ from instruction: %transpose_copy_fusion.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.57, %p.58), kind=kLoop, calls=%fused_computation.4.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<147 broadcast_divide_fusion.clone @0>
+ positions:
+  broadcast_divide_fusion.clone
+  call.29
+ uses:
+  dot.536, operand 0
+ from instruction: %broadcast_divide_fusion.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.59, %p.60), kind=kLoop, calls=%fused_computation.5.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<156 subtract_exponential_fusion.clone @0>
+ positions:
+  subtract_exponential_fusion.clone
+  call.30
+  p.44
+  p.59
+ uses:
+  call.22, operand 0
+  call.29, operand 0
+  reduce-window.11.clone, operand 0
+  broadcast_divide_fusion.clone, operand 0
+ from instruction: %subtract_exponential_fusion.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.61, %p.62), kind=kLoop, calls=%fused_computation.6.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<161 broadcast_multiply_fusion.clone @0>
+ positions:
+  broadcast_multiply_fusion.clone
+  call.31
+  p.40
+ uses:
+  call.20, operand 0
+  reduce-window.10.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.63), kind=kLoop, calls=%fused_computation.7.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<168 transpose_copy_fusion.1.clone @0>
+ positions:
+  transpose_copy_fusion.1.clone
+  call.32
+ uses:
+  dot.512, operand 1
+ from instruction: %transpose_copy_fusion.1.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.64, %p.65), kind=kLoop, calls=%fused_computation.8.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<175 transpose_copy_fusion.2.clone @0>
+ positions:
+  transpose_copy_fusion.2.clone
+  call.33
+ uses:
+  dot.512, operand 0
+ from instruction: %transpose_copy_fusion.2.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.66, %p.67), kind=kLoop, calls=%fused_computation.9.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<182 add_add_fusion.2.clone @0>
+ positions:
+  add_add_fusion.2.clone
+  bitcast.65
+  call.34
+  p.53
+ uses:
+  dot.30, operand 0
+  dot.31, operand 0
+  dot.32, operand 0
+  bitcast.65, operand 0
+  call.26, operand 0
+  add_add_fusion.1.clone, operand 0
+ from instruction: %add_add_fusion.2.clone = f32[32,512,1024]{2,1,0} fusion(%p.68, %p.69, %p.70), kind=kLoop, calls=%fused_computation.10.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<204 multiply_bitcast_fusion.1.clone @0>
+ positions:
+  multiply_bitcast_fusion.1.clone
+  call.35
+ uses:
+  dot.29, operand 0
+ from instruction: %multiply_bitcast_fusion.1.clone = f32[16384,4096]{1,0} fusion(%p.71, %p.72), kind=kLoop, calls=%fused_computation.11.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<211 add_add_fusion.3.clone @0>
+ positions:
+  add_add_fusion.3.clone
+  bitcast.61
+  call.36
+  p.68
+ uses:
+  dot.28, operand 0
+  bitcast.61, operand 0
+  call.34, operand 0
+  add_add_fusion.2.clone, operand 0
+ from instruction: %add_add_fusion.3.clone = f32[32,512,1024]{2,1,0} fusion(%p.73, %p.74, %p.75), kind=kLoop, calls=%fused_computation.12.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<215 copy_bitcast_fusion.1.clone @0>
+ positions:
+  copy_bitcast_fusion.1.clone
+  call.37
+ uses:
+  dot.27, operand 0
+ from instruction: %copy_bitcast_fusion.1.clone = f32[16384,1024]{1,0} fusion(%p.76), kind=kLoop, calls=%fused_computation.13.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<222 transpose_copy_fusion.3.clone @0>
+ positions:
+  transpose_copy_fusion.3.clone
+  call.38
+ uses:
+  dot.456, operand 1
+ from instruction: %transpose_copy_fusion.3.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.77, %p.78), kind=kLoop, calls=%fused_computation.14.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<227 broadcast_divide_fusion.1.clone @0>
+ positions:
+  broadcast_divide_fusion.1.clone
+  call.39
+ uses:
+  dot.456, operand 0
+ from instruction: %broadcast_divide_fusion.1.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.79, %p.80), kind=kLoop, calls=%fused_computation.15.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<236 subtract_exponential_fusion.1.clone @0>
+ positions:
+  subtract_exponential_fusion.1.clone
+  call.40
+  p.36
+  p.79
+ uses:
+  call.18, operand 0
+  call.39, operand 0
+  reduce-window.9.clone, operand 0
+  broadcast_divide_fusion.1.clone, operand 0
+ from instruction: %subtract_exponential_fusion.1.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.81, %p.82), kind=kLoop, calls=%fused_computation.16.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<241 broadcast_multiply_fusion.1.clone @0>
+ positions:
+  broadcast_multiply_fusion.1.clone
+  call.41
+  p.32
+ uses:
+  call.16, operand 0
+  reduce-window.8.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.1.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.83), kind=kLoop, calls=%fused_computation.17.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<248 transpose_copy_fusion.4.clone @0>
+ positions:
+  transpose_copy_fusion.4.clone
+  call.42
+ uses:
+  dot.432, operand 1
+ from instruction: %transpose_copy_fusion.4.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.84, %p.85), kind=kLoop, calls=%fused_computation.18.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<255 transpose_copy_fusion.5.clone @0>
+ positions:
+  transpose_copy_fusion.5.clone
+  call.43
+ uses:
+  dot.432, operand 0
+ from instruction: %transpose_copy_fusion.5.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.86, %p.87), kind=kLoop, calls=%fused_computation.19.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<262 add_add_fusion.4.clone @0>
+ positions:
+  add_add_fusion.4.clone
+  bitcast.52
+  call.44
+  p.73
+ uses:
+  dot.24, operand 0
+  dot.25, operand 0
+  dot.26, operand 0
+  bitcast.52, operand 0
+  call.36, operand 0
+  add_add_fusion.3.clone, operand 0
+ from instruction: %add_add_fusion.4.clone = f32[32,512,1024]{2,1,0} fusion(%p.88, %p.89, %p.90), kind=kLoop, calls=%fused_computation.20.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<284 multiply_bitcast_fusion.2.clone @0>
+ positions:
+  multiply_bitcast_fusion.2.clone
+  call.45
+ uses:
+  dot.23, operand 0
+ from instruction: %multiply_bitcast_fusion.2.clone = f32[16384,4096]{1,0} fusion(%p.91, %p.92), kind=kLoop, calls=%fused_computation.21.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<291 add_add_fusion.5.clone @0>
+ positions:
+  add_add_fusion.5.clone
+  bitcast.48
+  call.46
+  p.88
+ uses:
+  dot.22, operand 0
+  bitcast.48, operand 0
+  call.44, operand 0
+  add_add_fusion.4.clone, operand 0
+ from instruction: %add_add_fusion.5.clone = f32[32,512,1024]{2,1,0} fusion(%p.93, %p.94, %p.95), kind=kLoop, calls=%fused_computation.22.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<295 copy_bitcast_fusion.2.clone @0>
+ positions:
+  copy_bitcast_fusion.2.clone
+  call.47
+ uses:
+  dot.21, operand 0
+ from instruction: %copy_bitcast_fusion.2.clone = f32[16384,1024]{1,0} fusion(%p.96), kind=kLoop, calls=%fused_computation.23.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<302 transpose_copy_fusion.6.clone @0>
+ positions:
+  transpose_copy_fusion.6.clone
+  call.48
+ uses:
+  dot.376, operand 1
+ from instruction: %transpose_copy_fusion.6.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.97, %p.98), kind=kLoop, calls=%fused_computation.24.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<307 broadcast_divide_fusion.2.clone @0>
+ positions:
+  broadcast_divide_fusion.2.clone
+  call.49
+ uses:
+  dot.376, operand 0
+ from instruction: %broadcast_divide_fusion.2.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.99, %p.100), kind=kLoop, calls=%fused_computation.25.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<316 subtract_exponential_fusion.2.clone @0>
+ positions:
+  subtract_exponential_fusion.2.clone
+  call.50
+  p.28
+  p.99
+ uses:
+  call.14, operand 0
+  call.49, operand 0
+  reduce-window.7.clone, operand 0
+  broadcast_divide_fusion.2.clone, operand 0
+ from instruction: %subtract_exponential_fusion.2.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.101, %p.102), kind=kLoop, calls=%fused_computation.26.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<321 broadcast_multiply_fusion.2.clone @0>
+ positions:
+  broadcast_multiply_fusion.2.clone
+  call.51
+  p.24
+ uses:
+  call.12, operand 0
+  reduce-window.6.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.2.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.103), kind=kLoop, calls=%fused_computation.27.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<328 transpose_copy_fusion.7.clone @0>
+ positions:
+  transpose_copy_fusion.7.clone
+  call.52
+ uses:
+  dot.352, operand 1
+ from instruction: %transpose_copy_fusion.7.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.104, %p.105), kind=kLoop, calls=%fused_computation.28.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<335 transpose_copy_fusion.8.clone @0>
+ positions:
+  transpose_copy_fusion.8.clone
+  call.53
+ uses:
+  dot.352, operand 0
+ from instruction: %transpose_copy_fusion.8.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.106, %p.107), kind=kLoop, calls=%fused_computation.29.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<342 add_add_fusion.6.clone @0>
+ positions:
+  add_add_fusion.6.clone
+  bitcast.39
+  call.54
+  p.93
+ uses:
+  dot.18, operand 0
+  dot.19, operand 0
+  dot.20, operand 0
+  bitcast.39, operand 0
+  call.46, operand 0
+  add_add_fusion.5.clone, operand 0
+ from instruction: %add_add_fusion.6.clone = f32[32,512,1024]{2,1,0} fusion(%p.108, %p.109, %p.110), kind=kLoop, calls=%fused_computation.30.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<364 multiply_bitcast_fusion.3.clone @0>
+ positions:
+  multiply_bitcast_fusion.3.clone
+  call.55
+ uses:
+  dot.17, operand 0
+ from instruction: %multiply_bitcast_fusion.3.clone = f32[16384,4096]{1,0} fusion(%p.111, %p.112), kind=kLoop, calls=%fused_computation.31.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<371 add_add_fusion.7.clone @0>
+ positions:
+  add_add_fusion.7.clone
+  bitcast.35
+  call.56
+  p.108
+ uses:
+  dot.16, operand 0
+  bitcast.35, operand 0
+  call.54, operand 0
+  add_add_fusion.6.clone, operand 0
+ from instruction: %add_add_fusion.7.clone = f32[32,512,1024]{2,1,0} fusion(%p.113, %p.114, %p.115), kind=kLoop, calls=%fused_computation.32.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<375 copy_bitcast_fusion.3.clone @0>
+ positions:
+  copy_bitcast_fusion.3.clone
+  call.57
+ uses:
+  dot.15, operand 0
+ from instruction: %copy_bitcast_fusion.3.clone = f32[16384,1024]{1,0} fusion(%p.116), kind=kLoop, calls=%fused_computation.33.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<382 transpose_copy_fusion.9.clone @0>
+ positions:
+  transpose_copy_fusion.9.clone
+  call.58
+ uses:
+  dot.296, operand 1
+ from instruction: %transpose_copy_fusion.9.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.117, %p.118), kind=kLoop, calls=%fused_computation.34.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<387 broadcast_divide_fusion.3.clone @0>
+ positions:
+  broadcast_divide_fusion.3.clone
+  call.59
+ uses:
+  dot.296, operand 0
+ from instruction: %broadcast_divide_fusion.3.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.119, %p.120), kind=kLoop, calls=%fused_computation.35.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<396 subtract_exponential_fusion.3.clone @0>
+ positions:
+  subtract_exponential_fusion.3.clone
+  call.60
+  p.20
+  p.119
+ uses:
+  call.10, operand 0
+  call.59, operand 0
+  reduce-window.5.clone, operand 0
+  broadcast_divide_fusion.3.clone, operand 0
+ from instruction: %subtract_exponential_fusion.3.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.121, %p.122), kind=kLoop, calls=%fused_computation.36.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<401 broadcast_multiply_fusion.3.clone @0>
+ positions:
+  broadcast_multiply_fusion.3.clone
+  call.61
+  p.16
+ uses:
+  call.8, operand 0
+  reduce-window.4.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.3.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.123), kind=kLoop, calls=%fused_computation.37.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<408 transpose_copy_fusion.10.clone @0>
+ positions:
+  transpose_copy_fusion.10.clone
+  call.62
+ uses:
+  dot.272, operand 1
+ from instruction: %transpose_copy_fusion.10.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.124, %p.125), kind=kLoop, calls=%fused_computation.38.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<415 transpose_copy_fusion.11.clone @0>
+ positions:
+  transpose_copy_fusion.11.clone
+  call.63
+ uses:
+  dot.272, operand 0
+ from instruction: %transpose_copy_fusion.11.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.126, %p.127), kind=kLoop, calls=%fused_computation.39.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<422 add_add_fusion.8.clone @0>
+ positions:
+  add_add_fusion.8.clone
+  bitcast.26
+  call.64
+  p.113
+ uses:
+  dot.12, operand 0
+  dot.13, operand 0
+  dot.14, operand 0
+  bitcast.26, operand 0
+  call.56, operand 0
+  add_add_fusion.7.clone, operand 0
+ from instruction: %add_add_fusion.8.clone = f32[32,512,1024]{2,1,0} fusion(%p.128, %p.129, %p.130), kind=kLoop, calls=%fused_computation.40.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<444 multiply_bitcast_fusion.4.clone @0>
+ positions:
+  multiply_bitcast_fusion.4.clone
+  call.65
+ uses:
+  dot.11, operand 0
+ from instruction: %multiply_bitcast_fusion.4.clone = f32[16384,4096]{1,0} fusion(%p.131, %p.132), kind=kLoop, calls=%fused_computation.41.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<451 add_add_fusion.9.clone @0>
+ positions:
+  add_add_fusion.9.clone
+  bitcast.22
+  call.66
+  p.128
+ uses:
+  dot.10, operand 0
+  bitcast.22, operand 0
+  call.64, operand 0
+  add_add_fusion.8.clone, operand 0
+ from instruction: %add_add_fusion.9.clone = f32[32,512,1024]{2,1,0} fusion(%p.133, %p.134, %p.135), kind=kLoop, calls=%fused_computation.42.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<455 copy_bitcast_fusion.4.clone @0>
+ positions:
+  copy_bitcast_fusion.4.clone
+  call.67
+ uses:
+  dot.9, operand 0
+ from instruction: %copy_bitcast_fusion.4.clone = f32[16384,1024]{1,0} fusion(%p.136), kind=kLoop, calls=%fused_computation.43.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<462 transpose_copy_fusion.12.clone @0>
+ positions:
+  transpose_copy_fusion.12.clone
+  call.68
+ uses:
+  dot.216, operand 1
+ from instruction: %transpose_copy_fusion.12.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.137, %p.138), kind=kLoop, calls=%fused_computation.44.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<467 broadcast_divide_fusion.4.clone @0>
+ positions:
+  broadcast_divide_fusion.4.clone
+  call.69
+ uses:
+  dot.216, operand 0
+ from instruction: %broadcast_divide_fusion.4.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.139, %p.140), kind=kLoop, calls=%fused_computation.45.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<476 subtract_exponential_fusion.4.clone @0>
+ positions:
+  subtract_exponential_fusion.4.clone
+  call.70
+  p.12
+  p.139
+ uses:
+  call.6, operand 0
+  call.69, operand 0
+  reduce-window.3.clone, operand 0
+  broadcast_divide_fusion.4.clone, operand 0
+ from instruction: %subtract_exponential_fusion.4.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.141, %p.142), kind=kLoop, calls=%fused_computation.46.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<481 broadcast_multiply_fusion.4.clone @0>
+ positions:
+  broadcast_multiply_fusion.4.clone
+  call.71
+  p.8
+ uses:
+  call.4, operand 0
+  reduce-window.2.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.4.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.143), kind=kLoop, calls=%fused_computation.47.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<488 transpose_copy_fusion.13.clone @0>
+ positions:
+  transpose_copy_fusion.13.clone
+  call.72
+ uses:
+  dot.192, operand 1
+ from instruction: %transpose_copy_fusion.13.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.144, %p.145), kind=kLoop, calls=%fused_computation.48.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<495 transpose_copy_fusion.14.clone @0>
+ positions:
+  transpose_copy_fusion.14.clone
+  call.73
+ uses:
+  dot.192, operand 0
+ from instruction: %transpose_copy_fusion.14.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.146, %p.147), kind=kLoop, calls=%fused_computation.49.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<502 add_add_fusion.10.clone @0>
+ positions:
+  add_add_fusion.10.clone
+  bitcast.13
+  call.74
+  p.133
+ uses:
+  dot.6, operand 0
+  dot.7, operand 0
+  dot.8, operand 0
+  bitcast.13, operand 0
+  call.66, operand 0
+  add_add_fusion.9.clone, operand 0
+ from instruction: %add_add_fusion.10.clone = f32[32,512,1024]{2,1,0} fusion(%p.148, %p.149, %p.150), kind=kLoop, calls=%fused_computation.50.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=50}, backend_config={"outer_dimension_partitions":["4"]}
+<524 multiply_bitcast_fusion.5.clone @0>
+ positions:
+  multiply_bitcast_fusion.5.clone
+  call.75
+ uses:
+  dot.5, operand 0
+ from instruction: %multiply_bitcast_fusion.5.clone = f32[16384,4096]{1,0} fusion(%p.151, %p.152), kind=kLoop, calls=%fused_computation.51.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/mul" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=48}, backend_config={"outer_dimension_partitions":["12"]}
+<531 add_add_fusion.11.clone @0>
+ positions:
+  add_add_fusion.11.clone
+  bitcast.9
+  call.76
+  p.148
+ uses:
+  dot.4, operand 0
+  bitcast.9, operand 0
+  call.74, operand 0
+  add_add_fusion.10.clone, operand 0
+ from instruction: %add_add_fusion.11.clone = f32[32,512,1024]{2,1,0} fusion(%p.153, %p.154, %p.155), kind=kLoop, calls=%fused_computation.52.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/add" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=43}, backend_config={"outer_dimension_partitions":["4"]}
+<535 copy_bitcast_fusion.5.clone @0>
+ positions:
+  copy_bitcast_fusion.5.clone
+  call.77
+ uses:
+  dot.3, operand 0
+ from instruction: %copy_bitcast_fusion.5.clone = f32[16384,1024]{1,0} fusion(%p.156), kind=kLoop, calls=%fused_computation.53.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=39}, backend_config={"outer_dimension_partitions":["4"]}
+<542 transpose_copy_fusion.15.clone @0>
+ positions:
+  transpose_copy_fusion.15.clone
+  call.78
+ uses:
+  dot.136, operand 1
+ from instruction: %transpose_copy_fusion.15.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.157, %p.158), kind=kLoop, calls=%fused_computation.54.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=29}, backend_config={"outer_dimension_partitions":["4"]}
+<547 broadcast_divide_fusion.5.clone @0>
+ positions:
+  broadcast_divide_fusion.5.clone
+  call.79
+ uses:
+  dot.136, operand 0
+ from instruction: %broadcast_divide_fusion.5.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.159, %p.160), kind=kLoop, calls=%fused_computation.55.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<556 subtract_exponential_fusion.5.clone @0>
+ positions:
+  subtract_exponential_fusion.5.clone
+  call.80
+  p.4
+  p.159
+ uses:
+  call.2, operand 0
+  call.79, operand 0
+  reduce-window.1.clone, operand 0
+  broadcast_divide_fusion.5.clone, operand 0
+ from instruction: %subtract_exponential_fusion.5.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.161, %p.162), kind=kLoop, calls=%fused_computation.56.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/exp" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}, backend_config={"outer_dimension_partitions":["4"]}
+<561 broadcast_multiply_fusion.5.clone @0>
+ positions:
+  broadcast_multiply_fusion.5.clone
+  call.81
+  p
+ uses:
+  call, operand 0
+  reduce-window.clone, operand 0
+ from instruction: %broadcast_multiply_fusion.5.clone = f32[32,16,512,512]{3,2,1,0} fusion(%p.163), kind=kLoop, calls=%fused_computation.57.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<568 transpose_copy_fusion.16.clone @0>
+ positions:
+  transpose_copy_fusion.16.clone
+  call.82
+ uses:
+  dot.112, operand 1
+ from instruction: %transpose_copy_fusion.16.clone = f32[32,16,64,512]{3,2,1,0} fusion(%p.164, %p.165), kind=kLoop, calls=%fused_computation.58.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}, backend_config={"outer_dimension_partitions":["4"]}
+<575 transpose_copy_fusion.17.clone @0>
+ positions:
+  transpose_copy_fusion.17.clone
+  call.83
+ uses:
+  dot.112, operand 0
+ from instruction: %transpose_copy_fusion.17.clone = f32[32,16,512,64]{3,2,1,0} fusion(%p.166, %p.167), kind=kLoop, calls=%fused_computation.59.clone, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/transpose" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=27}, backend_config={"outer_dimension_partitions":["4"]}
+<576 Arg_72.73 @0>
+ positions:
+  Arg_72.73
+  bitcast
+  p.153
+ uses:
+  bitcast, operand 0
+  call.76, operand 0
+  dot, operand 0
+  dot.1, operand 0
+  dot.2, operand 0
+  add_add_fusion.11.clone, operand 0
+ from instruction: %Arg_72.73 = f32[32,512,1024]{2,1,0} parameter(72), metadata={op_name="x"}
+<577 Arg_6.7 @0>
+ positions:
+  Arg_6.7
+  p.154
+ uses:
+  call.76, operand 1
+  add_add_fusion.11.clone, operand 1
+ from instruction: %Arg_6.7 = f32[1024]{0} parameter(6), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_3\'][\'bias\']"}
+<578 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+  p.166
+ uses:
+  call.83, operand 0
+  transpose_copy_fusion.17.clone, operand 0
+ from instruction: %Arg_0.1 = f32[1024]{0} parameter(0), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_0\'][\'bias\']"}
+<579 Arg_1.2 @0>
+ positions:
+  Arg_1.2
+ uses:
+  dot, operand 1
+ from instruction: %Arg_1.2 = f32[1024,1024]{1,0} parameter(1), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_0\'][\'kernel\']"}
+<580 dot @0>
+ positions:
+  dot
+  p.167
+ uses:
+  call.83, operand 1
+  transpose_copy_fusion.17.clone, operand 1
+ from instruction: %dot = f32[16384,1024]{1,0} dot(%bitcast, %Arg_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<581 Arg_2.3 @0>
+ positions:
+  Arg_2.3
+  p.164
+ uses:
+  call.82, operand 0
+  transpose_copy_fusion.16.clone, operand 0
+ from instruction: %Arg_2.3 = f32[1024]{0} parameter(2), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_1\'][\'bias\']"}
+<582 Arg_3.4 @0>
+ positions:
+  Arg_3.4
+ uses:
+  dot.1, operand 1
+ from instruction: %Arg_3.4 = f32[1024,1024]{1,0} parameter(3), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_1\'][\'kernel\']"}
+<583 dot.1 @0>
+ positions:
+  dot.1
+  p.165
+ uses:
+  call.82, operand 1
+  transpose_copy_fusion.16.clone, operand 1
+ from instruction: %dot.1 = f32[16384,1024]{1,0} dot(%bitcast, %Arg_3.4), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<584 dot.112 @0>
+ positions:
+  dot.112
+  p.162
+  p.163
+ uses:
+  call.81, operand 0
+  call.80, operand 1
+  subtract_exponential_fusion.5.clone, operand 1
+  broadcast_multiply_fusion.5.clone, operand 0
+ from instruction: %dot.112 = f32[32,16,512,512]{3,2,1,0} dot(%call.83, %call.82), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<585 constant.87 @0>
+ positions:
+  constant.87
+  p.1
+  p.3
+  p.9
+  p.11
+  p.17
+  p.19
+  p.25
+  p.27
+  p.33
+  p.35
+  p.41
+  p.43
+ uses:
+  call.1, operand 1
+  call.5, operand 1
+  call.9, operand 1
+  call.13, operand 1
+  call.17, operand 1
+  call.21, operand 1
+  call, operand 1
+  call.4, operand 1
+  call.8, operand 1
+  call.12, operand 1
+  call.16, operand 1
+  call.20, operand 1
+  reduce-window.clone, operand 1
+  reduce.118.clone, operand 1
+  reduce-window.2.clone, operand 1
+  reduce.198.clone, operand 1
+  reduce-window.4.clone, operand 1
+  reduce.278.clone, operand 1
+  reduce-window.6.clone, operand 1
+  reduce.358.clone, operand 1
+  reduce-window.8.clone, operand 1
+  reduce.438.clone, operand 1
+  reduce-window.10.clone, operand 1
+  reduce.518.clone, operand 1
+ from instruction: %constant.87 = f32[] constant(-inf)
+<586 constant.86 @0>
+ positions:
+  constant.86
+  p.5
+  p.7
+  p.13
+  p.15
+  p.21
+  p.23
+  p.29
+  p.31
+  p.37
+  p.39
+  p.45
+  p.47
+ uses:
+  call.3, operand 1
+  call.7, operand 1
+  call.11, operand 1
+  call.15, operand 1
+  call.19, operand 1
+  call.23, operand 1
+  call.2, operand 1
+  call.6, operand 1
+  call.10, operand 1
+  call.14, operand 1
+  call.18, operand 1
+  call.22, operand 1
+  reduce-window.1.clone, operand 1
+  reduce.130.clone, operand 1
+  reduce-window.3.clone, operand 1
+  reduce.210.clone, operand 1
+  reduce-window.5.clone, operand 1
+  reduce.290.clone, operand 1
+  reduce-window.7.clone, operand 1
+  reduce.370.clone, operand 1
+  reduce-window.9.clone, operand 1
+  reduce.450.clone, operand 1
+  reduce-window.11.clone, operand 1
+  reduce.530.clone, operand 1
+ from instruction: %constant.86 = f32[] constant(0)
+<587 Arg_4.5 @0>
+ positions:
+  Arg_4.5
+  p.157
+ uses:
+  call.78, operand 0
+  transpose_copy_fusion.15.clone, operand 0
+ from instruction: %Arg_4.5 = f32[1024]{0} parameter(4), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_2\'][\'bias\']"}
+<588 Arg_5.6 @0>
+ positions:
+  Arg_5.6
+ uses:
+  dot.2, operand 1
+ from instruction: %Arg_5.6 = f32[1024,1024]{1,0} parameter(5), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_2\'][\'kernel\']"}
+<589 dot.2 @0>
+ positions:
+  dot.2
+  p.158
+ uses:
+  call.78, operand 1
+  transpose_copy_fusion.15.clone, operand 1
+ from instruction: %dot.2 = f32[16384,1024]{1,0} dot(%bitcast, %Arg_5.6), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<590 dot.136 @0>
+ positions:
+  dot.136
+  p.156
+ uses:
+  call.77, operand 0
+  copy_bitcast_fusion.5.clone, operand 0
+ from instruction: %dot.136 = f32[32,16,512,64]{3,2,1,0} dot(%call.79, %call.78), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<591 Arg_7.8 @0>
+ positions:
+  Arg_7.8
+ uses:
+  dot.3, operand 1
+ from instruction: %Arg_7.8 = f32[1024,1024]{1,0} parameter(7), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_3\'][\'kernel\']"}
+<592 dot.3 @0>
+ positions:
+  dot.3
+  p.155
+ uses:
+  call.76, operand 2
+  add_add_fusion.11.clone, operand 2
+ from instruction: %dot.3 = f32[16384,1024]{1,0} dot(%call.77, %Arg_7.8), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<593 Arg_10.11 @0>
+ positions:
+  Arg_10.11
+  p.149
+ uses:
+  call.74, operand 1
+  add_add_fusion.10.clone, operand 1
+ from instruction: %Arg_10.11 = f32[1024]{0} parameter(10), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_5\'][\'bias\']"}
+<594 Arg_8.9 @0>
+ positions:
+  Arg_8.9
+  p.151
+ uses:
+  call.75, operand 0
+  multiply_bitcast_fusion.5.clone, operand 0
+ from instruction: %Arg_8.9 = f32[4096]{0} parameter(8), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_4\'][\'bias\']"}
+<595 Arg_9.10 @0>
+ positions:
+  Arg_9.10
+ uses:
+  dot.4, operand 1
+ from instruction: %Arg_9.10 = f32[1024,4096]{1,0} parameter(9), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_4\'][\'kernel\']"}
+<596 dot.4 @0>
+ positions:
+  dot.4
+  p.152
+ uses:
+  call.75, operand 1
+  multiply_bitcast_fusion.5.clone, operand 1
+ from instruction: %dot.4 = f32[16384,4096]{1,0} dot(%bitcast.9, %Arg_9.10), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<597 Arg_11.12 @0>
+ positions:
+  Arg_11.12
+ uses:
+  dot.5, operand 1
+ from instruction: %Arg_11.12 = f32[4096,1024]{1,0} parameter(11), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_0\'][\'Dense_5\'][\'kernel\']"}
+<598 dot.5 @0>
+ positions:
+  dot.5
+  p.150
+ uses:
+  call.74, operand 2
+  add_add_fusion.10.clone, operand 2
+ from instruction: %dot.5 = f32[16384,1024]{1,0} dot(%call.75, %Arg_11.12), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_0/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<599 Arg_18.19 @0>
+ positions:
+  Arg_18.19
+  p.134
+ uses:
+  call.66, operand 1
+  add_add_fusion.9.clone, operand 1
+ from instruction: %Arg_18.19 = f32[1024]{0} parameter(18), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_3\'][\'bias\']"}
+<600 Arg_12.13 @0>
+ positions:
+  Arg_12.13
+  p.146
+ uses:
+  call.73, operand 0
+  transpose_copy_fusion.14.clone, operand 0
+ from instruction: %Arg_12.13 = f32[1024]{0} parameter(12), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_0\'][\'bias\']"}
+<601 Arg_13.14 @0>
+ positions:
+  Arg_13.14
+ uses:
+  dot.6, operand 1
+ from instruction: %Arg_13.14 = f32[1024,1024]{1,0} parameter(13), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_0\'][\'kernel\']"}
+<602 dot.6 @0>
+ positions:
+  dot.6
+  p.147
+ uses:
+  call.73, operand 1
+  transpose_copy_fusion.14.clone, operand 1
+ from instruction: %dot.6 = f32[16384,1024]{1,0} dot(%bitcast.13, %Arg_13.14), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<603 Arg_14.15 @0>
+ positions:
+  Arg_14.15
+  p.144
+ uses:
+  call.72, operand 0
+  transpose_copy_fusion.13.clone, operand 0
+ from instruction: %Arg_14.15 = f32[1024]{0} parameter(14), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_1\'][\'bias\']"}
+<604 Arg_15.16 @0>
+ positions:
+  Arg_15.16
+ uses:
+  dot.7, operand 1
+ from instruction: %Arg_15.16 = f32[1024,1024]{1,0} parameter(15), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_1\'][\'kernel\']"}
+<605 dot.7 @0>
+ positions:
+  dot.7
+  p.145
+ uses:
+  call.72, operand 1
+  transpose_copy_fusion.13.clone, operand 1
+ from instruction: %dot.7 = f32[16384,1024]{1,0} dot(%bitcast.13, %Arg_15.16), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<606 dot.192 @0>
+ positions:
+  dot.192
+  p.142
+  p.143
+ uses:
+  call.71, operand 0
+  call.70, operand 1
+  subtract_exponential_fusion.4.clone, operand 1
+  broadcast_multiply_fusion.4.clone, operand 0
+ from instruction: %dot.192 = f32[32,16,512,512]{3,2,1,0} dot(%call.73, %call.72), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<607 Arg_16.17 @0>
+ positions:
+  Arg_16.17
+  p.137
+ uses:
+  call.68, operand 0
+  transpose_copy_fusion.12.clone, operand 0
+ from instruction: %Arg_16.17 = f32[1024]{0} parameter(16), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_2\'][\'bias\']"}
+<608 Arg_17.18 @0>
+ positions:
+  Arg_17.18
+ uses:
+  dot.8, operand 1
+ from instruction: %Arg_17.18 = f32[1024,1024]{1,0} parameter(17), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_2\'][\'kernel\']"}
+<609 dot.8 @0>
+ positions:
+  dot.8
+  p.138
+ uses:
+  call.68, operand 1
+  transpose_copy_fusion.12.clone, operand 1
+ from instruction: %dot.8 = f32[16384,1024]{1,0} dot(%bitcast.13, %Arg_17.18), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<610 dot.216 @0>
+ positions:
+  dot.216
+  p.136
+ uses:
+  call.67, operand 0
+  copy_bitcast_fusion.4.clone, operand 0
+ from instruction: %dot.216 = f32[32,16,512,64]{3,2,1,0} dot(%call.69, %call.68), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<611 Arg_19.20 @0>
+ positions:
+  Arg_19.20
+ uses:
+  dot.9, operand 1
+ from instruction: %Arg_19.20 = f32[1024,1024]{1,0} parameter(19), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_3\'][\'kernel\']"}
+<612 dot.9 @0>
+ positions:
+  dot.9
+  p.135
+ uses:
+  call.66, operand 2
+  add_add_fusion.9.clone, operand 2
+ from instruction: %dot.9 = f32[16384,1024]{1,0} dot(%call.67, %Arg_19.20), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<613 Arg_22.23 @0>
+ positions:
+  Arg_22.23
+  p.129
+ uses:
+  call.64, operand 1
+  add_add_fusion.8.clone, operand 1
+ from instruction: %Arg_22.23 = f32[1024]{0} parameter(22), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_5\'][\'bias\']"}
+<614 Arg_20.21 @0>
+ positions:
+  Arg_20.21
+  p.131
+ uses:
+  call.65, operand 0
+  multiply_bitcast_fusion.4.clone, operand 0
+ from instruction: %Arg_20.21 = f32[4096]{0} parameter(20), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_4\'][\'bias\']"}
+<615 Arg_21.22 @0>
+ positions:
+  Arg_21.22
+ uses:
+  dot.10, operand 1
+ from instruction: %Arg_21.22 = f32[1024,4096]{1,0} parameter(21), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_4\'][\'kernel\']"}
+<616 dot.10 @0>
+ positions:
+  dot.10
+  p.132
+ uses:
+  call.65, operand 1
+  multiply_bitcast_fusion.4.clone, operand 1
+ from instruction: %dot.10 = f32[16384,4096]{1,0} dot(%bitcast.22, %Arg_21.22), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<617 Arg_23.24 @0>
+ positions:
+  Arg_23.24
+ uses:
+  dot.11, operand 1
+ from instruction: %Arg_23.24 = f32[4096,1024]{1,0} parameter(23), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_1\'][\'Dense_5\'][\'kernel\']"}
+<618 dot.11 @0>
+ positions:
+  dot.11
+  p.130
+ uses:
+  call.64, operand 2
+  add_add_fusion.8.clone, operand 2
+ from instruction: %dot.11 = f32[16384,1024]{1,0} dot(%call.65, %Arg_23.24), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_1/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<619 Arg_30.31 @0>
+ positions:
+  Arg_30.31
+  p.114
+ uses:
+  call.56, operand 1
+  add_add_fusion.7.clone, operand 1
+ from instruction: %Arg_30.31 = f32[1024]{0} parameter(30), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_3\'][\'bias\']"}
+<620 Arg_24.25 @0>
+ positions:
+  Arg_24.25
+  p.126
+ uses:
+  call.63, operand 0
+  transpose_copy_fusion.11.clone, operand 0
+ from instruction: %Arg_24.25 = f32[1024]{0} parameter(24), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_0\'][\'bias\']"}
+<621 Arg_25.26 @0>
+ positions:
+  Arg_25.26
+ uses:
+  dot.12, operand 1
+ from instruction: %Arg_25.26 = f32[1024,1024]{1,0} parameter(25), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_0\'][\'kernel\']"}
+<622 dot.12 @0>
+ positions:
+  dot.12
+  p.127
+ uses:
+  call.63, operand 1
+  transpose_copy_fusion.11.clone, operand 1
+ from instruction: %dot.12 = f32[16384,1024]{1,0} dot(%bitcast.26, %Arg_25.26), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<623 Arg_26.27 @0>
+ positions:
+  Arg_26.27
+  p.124
+ uses:
+  call.62, operand 0
+  transpose_copy_fusion.10.clone, operand 0
+ from instruction: %Arg_26.27 = f32[1024]{0} parameter(26), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_1\'][\'bias\']"}
+<624 Arg_27.28 @0>
+ positions:
+  Arg_27.28
+ uses:
+  dot.13, operand 1
+ from instruction: %Arg_27.28 = f32[1024,1024]{1,0} parameter(27), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_1\'][\'kernel\']"}
+<625 dot.13 @0>
+ positions:
+  dot.13
+  p.125
+ uses:
+  call.62, operand 1
+  transpose_copy_fusion.10.clone, operand 1
+ from instruction: %dot.13 = f32[16384,1024]{1,0} dot(%bitcast.26, %Arg_27.28), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<626 dot.272 @0>
+ positions:
+  dot.272
+  p.122
+  p.123
+ uses:
+  call.61, operand 0
+  call.60, operand 1
+  subtract_exponential_fusion.3.clone, operand 1
+  broadcast_multiply_fusion.3.clone, operand 0
+ from instruction: %dot.272 = f32[32,16,512,512]{3,2,1,0} dot(%call.63, %call.62), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<627 Arg_28.29 @0>
+ positions:
+  Arg_28.29
+  p.117
+ uses:
+  call.58, operand 0
+  transpose_copy_fusion.9.clone, operand 0
+ from instruction: %Arg_28.29 = f32[1024]{0} parameter(28), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_2\'][\'bias\']"}
+<628 Arg_29.30 @0>
+ positions:
+  Arg_29.30
+ uses:
+  dot.14, operand 1
+ from instruction: %Arg_29.30 = f32[1024,1024]{1,0} parameter(29), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_2\'][\'kernel\']"}
+<629 dot.14 @0>
+ positions:
+  dot.14
+  p.118
+ uses:
+  call.58, operand 1
+  transpose_copy_fusion.9.clone, operand 1
+ from instruction: %dot.14 = f32[16384,1024]{1,0} dot(%bitcast.26, %Arg_29.30), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<630 dot.296 @0>
+ positions:
+  dot.296
+  p.116
+ uses:
+  call.57, operand 0
+  copy_bitcast_fusion.3.clone, operand 0
+ from instruction: %dot.296 = f32[32,16,512,64]{3,2,1,0} dot(%call.59, %call.58), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<631 Arg_31.32 @0>
+ positions:
+  Arg_31.32
+ uses:
+  dot.15, operand 1
+ from instruction: %Arg_31.32 = f32[1024,1024]{1,0} parameter(31), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_3\'][\'kernel\']"}
+<632 dot.15 @0>
+ positions:
+  dot.15
+  p.115
+ uses:
+  call.56, operand 2
+  add_add_fusion.7.clone, operand 2
+ from instruction: %dot.15 = f32[16384,1024]{1,0} dot(%call.57, %Arg_31.32), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<633 Arg_34.35 @0>
+ positions:
+  Arg_34.35
+  p.109
+ uses:
+  call.54, operand 1
+  add_add_fusion.6.clone, operand 1
+ from instruction: %Arg_34.35 = f32[1024]{0} parameter(34), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_5\'][\'bias\']"}
+<634 Arg_32.33 @0>
+ positions:
+  Arg_32.33
+  p.111
+ uses:
+  call.55, operand 0
+  multiply_bitcast_fusion.3.clone, operand 0
+ from instruction: %Arg_32.33 = f32[4096]{0} parameter(32), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_4\'][\'bias\']"}
+<635 Arg_33.34 @0>
+ positions:
+  Arg_33.34
+ uses:
+  dot.16, operand 1
+ from instruction: %Arg_33.34 = f32[1024,4096]{1,0} parameter(33), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_4\'][\'kernel\']"}
+<636 dot.16 @0>
+ positions:
+  dot.16
+  p.112
+ uses:
+  call.55, operand 1
+  multiply_bitcast_fusion.3.clone, operand 1
+ from instruction: %dot.16 = f32[16384,4096]{1,0} dot(%bitcast.35, %Arg_33.34), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<637 Arg_35.36 @0>
+ positions:
+  Arg_35.36
+ uses:
+  dot.17, operand 1
+ from instruction: %Arg_35.36 = f32[4096,1024]{1,0} parameter(35), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_2\'][\'Dense_5\'][\'kernel\']"}
+<638 dot.17 @0>
+ positions:
+  dot.17
+  p.110
+ uses:
+  call.54, operand 2
+  add_add_fusion.6.clone, operand 2
+ from instruction: %dot.17 = f32[16384,1024]{1,0} dot(%call.55, %Arg_35.36), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_2/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<639 Arg_42.43 @0>
+ positions:
+  Arg_42.43
+  p.94
+ uses:
+  call.46, operand 1
+  add_add_fusion.5.clone, operand 1
+ from instruction: %Arg_42.43 = f32[1024]{0} parameter(42), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_3\'][\'bias\']"}
+<640 Arg_36.37 @0>
+ positions:
+  Arg_36.37
+  p.106
+ uses:
+  call.53, operand 0
+  transpose_copy_fusion.8.clone, operand 0
+ from instruction: %Arg_36.37 = f32[1024]{0} parameter(36), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_0\'][\'bias\']"}
+<641 Arg_37.38 @0>
+ positions:
+  Arg_37.38
+ uses:
+  dot.18, operand 1
+ from instruction: %Arg_37.38 = f32[1024,1024]{1,0} parameter(37), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_0\'][\'kernel\']"}
+<642 dot.18 @0>
+ positions:
+  dot.18
+  p.107
+ uses:
+  call.53, operand 1
+  transpose_copy_fusion.8.clone, operand 1
+ from instruction: %dot.18 = f32[16384,1024]{1,0} dot(%bitcast.39, %Arg_37.38), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<643 Arg_38.39 @0>
+ positions:
+  Arg_38.39
+  p.104
+ uses:
+  call.52, operand 0
+  transpose_copy_fusion.7.clone, operand 0
+ from instruction: %Arg_38.39 = f32[1024]{0} parameter(38), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_1\'][\'bias\']"}
+<644 Arg_39.40 @0>
+ positions:
+  Arg_39.40
+ uses:
+  dot.19, operand 1
+ from instruction: %Arg_39.40 = f32[1024,1024]{1,0} parameter(39), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_1\'][\'kernel\']"}
+<645 dot.19 @0>
+ positions:
+  dot.19
+  p.105
+ uses:
+  call.52, operand 1
+  transpose_copy_fusion.7.clone, operand 1
+ from instruction: %dot.19 = f32[16384,1024]{1,0} dot(%bitcast.39, %Arg_39.40), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<646 dot.352 @0>
+ positions:
+  dot.352
+  p.102
+  p.103
+ uses:
+  call.51, operand 0
+  call.50, operand 1
+  subtract_exponential_fusion.2.clone, operand 1
+  broadcast_multiply_fusion.2.clone, operand 0
+ from instruction: %dot.352 = f32[32,16,512,512]{3,2,1,0} dot(%call.53, %call.52), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<647 Arg_40.41 @0>
+ positions:
+  Arg_40.41
+  p.97
+ uses:
+  call.48, operand 0
+  transpose_copy_fusion.6.clone, operand 0
+ from instruction: %Arg_40.41 = f32[1024]{0} parameter(40), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_2\'][\'bias\']"}
+<648 Arg_41.42 @0>
+ positions:
+  Arg_41.42
+ uses:
+  dot.20, operand 1
+ from instruction: %Arg_41.42 = f32[1024,1024]{1,0} parameter(41), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_2\'][\'kernel\']"}
+<649 dot.20 @0>
+ positions:
+  dot.20
+  p.98
+ uses:
+  call.48, operand 1
+  transpose_copy_fusion.6.clone, operand 1
+ from instruction: %dot.20 = f32[16384,1024]{1,0} dot(%bitcast.39, %Arg_41.42), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<650 dot.376 @0>
+ positions:
+  dot.376
+  p.96
+ uses:
+  call.47, operand 0
+  copy_bitcast_fusion.2.clone, operand 0
+ from instruction: %dot.376 = f32[32,16,512,64]{3,2,1,0} dot(%call.49, %call.48), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<651 Arg_43.44 @0>
+ positions:
+  Arg_43.44
+ uses:
+  dot.21, operand 1
+ from instruction: %Arg_43.44 = f32[1024,1024]{1,0} parameter(43), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_3\'][\'kernel\']"}
+<652 dot.21 @0>
+ positions:
+  dot.21
+  p.95
+ uses:
+  call.46, operand 2
+  add_add_fusion.5.clone, operand 2
+ from instruction: %dot.21 = f32[16384,1024]{1,0} dot(%call.47, %Arg_43.44), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<653 Arg_46.47 @0>
+ positions:
+  Arg_46.47
+  p.89
+ uses:
+  call.44, operand 1
+  add_add_fusion.4.clone, operand 1
+ from instruction: %Arg_46.47 = f32[1024]{0} parameter(46), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_5\'][\'bias\']"}
+<654 Arg_44.45 @0>
+ positions:
+  Arg_44.45
+  p.91
+ uses:
+  call.45, operand 0
+  multiply_bitcast_fusion.2.clone, operand 0
+ from instruction: %Arg_44.45 = f32[4096]{0} parameter(44), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_4\'][\'bias\']"}
+<655 Arg_45.46 @0>
+ positions:
+  Arg_45.46
+ uses:
+  dot.22, operand 1
+ from instruction: %Arg_45.46 = f32[1024,4096]{1,0} parameter(45), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_4\'][\'kernel\']"}
+<656 dot.22 @0>
+ positions:
+  dot.22
+  p.92
+ uses:
+  call.45, operand 1
+  multiply_bitcast_fusion.2.clone, operand 1
+ from instruction: %dot.22 = f32[16384,4096]{1,0} dot(%bitcast.48, %Arg_45.46), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<657 Arg_47.48 @0>
+ positions:
+  Arg_47.48
+ uses:
+  dot.23, operand 1
+ from instruction: %Arg_47.48 = f32[4096,1024]{1,0} parameter(47), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_3\'][\'Dense_5\'][\'kernel\']"}
+<658 dot.23 @0>
+ positions:
+  dot.23
+  p.90
+ uses:
+  call.44, operand 2
+  add_add_fusion.4.clone, operand 2
+ from instruction: %dot.23 = f32[16384,1024]{1,0} dot(%call.45, %Arg_47.48), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_3/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<659 Arg_54.55 @0>
+ positions:
+  Arg_54.55
+  p.74
+ uses:
+  call.36, operand 1
+  add_add_fusion.3.clone, operand 1
+ from instruction: %Arg_54.55 = f32[1024]{0} parameter(54), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_3\'][\'bias\']"}
+<660 Arg_48.49 @0>
+ positions:
+  Arg_48.49
+  p.86
+ uses:
+  call.43, operand 0
+  transpose_copy_fusion.5.clone, operand 0
+ from instruction: %Arg_48.49 = f32[1024]{0} parameter(48), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_0\'][\'bias\']"}
+<661 Arg_49.50 @0>
+ positions:
+  Arg_49.50
+ uses:
+  dot.24, operand 1
+ from instruction: %Arg_49.50 = f32[1024,1024]{1,0} parameter(49), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_0\'][\'kernel\']"}
+<662 dot.24 @0>
+ positions:
+  dot.24
+  p.87
+ uses:
+  call.43, operand 1
+  transpose_copy_fusion.5.clone, operand 1
+ from instruction: %dot.24 = f32[16384,1024]{1,0} dot(%bitcast.52, %Arg_49.50), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<663 Arg_50.51 @0>
+ positions:
+  Arg_50.51
+  p.84
+ uses:
+  call.42, operand 0
+  transpose_copy_fusion.4.clone, operand 0
+ from instruction: %Arg_50.51 = f32[1024]{0} parameter(50), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_1\'][\'bias\']"}
+<664 Arg_51.52 @0>
+ positions:
+  Arg_51.52
+ uses:
+  dot.25, operand 1
+ from instruction: %Arg_51.52 = f32[1024,1024]{1,0} parameter(51), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_1\'][\'kernel\']"}
+<665 dot.25 @0>
+ positions:
+  dot.25
+  p.85
+ uses:
+  call.42, operand 1
+  transpose_copy_fusion.4.clone, operand 1
+ from instruction: %dot.25 = f32[16384,1024]{1,0} dot(%bitcast.52, %Arg_51.52), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<666 dot.432 @0>
+ positions:
+  dot.432
+  p.82
+  p.83
+ uses:
+  call.41, operand 0
+  call.40, operand 1
+  subtract_exponential_fusion.1.clone, operand 1
+  broadcast_multiply_fusion.1.clone, operand 0
+ from instruction: %dot.432 = f32[32,16,512,512]{3,2,1,0} dot(%call.43, %call.42), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<667 Arg_52.53 @0>
+ positions:
+  Arg_52.53
+  p.77
+ uses:
+  call.38, operand 0
+  transpose_copy_fusion.3.clone, operand 0
+ from instruction: %Arg_52.53 = f32[1024]{0} parameter(52), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_2\'][\'bias\']"}
+<668 Arg_53.54 @0>
+ positions:
+  Arg_53.54
+ uses:
+  dot.26, operand 1
+ from instruction: %Arg_53.54 = f32[1024,1024]{1,0} parameter(53), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_2\'][\'kernel\']"}
+<669 dot.26 @0>
+ positions:
+  dot.26
+  p.78
+ uses:
+  call.38, operand 1
+  transpose_copy_fusion.3.clone, operand 1
+ from instruction: %dot.26 = f32[16384,1024]{1,0} dot(%bitcast.52, %Arg_53.54), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<670 dot.456 @0>
+ positions:
+  dot.456
+  p.76
+ uses:
+  call.37, operand 0
+  copy_bitcast_fusion.1.clone, operand 0
+ from instruction: %dot.456 = f32[32,16,512,64]{3,2,1,0} dot(%call.39, %call.38), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<671 Arg_55.56 @0>
+ positions:
+  Arg_55.56
+ uses:
+  dot.27, operand 1
+ from instruction: %Arg_55.56 = f32[1024,1024]{1,0} parameter(55), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_3\'][\'kernel\']"}
+<672 dot.27 @0>
+ positions:
+  dot.27
+  p.75
+ uses:
+  call.36, operand 2
+  add_add_fusion.3.clone, operand 2
+ from instruction: %dot.27 = f32[16384,1024]{1,0} dot(%call.37, %Arg_55.56), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<673 Arg_58.59 @0>
+ positions:
+  Arg_58.59
+  p.69
+ uses:
+  call.34, operand 1
+  add_add_fusion.2.clone, operand 1
+ from instruction: %Arg_58.59 = f32[1024]{0} parameter(58), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_5\'][\'bias\']"}
+<674 Arg_56.57 @0>
+ positions:
+  Arg_56.57
+  p.71
+ uses:
+  call.35, operand 0
+  multiply_bitcast_fusion.1.clone, operand 0
+ from instruction: %Arg_56.57 = f32[4096]{0} parameter(56), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_4\'][\'bias\']"}
+<675 Arg_57.58 @0>
+ positions:
+  Arg_57.58
+ uses:
+  dot.28, operand 1
+ from instruction: %Arg_57.58 = f32[1024,4096]{1,0} parameter(57), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_4\'][\'kernel\']"}
+<676 dot.28 @0>
+ positions:
+  dot.28
+  p.72
+ uses:
+  call.35, operand 1
+  multiply_bitcast_fusion.1.clone, operand 1
+ from instruction: %dot.28 = f32[16384,4096]{1,0} dot(%bitcast.61, %Arg_57.58), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<677 Arg_59.60 @0>
+ positions:
+  Arg_59.60
+ uses:
+  dot.29, operand 1
+ from instruction: %Arg_59.60 = f32[4096,1024]{1,0} parameter(59), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_4\'][\'Dense_5\'][\'kernel\']"}
+<678 dot.29 @0>
+ positions:
+  dot.29
+  p.70
+ uses:
+  call.34, operand 2
+  add_add_fusion.2.clone, operand 2
+ from instruction: %dot.29 = f32[16384,1024]{1,0} dot(%call.35, %Arg_59.60), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_4/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<679 Arg_66.67 @0>
+ positions:
+  Arg_66.67
+  p.54
+ uses:
+  call.26, operand 1
+  add_add_fusion.1.clone, operand 1
+ from instruction: %Arg_66.67 = f32[1024]{0} parameter(66), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_3\'][\'bias\']"}
+<680 Arg_60.61 @0>
+ positions:
+  Arg_60.61
+  p.66
+ uses:
+  call.33, operand 0
+  transpose_copy_fusion.2.clone, operand 0
+ from instruction: %Arg_60.61 = f32[1024]{0} parameter(60), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_0\'][\'bias\']"}
+<681 Arg_61.62 @0>
+ positions:
+  Arg_61.62
+ uses:
+  dot.30, operand 1
+ from instruction: %Arg_61.62 = f32[1024,1024]{1,0} parameter(61), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_0\'][\'kernel\']"}
+<682 dot.30 @0>
+ positions:
+  dot.30
+  p.67
+ uses:
+  call.33, operand 1
+  transpose_copy_fusion.2.clone, operand 1
+ from instruction: %dot.30 = f32[16384,1024]{1,0} dot(%bitcast.65, %Arg_61.62), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<683 Arg_62.63 @0>
+ positions:
+  Arg_62.63
+  p.64
+ uses:
+  call.32, operand 0
+  transpose_copy_fusion.1.clone, operand 0
+ from instruction: %Arg_62.63 = f32[1024]{0} parameter(62), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_1\'][\'bias\']"}
+<684 Arg_63.64 @0>
+ positions:
+  Arg_63.64
+ uses:
+  dot.31, operand 1
+ from instruction: %Arg_63.64 = f32[1024,1024]{1,0} parameter(63), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_1\'][\'kernel\']"}
+<685 dot.31 @0>
+ positions:
+  dot.31
+  p.65
+ uses:
+  call.32, operand 1
+  transpose_copy_fusion.1.clone, operand 1
+ from instruction: %dot.31 = f32[16384,1024]{1,0} dot(%bitcast.65, %Arg_63.64), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<686 dot.512 @0>
+ positions:
+  dot.512
+  p.62
+  p.63
+ uses:
+  call.31, operand 0
+  call.30, operand 1
+  subtract_exponential_fusion.clone, operand 1
+  broadcast_multiply_fusion.clone, operand 0
+ from instruction: %dot.512 = f32[32,16,512,512]{3,2,1,0} dot(%call.33, %call.32), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+<687 Arg_64.65 @0>
+ positions:
+  Arg_64.65
+  p.57
+ uses:
+  call.28, operand 0
+  transpose_copy_fusion.clone, operand 0
+ from instruction: %Arg_64.65 = f32[1024]{0} parameter(64), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_2\'][\'bias\']"}
+<688 Arg_65.66 @0>
+ positions:
+  Arg_65.66
+ uses:
+  dot.32, operand 1
+ from instruction: %Arg_65.66 = f32[1024,1024]{1,0} parameter(65), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_2\'][\'kernel\']"}
+<689 dot.32 @0>
+ positions:
+  dot.32
+  p.58
+ uses:
+  call.28, operand 1
+  transpose_copy_fusion.clone, operand 1
+ from instruction: %dot.32 = f32[16384,1024]{1,0} dot(%bitcast.65, %Arg_65.66), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<690 dot.536 @0>
+ positions:
+  dot.536
+  p.56
+ uses:
+  call.27, operand 0
+  copy_bitcast_fusion.clone, operand 0
+ from instruction: %dot.536 = f32[32,16,512,64]{3,2,1,0} dot(%call.29, %call.28), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=38}
+<691 Arg_67.68 @0>
+ positions:
+  Arg_67.68
+ uses:
+  dot.33, operand 1
+ from instruction: %Arg_67.68 = f32[1024,1024]{1,0} parameter(67), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_3\'][\'kernel\']"}
+<692 dot.33 @0>
+ positions:
+  dot.33
+  p.55
+ uses:
+  call.26, operand 2
+  add_add_fusion.1.clone, operand 2
+ from instruction: %dot.33 = f32[16384,1024]{1,0} dot(%call.27, %Arg_67.68), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_3/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<693 Arg_70.71 @0>
+ positions:
+  Arg_70.71
+  p.49
+ uses:
+  call.24, operand 1
+  add_add_fusion.clone, operand 1
+ from instruction: %Arg_70.71 = f32[1024]{0} parameter(70), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_5\'][\'bias\']"}
+<694 Arg_68.69 @0>
+ positions:
+  Arg_68.69
+  p.51
+ uses:
+  call.25, operand 0
+  multiply_bitcast_fusion.clone, operand 0
+ from instruction: %Arg_68.69 = f32[4096]{0} parameter(68), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_4\'][\'bias\']"}
+<695 Arg_69.70 @0>
+ positions:
+  Arg_69.70
+ uses:
+  dot.34, operand 1
+ from instruction: %Arg_69.70 = f32[1024,4096]{1,0} parameter(69), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_4\'][\'kernel\']"}
+<696 dot.34 @0>
+ positions:
+  dot.34
+  p.52
+ uses:
+  call.25, operand 1
+  multiply_bitcast_fusion.clone, operand 1
+ from instruction: %dot.34 = f32[16384,4096]{1,0} dot(%bitcast.74, %Arg_69.70), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_4/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+<697 Arg_71.72 @0>
+ positions:
+  Arg_71.72
+ uses:
+  dot.35, operand 1
+ from instruction: %Arg_71.72 = f32[4096,1024]{1,0} parameter(71), metadata={op_name="params[\'params\'][\'HeavyTransformerLayer_5\'][\'Dense_5\'][\'kernel\']"}
+<698 dot.35 @0>
+ positions:
+  dot.35
+  p.50
+ uses:
+  call.24, operand 2
+  add_add_fusion.clone, operand 2
+ from instruction: %dot.35 = f32[16384,1024]{1,0} dot(%call.25, %Arg_71.72), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/HeavyModel/HeavyTransformerLayer_5/Dense_5/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+
+
+HloLiveRange (max 471):
+  InstructionSequence:
+    0:Arg_0.1
+    1:Arg_1.2
+    2:Arg_2.3
+    3:Arg_3.4
+    4:Arg_4.5
+    5:Arg_5.6
+    6:Arg_6.7
+    7:Arg_7.8
+    8:Arg_8.9
+    9:Arg_9.10
+    10:Arg_10.11
+    11:Arg_11.12
+    12:Arg_12.13
+    13:Arg_13.14
+    14:Arg_14.15
+    15:Arg_15.16
+    16:Arg_16.17
+    17:Arg_17.18
+    18:Arg_18.19
+    19:Arg_19.20
+    20:Arg_20.21
+    21:Arg_21.22
+    22:Arg_22.23
+    23:Arg_23.24
+    24:Arg_24.25
+    25:Arg_25.26
+    26:Arg_26.27
+    27:Arg_27.28
+    28:Arg_28.29
+    29:Arg_29.30
+    30:Arg_30.31
+    31:Arg_31.32
+    32:Arg_32.33
+    33:Arg_33.34
+    34:Arg_34.35
+    35:Arg_35.36
+    36:Arg_36.37
+    37:Arg_37.38
+    38:Arg_38.39
+    39:Arg_39.40
+    40:Arg_40.41
+    41:Arg_41.42
+    42:Arg_42.43
+    43:Arg_43.44
+    44:Arg_44.45
+    45:Arg_45.46
+    46:Arg_46.47
+    47:Arg_47.48
+    48:Arg_48.49
+    49:Arg_49.50
+    50:Arg_50.51
+    51:Arg_51.52
+    52:Arg_52.53
+    53:Arg_53.54
+    54:Arg_54.55
+    55:Arg_55.56
+    56:Arg_56.57
+    57:Arg_57.58
+    58:Arg_58.59
+    59:Arg_59.60
+    60:Arg_60.61
+    61:Arg_61.62
+    62:Arg_62.63
+    63:Arg_63.64
+    64:Arg_64.65
+    65:Arg_65.66
+    66:Arg_66.67
+    67:Arg_67.68
+    68:Arg_68.69
+    69:Arg_69.70
+    70:Arg_70.71
+    71:Arg_71.72
+    72:Arg_72.73
+    73:constant.86
+    74:constant.87
+    75:bitcast
+    76:dot
+    77:dot.1
+    78:dot.2
+    79:p.166
+    80:p.167
+    81:transpose_copy_fusion.17.clone
+    82:call.83
+    83:p.164
+    84:p.165
+    85:transpose_copy_fusion.16.clone
+    86:call.82
+    87:p.157
+    88:p.158
+    89:transpose_copy_fusion.15.clone
+    90:call.78
+    91:dot.112
+    92:p.163
+    93:broadcast_multiply_fusion.5.clone
+    94:call.81
+    95:p
+    96:p.1
+    97:reduce-window.clone
+    98:call
+    99:p.2
+    100:p.3
+    101:reduce.118.clone
+    102:call.1
+    103:p.161
+    104:p.162
+    105:subtract_exponential_fusion.5.clone
+    106:call.80
+    107:p.4
+    108:p.5
+    109:reduce-window.1.clone
+    110:call.2
+    111:p.6
+    112:p.7
+    113:reduce.130.clone
+    114:call.3
+    115:p.159
+    116:p.160
+    117:broadcast_divide_fusion.5.clone
+    118:call.79
+    119:dot.136
+    120:p.156
+    121:copy_bitcast_fusion.5.clone
+    122:call.77
+    123:dot.3
+    124:p.153
+    125:p.154
+    126:p.155
+    127:add_add_fusion.11.clone
+    128:call.76
+    129:bitcast.9
+    130:dot.4
+    131:p.151
+    132:p.152
+    133:multiply_bitcast_fusion.5.clone
+    134:call.75
+    135:dot.5
+    136:p.148
+    137:p.149
+    138:p.150
+    139:add_add_fusion.10.clone
+    140:call.74
+    141:bitcast.13
+    142:dot.6
+    143:dot.7
+    144:dot.8
+    145:p.146
+    146:p.147
+    147:transpose_copy_fusion.14.clone
+    148:call.73
+    149:p.144
+    150:p.145
+    151:transpose_copy_fusion.13.clone
+    152:call.72
+    153:p.137
+    154:p.138
+    155:transpose_copy_fusion.12.clone
+    156:call.68
+    157:dot.192
+    158:p.143
+    159:broadcast_multiply_fusion.4.clone
+    160:call.71
+    161:p.8
+    162:p.9
+    163:reduce-window.2.clone
+    164:call.4
+    165:p.10
+    166:p.11
+    167:reduce.198.clone
+    168:call.5
+    169:p.141
+    170:p.142
+    171:subtract_exponential_fusion.4.clone
+    172:call.70
+    173:p.12
+    174:p.13
+    175:reduce-window.3.clone
+    176:call.6
+    177:p.14
+    178:p.15
+    179:reduce.210.clone
+    180:call.7
+    181:p.139
+    182:p.140
+    183:broadcast_divide_fusion.4.clone
+    184:call.69
+    185:dot.216
+    186:p.136
+    187:copy_bitcast_fusion.4.clone
+    188:call.67
+    189:dot.9
+    190:p.133
+    191:p.134
+    192:p.135
+    193:add_add_fusion.9.clone
+    194:call.66
+    195:bitcast.22
+    196:dot.10
+    197:p.131
+    198:p.132
+    199:multiply_bitcast_fusion.4.clone
+    200:call.65
+    201:dot.11
+    202:p.128
+    203:p.129
+    204:p.130
+    205:add_add_fusion.8.clone
+    206:call.64
+    207:bitcast.26
+    208:dot.12
+    209:dot.13
+    210:dot.14
+    211:p.126
+    212:p.127
+    213:transpose_copy_fusion.11.clone
+    214:call.63
+    215:p.124
+    216:p.125
+    217:transpose_copy_fusion.10.clone
+    218:call.62
+    219:p.117
+    220:p.118
+    221:transpose_copy_fusion.9.clone
+    222:call.58
+    223:dot.272
+    224:p.123
+    225:broadcast_multiply_fusion.3.clone
+    226:call.61
+    227:p.16
+    228:p.17
+    229:reduce-window.4.clone
+    230:call.8
+    231:p.18
+    232:p.19
+    233:reduce.278.clone
+    234:call.9
+    235:p.121
+    236:p.122
+    237:subtract_exponential_fusion.3.clone
+    238:call.60
+    239:p.20
+    240:p.21
+    241:reduce-window.5.clone
+    242:call.10
+    243:p.22
+    244:p.23
+    245:reduce.290.clone
+    246:call.11
+    247:p.119
+    248:p.120
+    249:broadcast_divide_fusion.3.clone
+    250:call.59
+    251:dot.296
+    252:p.116
+    253:copy_bitcast_fusion.3.clone
+    254:call.57
+    255:dot.15
+    256:p.113
+    257:p.114
+    258:p.115
+    259:add_add_fusion.7.clone
+    260:call.56
+    261:bitcast.35
+    262:dot.16
+    263:p.111
+    264:p.112
+    265:multiply_bitcast_fusion.3.clone
+    266:call.55
+    267:dot.17
+    268:p.108
+    269:p.109
+    270:p.110
+    271:add_add_fusion.6.clone
+    272:call.54
+    273:bitcast.39
+    274:dot.18
+    275:dot.19
+    276:dot.20
+    277:p.106
+    278:p.107
+    279:transpose_copy_fusion.8.clone
+    280:call.53
+    281:p.104
+    282:p.105
+    283:transpose_copy_fusion.7.clone
+    284:call.52
+    285:p.97
+    286:p.98
+    287:transpose_copy_fusion.6.clone
+    288:call.48
+    289:dot.352
+    290:p.103
+    291:broadcast_multiply_fusion.2.clone
+    292:call.51
+    293:p.24
+    294:p.25
+    295:reduce-window.6.clone
+    296:call.12
+    297:p.26
+    298:p.27
+    299:reduce.358.clone
+    300:call.13
+    301:p.101
+    302:p.102
+    303:subtract_exponential_fusion.2.clone
+    304:call.50
+    305:p.28
+    306:p.29
+    307:reduce-window.7.clone
+    308:call.14
+    309:p.30
+    310:p.31
+    311:reduce.370.clone
+    312:call.15
+    313:p.99
+    314:p.100
+    315:broadcast_divide_fusion.2.clone
+    316:call.49
+    317:dot.376
+    318:p.96
+    319:copy_bitcast_fusion.2.clone
+    320:call.47
+    321:dot.21
+    322:p.93
+    323:p.94
+    324:p.95
+    325:add_add_fusion.5.clone
+    326:call.46
+    327:bitcast.48
+    328:dot.22
+    329:p.91
+    330:p.92
+    331:multiply_bitcast_fusion.2.clone
+    332:call.45
+    333:dot.23
+    334:p.88
+    335:p.89
+    336:p.90
+    337:add_add_fusion.4.clone
+    338:call.44
+    339:bitcast.52
+    340:dot.24
+    341:dot.25
+    342:dot.26
+    343:p.86
+    344:p.87
+    345:transpose_copy_fusion.5.clone
+    346:call.43
+    347:p.84
+    348:p.85
+    349:transpose_copy_fusion.4.clone
+    350:call.42
+    351:p.77
+    352:p.78
+    353:transpose_copy_fusion.3.clone
+    354:call.38
+    355:dot.432
+    356:p.83
+    357:broadcast_multiply_fusion.1.clone
+    358:call.41
+    359:p.32
+    360:p.33
+    361:reduce-window.8.clone
+    362:call.16
+    363:p.34
+    364:p.35
+    365:reduce.438.clone
+    366:call.17
+    367:p.81
+    368:p.82
+    369:subtract_exponential_fusion.1.clone
+    370:call.40
+    371:p.36
+    372:p.37
+    373:reduce-window.9.clone
+    374:call.18
+    375:p.38
+    376:p.39
+    377:reduce.450.clone
+    378:call.19
+    379:p.79
+    380:p.80
+    381:broadcast_divide_fusion.1.clone
+    382:call.39
+    383:dot.456
+    384:p.76
+    385:copy_bitcast_fusion.1.clone
+    386:call.37
+    387:dot.27
+    388:p.73
+    389:p.74
+    390:p.75
+    391:add_add_fusion.3.clone
+    392:call.36
+    393:bitcast.61
+    394:dot.28
+    395:p.71
+    396:p.72
+    397:multiply_bitcast_fusion.1.clone
+    398:call.35
+    399:dot.29
+    400:p.68
+    401:p.69
+    402:p.70
+    403:add_add_fusion.2.clone
+    404:call.34
+    405:bitcast.65
+    406:dot.30
+    407:dot.31
+    408:dot.32
+    409:p.66
+    410:p.67
+    411:transpose_copy_fusion.2.clone
+    412:call.33
+    413:p.64
+    414:p.65
+    415:transpose_copy_fusion.1.clone
+    416:call.32
+    417:p.57
+    418:p.58
+    419:transpose_copy_fusion.clone
+    420:call.28
+    421:dot.512
+    422:p.63
+    423:broadcast_multiply_fusion.clone
+    424:call.31
+    425:p.40
+    426:p.41
+    427:reduce-window.10.clone
+    428:call.20
+    429:p.42
+    430:p.43
+    431:reduce.518.clone
+    432:call.21
+    433:p.61
+    434:p.62
+    435:subtract_exponential_fusion.clone
+    436:call.30
+    437:p.44
+    438:p.45
+    439:reduce-window.11.clone
+    440:call.22
+    441:p.46
+    442:p.47
+    443:reduce.530.clone
+    444:call.23
+    445:p.59
+    446:p.60
+    447:broadcast_divide_fusion.clone
+    448:call.29
+    449:dot.536
+    450:p.56
+    451:copy_bitcast_fusion.clone
+    452:call.27
+    453:dot.33
+    454:p.53
+    455:p.54
+    456:p.55
+    457:add_add_fusion.1.clone
+    458:call.26
+    459:bitcast.74
+    460:dot.34
+    461:p.51
+    462:p.52
+    463:multiply_bitcast_fusion.clone
+    464:call.25
+    465:dot.35
+    466:p.48
+    467:p.49
+    468:p.50
+    469:add_add_fusion.clone
+    470:call.24
+  BufferLiveRange:
+    reduce-window.clone{}:97-101
+    reduce.118.clone{}:101-105
+    reduce-window.1.clone{}:109-113
+    reduce.130.clone{}:113-117
+    reduce-window.2.clone{}:163-167
+    reduce.198.clone{}:167-171
+    reduce-window.3.clone{}:175-179
+    reduce.210.clone{}:179-183
+    reduce-window.4.clone{}:229-233
+    reduce.278.clone{}:233-237
+    reduce-window.5.clone{}:241-245
+    reduce.290.clone{}:245-249
+    reduce-window.6.clone{}:295-299
+    reduce.358.clone{}:299-303
+    reduce-window.7.clone{}:307-311
+    reduce.370.clone{}:311-315
+    reduce-window.8.clone{}:361-365
+    reduce.438.clone{}:365-369
+    reduce-window.9.clone{}:373-377
+    reduce.450.clone{}:377-381
+    reduce-window.10.clone{}:427-431
+    reduce.518.clone{}:431-435
+    reduce-window.11.clone{}:439-443
+    reduce.530.clone{}:443-447
+    add_add_fusion.clone{}:469-471
+    multiply_bitcast_fusion.clone{}:463-465
+    add_add_fusion.1.clone{}:457-469
+    copy_bitcast_fusion.clone{}:451-453
+    transpose_copy_fusion.clone{}:419-449
+    broadcast_divide_fusion.clone{}:447-449
+    subtract_exponential_fusion.clone{}:435-447
+    broadcast_multiply_fusion.clone{}:423-427
+    transpose_copy_fusion.1.clone{}:415-421
+    transpose_copy_fusion.2.clone{}:411-421
+    add_add_fusion.2.clone{}:403-457
+    multiply_bitcast_fusion.1.clone{}:397-399
+    add_add_fusion.3.clone{}:391-403
+    copy_bitcast_fusion.1.clone{}:385-387
+    transpose_copy_fusion.3.clone{}:353-383
+    broadcast_divide_fusion.1.clone{}:381-383
+    subtract_exponential_fusion.1.clone{}:369-381
+    broadcast_multiply_fusion.1.clone{}:357-361
+    transpose_copy_fusion.4.clone{}:349-355
+    transpose_copy_fusion.5.clone{}:345-355
+    add_add_fusion.4.clone{}:337-391
+    multiply_bitcast_fusion.2.clone{}:331-333
+    add_add_fusion.5.clone{}:325-337
+    copy_bitcast_fusion.2.clone{}:319-321
+    transpose_copy_fusion.6.clone{}:287-317
+    broadcast_divide_fusion.2.clone{}:315-317
+    subtract_exponential_fusion.2.clone{}:303-315
+    broadcast_multiply_fusion.2.clone{}:291-295
+    transpose_copy_fusion.7.clone{}:283-289
+    transpose_copy_fusion.8.clone{}:279-289
+    add_add_fusion.6.clone{}:271-325
+    multiply_bitcast_fusion.3.clone{}:265-267
+    add_add_fusion.7.clone{}:259-271
+    copy_bitcast_fusion.3.clone{}:253-255
+    transpose_copy_fusion.9.clone{}:221-251
+    broadcast_divide_fusion.3.clone{}:249-251
+    subtract_exponential_fusion.3.clone{}:237-249
+    broadcast_multiply_fusion.3.clone{}:225-229
+    transpose_copy_fusion.10.clone{}:217-223
+    transpose_copy_fusion.11.clone{}:213-223
+    add_add_fusion.8.clone{}:205-259
+    multiply_bitcast_fusion.4.clone{}:199-201
+    add_add_fusion.9.clone{}:193-205
+    copy_bitcast_fusion.4.clone{}:187-189
+    transpose_copy_fusion.12.clone{}:155-185
+    broadcast_divide_fusion.4.clone{}:183-185
+    subtract_exponential_fusion.4.clone{}:171-183
+    broadcast_multiply_fusion.4.clone{}:159-163
+    transpose_copy_fusion.13.clone{}:151-157
+    transpose_copy_fusion.14.clone{}:147-157
+    add_add_fusion.10.clone{}:139-193
+    multiply_bitcast_fusion.5.clone{}:133-135
+    add_add_fusion.11.clone{}:127-139
+    copy_bitcast_fusion.5.clone{}:121-123
+    transpose_copy_fusion.15.clone{}:89-119
+    broadcast_divide_fusion.5.clone{}:117-119
+    subtract_exponential_fusion.5.clone{}:105-117
+    broadcast_multiply_fusion.5.clone{}:93-97
+    transpose_copy_fusion.16.clone{}:85-91
+    transpose_copy_fusion.17.clone{}:81-91
+    Arg_72.73{}:0-471
+    Arg_6.7{}:0-471
+    Arg_0.1{}:0-471
+    Arg_1.2{}:0-471
+    dot{}:76-81
+    Arg_2.3{}:0-471
+    Arg_3.4{}:0-471
+    dot.1{}:77-85
+    dot.112{}:91-105
+    constant.87{}:74-431
+    constant.86{}:73-443
+    Arg_4.5{}:0-471
+    Arg_5.6{}:0-471
+    dot.2{}:78-89
+    dot.136{}:119-121
+    Arg_7.8{}:0-471
+    dot.3{}:123-127
+    Arg_10.11{}:0-471
+    Arg_8.9{}:0-471
+    Arg_9.10{}:0-471
+    dot.4{}:130-133
+    Arg_11.12{}:0-471
+    dot.5{}:135-139
+    Arg_18.19{}:0-471
+    Arg_12.13{}:0-471
+    Arg_13.14{}:0-471
+    dot.6{}:142-147
+    Arg_14.15{}:0-471
+    Arg_15.16{}:0-471
+    dot.7{}:143-151
+    dot.192{}:157-171
+    Arg_16.17{}:0-471
+    Arg_17.18{}:0-471
+    dot.8{}:144-155
+    dot.216{}:185-187
+    Arg_19.20{}:0-471
+    dot.9{}:189-193
+    Arg_22.23{}:0-471
+    Arg_20.21{}:0-471
+    Arg_21.22{}:0-471
+    dot.10{}:196-199
+    Arg_23.24{}:0-471
+    dot.11{}:201-205
+    Arg_30.31{}:0-471
+    Arg_24.25{}:0-471
+    Arg_25.26{}:0-471
+    dot.12{}:208-213
+    Arg_26.27{}:0-471
+    Arg_27.28{}:0-471
+    dot.13{}:209-217
+    dot.272{}:223-237
+    Arg_28.29{}:0-471
+    Arg_29.30{}:0-471
+    dot.14{}:210-221
+    dot.296{}:251-253
+    Arg_31.32{}:0-471
+    dot.15{}:255-259
+    Arg_34.35{}:0-471
+    Arg_32.33{}:0-471
+    Arg_33.34{}:0-471
+    dot.16{}:262-265
+    Arg_35.36{}:0-471
+    dot.17{}:267-271
+    Arg_42.43{}:0-471
+    Arg_36.37{}:0-471
+    Arg_37.38{}:0-471
+    dot.18{}:274-279
+    Arg_38.39{}:0-471
+    Arg_39.40{}:0-471
+    dot.19{}:275-283
+    dot.352{}:289-303
+    Arg_40.41{}:0-471
+    Arg_41.42{}:0-471
+    dot.20{}:276-287
+    dot.376{}:317-319
+    Arg_43.44{}:0-471
+    dot.21{}:321-325
+    Arg_46.47{}:0-471
+    Arg_44.45{}:0-471
+    Arg_45.46{}:0-471
+    dot.22{}:328-331
+    Arg_47.48{}:0-471
+    dot.23{}:333-337
+    Arg_54.55{}:0-471
+    Arg_48.49{}:0-471
+    Arg_49.50{}:0-471
+    dot.24{}:340-345
+    Arg_50.51{}:0-471
+    Arg_51.52{}:0-471
+    dot.25{}:341-349
+    dot.432{}:355-369
+    Arg_52.53{}:0-471
+    Arg_53.54{}:0-471
+    dot.26{}:342-353
+    dot.456{}:383-385
+    Arg_55.56{}:0-471
+    dot.27{}:387-391
+    Arg_58.59{}:0-471
+    Arg_56.57{}:0-471
+    Arg_57.58{}:0-471
+    dot.28{}:394-397
+    Arg_59.60{}:0-471
+    dot.29{}:399-403
+    Arg_66.67{}:0-471
+    Arg_60.61{}:0-471
+    Arg_61.62{}:0-471
+    dot.30{}:406-411
+    Arg_62.63{}:0-471
+    Arg_63.64{}:0-471
+    dot.31{}:407-415
+    dot.512{}:421-435
+    Arg_64.65{}:0-471
+    Arg_65.66{}:0-471
+    dot.32{}:408-419
+    dot.536{}:449-451
+    Arg_67.68{}:0-471
+    dot.33{}:453-457
+    Arg_70.71{}:0-471
+    Arg_68.69{}:0-471
+    Arg_69.70{}:0-471
+    dot.34{}:460-463
+    Arg_71.72{}:0-471
+    dot.35{}:465-469
+  Live ranges at 163 (peak):
+    broadcast_multiply_fusion.4.clone{}: 536870912 bytes (cumulative: 536870912 bytes)
+    dot.192{}: 536870912 bytes (cumulative: 1073741824 bytes)
+    Arg_72.73{}: 67108864 bytes (cumulative: 1140850688 bytes)
+    add_add_fusion.10.clone{}: 67108864 bytes (cumulative: 1207959552 bytes)
+    transpose_copy_fusion.12.clone{}: 67108864 bytes (cumulative: 1275068416 bytes)
+    Arg_11.12{}: 16777216 bytes (cumulative: 1291845632 bytes)
+    Arg_21.22{}: 16777216 bytes (cumulative: 1308622848 bytes)
+    Arg_23.24{}: 16777216 bytes (cumulative: 1325400064 bytes)
+    Arg_33.34{}: 16777216 bytes (cumulative: 1342177280 bytes)
+    Arg_35.36{}: 16777216 bytes (cumulative: 1358954496 bytes)
+    Arg_45.46{}: 16777216 bytes (cumulative: 1375731712 bytes)
+    Arg_47.48{}: 16777216 bytes (cumulative: 1392508928 bytes)
+    Arg_57.58{}: 16777216 bytes (cumulative: 1409286144 bytes)
+    Arg_59.60{}: 16777216 bytes (cumulative: 1426063360 bytes)
+    Arg_69.70{}: 16777216 bytes (cumulative: 1442840576 bytes)
+    Arg_71.72{}: 16777216 bytes (cumulative: 1459617792 bytes)
+    Arg_9.10{}: 16777216 bytes (cumulative: 1476395008 bytes)
+    reduce-window.2.clone{}: 16777216 bytes (cumulative: 1493172224 bytes)
+    Arg_1.2{}: 4194304 bytes (cumulative: 1497366528 bytes)
+    Arg_13.14{}: 4194304 bytes (cumulative: 1501560832 bytes)
+    Arg_15.16{}: 4194304 bytes (cumulative: 1505755136 bytes)
+    Arg_17.18{}: 4194304 bytes (cumulative: 1509949440 bytes)
+    Arg_19.20{}: 4194304 bytes (cumulative: 1514143744 bytes)
+    Arg_25.26{}: 4194304 bytes (cumulative: 1518338048 bytes)
+    Arg_27.28{}: 4194304 bytes (cumulative: 1522532352 bytes)
+    Arg_29.30{}: 4194304 bytes (cumulative: 1526726656 bytes)
+    Arg_3.4{}: 4194304 bytes (cumulative: 1530920960 bytes)
+    Arg_31.32{}: 4194304 bytes (cumulative: 1535115264 bytes)
+    Arg_37.38{}: 4194304 bytes (cumulative: 1539309568 bytes)
+    Arg_39.40{}: 4194304 bytes (cumulative: 1543503872 bytes)
+    Arg_41.42{}: 4194304 bytes (cumulative: 1547698176 bytes)
+    Arg_43.44{}: 4194304 bytes (cumulative: 1551892480 bytes)
+    Arg_49.50{}: 4194304 bytes (cumulative: 1556086784 bytes)
+    Arg_5.6{}: 4194304 bytes (cumulative: 1560281088 bytes)
+    Arg_51.52{}: 4194304 bytes (cumulative: 1564475392 bytes)
+    Arg_53.54{}: 4194304 bytes (cumulative: 1568669696 bytes)
+    Arg_55.56{}: 4194304 bytes (cumulative: 1572864000 bytes)
+    Arg_61.62{}: 4194304 bytes (cumulative: 1577058304 bytes)
+    Arg_63.64{}: 4194304 bytes (cumulative: 1581252608 bytes)
+    Arg_65.66{}: 4194304 bytes (cumulative: 1585446912 bytes)
+    Arg_67.68{}: 4194304 bytes (cumulative: 1589641216 bytes)
+    Arg_7.8{}: 4194304 bytes (cumulative: 1593835520 bytes)
+    Arg_20.21{}: 16384 bytes (cumulative: 1593851904 bytes)
+    Arg_32.33{}: 16384 bytes (cumulative: 1593868288 bytes)
+    Arg_44.45{}: 16384 bytes (cumulative: 1593884672 bytes)
+    Arg_56.57{}: 16384 bytes (cumulative: 1593901056 bytes)
+    Arg_68.69{}: 16384 bytes (cumulative: 1593917440 bytes)
+    Arg_8.9{}: 16384 bytes (cumulative: 1593933824 bytes)
+    Arg_0.1{}: 4096 bytes (cumulative: 1593937920 bytes)
+    Arg_10.11{}: 4096 bytes (cumulative: 1593942016 bytes)
+    Arg_12.13{}: 4096 bytes (cumulative: 1593946112 bytes)
+    Arg_14.15{}: 4096 bytes (cumulative: 1593950208 bytes)
+    Arg_16.17{}: 4096 bytes (cumulative: 1593954304 bytes)
+    Arg_18.19{}: 4096 bytes (cumulative: 1593958400 bytes)
+    Arg_2.3{}: 4096 bytes (cumulative: 1593962496 bytes)
+    Arg_22.23{}: 4096 bytes (cumulative: 1593966592 bytes)
+    Arg_24.25{}: 4096 bytes (cumulative: 1593970688 bytes)
+    Arg_26.27{}: 4096 bytes (cumulative: 1593974784 bytes)
+    Arg_28.29{}: 4096 bytes (cumulative: 1593978880 bytes)
+    Arg_30.31{}: 4096 bytes (cumulative: 1593982976 bytes)
+    Arg_34.35{}: 4096 bytes (cumulative: 1593987072 bytes)
+    Arg_36.37{}: 4096 bytes (cumulative: 1593991168 bytes)
+    Arg_38.39{}: 4096 bytes (cumulative: 1593995264 bytes)
+    Arg_4.5{}: 4096 bytes (cumulative: 1593999360 bytes)
+    Arg_40.41{}: 4096 bytes (cumulative: 1594003456 bytes)
+    Arg_42.43{}: 4096 bytes (cumulative: 1594007552 bytes)
+    Arg_46.47{}: 4096 bytes (cumulative: 1594011648 bytes)
+    Arg_48.49{}: 4096 bytes (cumulative: 1594015744 bytes)
+    Arg_50.51{}: 4096 bytes (cumulative: 1594019840 bytes)
+    Arg_52.53{}: 4096 bytes (cumulative: 1594023936 bytes)
+    Arg_54.55{}: 4096 bytes (cumulative: 1594028032 bytes)
+    Arg_58.59{}: 4096 bytes (cumulative: 1594032128 bytes)
+    Arg_6.7{}: 4096 bytes (cumulative: 1594036224 bytes)
+    Arg_60.61{}: 4096 bytes (cumulative: 1594040320 bytes)
+    Arg_62.63{}: 4096 bytes (cumulative: 1594044416 bytes)
+    Arg_64.65{}: 4096 bytes (cumulative: 1594048512 bytes)
+    Arg_66.67{}: 4096 bytes (cumulative: 1594052608 bytes)
+    Arg_70.71{}: 4096 bytes (cumulative: 1594056704 bytes)
+    constant.86{}: 4 bytes (cumulative: 1594056708 bytes)
+    constant.87{}: 4 bytes (cumulative: 1594056712 bytes)
