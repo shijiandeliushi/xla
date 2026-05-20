@@ -1,0 +1,12 @@
+HloModule demo
+
+// EighExpander:
+// 将对称矩阵特征值分解 (CustomCall with target="Eigh") 展开为 QR 迭代算法
+// Eigh → 三对角化 + QR迭代 + sort(eigenvalues)
+// backend_config="lower,sort_eigenvalues,max_iter,tol"
+//   lower=1: 使用下三角, sort_eigenvalues=1: 排序特征值
+//   max_iter=100: 最大迭代次数, tol=1e-6: 收敛容差
+ENTRY main {
+  p0 = f32[3,3] parameter(0)
+  ROOT eigh = (f32[3], f32[3,3]) custom-call(p0), custom_call_target="Eigh", backend_config="1,1,100,0.000001"
+}

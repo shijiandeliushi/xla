@@ -1,0 +1,646 @@
+BufferAssignment:
+allocation 0: size 4, constant:
+ value: <70 constant.19 @0> (size=4,offset=0): s32[]
+allocation 1: size 16, constant:
+ value: <116 constant.6 @0> (size=16,offset=0): u32[4]{0}
+allocation 2: size 16, constant:
+ value: <118 constant.5 @0> (size=16,offset=0): u32[4]{0}
+allocation 3: size 8, output shape is |u32[2]|, maybe-live-out:
+ value: <71 add.35 @0> (size=4,offset=0): s32[]
+ value: <108 copy.24 @0> (size=4,offset=0): s32[]
+ value: <121 concatenate.123 @0> (size=8,offset=0): u32[2]{0}
+ value: <124 arg_tuple.3{0} (phi) @0> (size=4,offset=0): s32[]
+ value: <132 arg_tuple.4{0} (phi) @0> (size=4,offset=0): s32[]
+ value: <141 while.2{0} (phi) @0> (size=4,offset=0): s32[]
+allocation 4: size 8, parameter 0, shape |u32[2]| at ShapeIndex {}:
+ value: <109 Arg_0.1 @0> (size=8,offset=0): u32[2]{0}
+allocation 5: size 4, constant:
+ value: <107 constant.3 @0> (size=4,offset=0): s32[]
+allocation 6: size 4, parameter 1, shape |u32[]| at ShapeIndex {}:
+ value: <110 Arg_1.2 @0> (size=4,offset=0): u32[]
+allocation 7: size 4, constant:
+ value: <0 constant.18 @0> (size=4,offset=0): s32[]
+allocation 8: size 964, preallocated-temp:
+ value: <1 compare.1 @0> (size=1,offset=64): pred[]
+ value: <69 copy.8 @0> (size=4,offset=512): s32[]
+ value: <72 copy.11 @0> (size=4,offset=576): u32[]
+ value: <73 copy.14 @0> (size=16,offset=64): u32[4]{0}
+ value: <74 copy.10 @0> (size=4,offset=384): u32[1]{0}
+ value: <75 copy.9 @0> (size=4,offset=448): u32[1]{0}
+ value: <76 bitcast_add_fusion.1 @0> (size=4,offset=704): u32[1]{0}
+ value: <77 copy.12 @0> (size=4,offset=320): u32[]
+ value: <78 bitcast_add_fusion @0> (size=4,offset=768): u32[1]{0}
+ value: <79 copy.19 @0> (size=4,offset=832): u32[]
+ value: <80 copy.13 @0> (size=4,offset=640): u32[]
+ value: <81 copy.20 @0> (size=4,offset=896): u32[]
+ value: <82 copy.21 @0> (size=4,offset=960): u32[]
+ value: <83 copy.15 @0> (size=16,offset=128): u32[4]{0}
+ value: <84 copy.22 @0> (size=16,offset=192): u32[4]{0}
+ value: <85 copy.23 @0> (size=16,offset=256): u32[4]{0}
+ value: <86 tuple.12{} @0> (size=64,offset=0): (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0})
+ value: <111 slice_add_fusion.1 @0> (size=4,offset=704): u32[1]{0}
+ value: <112 slice_add_fusion @0> (size=4,offset=768): u32[1]{0}
+ value: <113 slice_bitcast_fusion.1 @0> (size=4,offset=832): u32[]
+ value: <114 xor_xor_fusion @0> (size=4,offset=896): u32[]
+ value: <115 slice_bitcast_fusion @0> (size=4,offset=960): u32[]
+ value: <117 copy.26 @0> (size=16,offset=192): u32[4]{0}
+ value: <119 copy.25 @0> (size=16,offset=256): u32[4]{0}
+ value: <120 tuple.10{} @0> (size=64,offset=0): (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0})
+ value: <122 arg_tuple.3{} (phi) @0> (size=64,offset=0): (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0})
+ value: <123 arg_tuple.4{} (phi) @0> (size=64,offset=0): (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0})
+ value: <125 arg_tuple.3{1} (phi) @0> (size=4,offset=704): u32[1]{0}
+ value: <126 arg_tuple.3{2} (phi) @0> (size=4,offset=768): u32[1]{0}
+ value: <127 arg_tuple.3{3} (phi) @0> (size=4,offset=832): u32[]
+ value: <128 arg_tuple.3{4} (phi) @0> (size=4,offset=896): u32[]
+ value: <129 arg_tuple.3{5} (phi) @0> (size=4,offset=960): u32[]
+ value: <130 arg_tuple.3{6} (phi) @0> (size=16,offset=192): u32[4]{0}
+ value: <131 arg_tuple.3{7} (phi) @0> (size=16,offset=256): u32[4]{0}
+ value: <133 arg_tuple.4{1} (phi) @0> (size=4,offset=704): u32[1]{0}
+ value: <134 arg_tuple.4{2} (phi) @0> (size=4,offset=768): u32[1]{0}
+ value: <135 arg_tuple.4{3} (phi) @0> (size=4,offset=832): u32[]
+ value: <136 arg_tuple.4{4} (phi) @0> (size=4,offset=896): u32[]
+ value: <137 arg_tuple.4{5} (phi) @0> (size=4,offset=960): u32[]
+ value: <138 arg_tuple.4{6} (phi) @0> (size=16,offset=192): u32[4]{0}
+ value: <139 arg_tuple.4{7} (phi) @0> (size=16,offset=256): u32[4]{0}
+ value: <140 while.2{} (phi) @0> (size=64,offset=0): (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0})
+ value: <142 while.2{1} (phi) @0> (size=4,offset=704): u32[1]{0}
+ value: <143 while.2{2} (phi) @0> (size=4,offset=768): u32[1]{0}
+ value: <144 while.2{3} (phi) @0> (size=4,offset=832): u32[]
+ value: <145 while.2{4} (phi) @0> (size=4,offset=896): u32[]
+ value: <146 while.2{5} (phi) @0> (size=4,offset=960): u32[]
+ value: <147 while.2{6} (phi) @0> (size=16,offset=192): u32[4]{0}
+ value: <148 while.2{7} (phi) @0> (size=16,offset=256): u32[4]{0}
+
+Total bytes used: 1028 (1.0KiB)
+
+Used values:
+<0 constant.18 @0>
+ positions:
+  constant.18
+ uses:
+  compare.1, operand 1
+ from instruction: %constant.18 = s32[] constant(5)
+<1 compare.1 @0>
+ positions:
+  compare.1
+ uses:
+ from instruction: %compare.1 = pred[] compare(%get-tuple-element.77, %constant.18), direction=LT, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/cond/lt" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<69 copy.8 @0>
+ positions:
+  copy.8
+ uses:
+  bitcast_add_fusion, operand 4
+  add.35, operand 0
+ from instruction: %copy.8 = s32[] copy(%get-tuple-element.130)
+<70 constant.19 @0>
+ positions:
+  constant.19
+ uses:
+  add.35, operand 1
+ from instruction: %constant.19 = s32[] constant(1)
+<71 add.35 @0>
+ positions:
+  add.35
+  tuple.12 {0}
+ uses:
+  tuple.12, operand 0
+ from instruction: %add.35 = s32[] add(%copy.8, %constant.19), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<72 copy.11 @0>
+ positions:
+  copy.11
+ uses:
+  bitcast_add_fusion.1, operand 0
+  copy.21, operand 0
+ from instruction: %copy.11 = u32[] copy(%get-tuple-element.133)
+<73 copy.14 @0>
+ positions:
+  copy.14
+ uses:
+  bitcast_add_fusion, operand 1
+  copy.23, operand 0
+  bitcast_add_fusion.1, operand 1
+ from instruction: %copy.14 = u32[4]{0} copy(%get-tuple-element.136)
+<74 copy.10 @0>
+ positions:
+  copy.10
+ uses:
+  bitcast_add_fusion.1, operand 2
+  bitcast_add_fusion, operand 2
+ from instruction: %copy.10 = u32[1]{0} copy(%get-tuple-element.132)
+<75 copy.9 @0>
+ positions:
+  copy.9
+ uses:
+  bitcast_add_fusion, operand 3
+  bitcast_add_fusion.1, operand 3
+ from instruction: %copy.9 = u32[1]{0} copy(%get-tuple-element.131)
+<76 bitcast_add_fusion.1 @0>
+ positions:
+  bitcast_add_fusion.1
+  tuple.12 {1}
+ uses:
+  tuple.12, operand 1
+ from instruction: %bitcast_add_fusion.1 = u32[1]{0} fusion(%copy.11, %copy.14, %copy.10, %copy.9), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<77 copy.12 @0>
+ positions:
+  copy.12
+ uses:
+  bitcast_add_fusion, operand 0
+  copy.19, operand 0
+ from instruction: %copy.12 = u32[] copy(%get-tuple-element.134)
+<78 bitcast_add_fusion @0>
+ positions:
+  bitcast_add_fusion
+  tuple.12 {2}
+ uses:
+  tuple.12, operand 2
+ from instruction: %bitcast_add_fusion = u32[1]{0} fusion(%copy.12, %copy.14, %copy.10, %copy.9, %copy.8), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<79 copy.19 @0>
+ positions:
+  copy.19
+  tuple.12 {3}
+ uses:
+  tuple.12, operand 3
+ from instruction: %copy.19 = u32[] copy(%copy.12), control-predecessors={%copy.11}
+<80 copy.13 @0>
+ positions:
+  copy.13
+ uses:
+  copy.20, operand 0
+ from instruction: %copy.13 = u32[] copy(%get-tuple-element.135)
+<81 copy.20 @0>
+ positions:
+  copy.20
+  tuple.12 {4}
+ uses:
+  tuple.12, operand 4
+ from instruction: %copy.20 = u32[] copy(%copy.13), control-predecessors={%copy.12}
+<82 copy.21 @0>
+ positions:
+  copy.21
+  tuple.12 {5}
+ uses:
+  tuple.12, operand 5
+ from instruction: %copy.21 = u32[] copy(%copy.11), control-predecessors={%copy.13}
+<83 copy.15 @0>
+ positions:
+  copy.15
+ uses:
+  copy.22, operand 0
+ from instruction: %copy.15 = u32[4]{0} copy(%get-tuple-element.137)
+<84 copy.22 @0>
+ positions:
+  copy.22
+  tuple.12 {6}
+ uses:
+  tuple.12, operand 6
+ from instruction: %copy.22 = u32[4]{0} copy(%copy.15), control-predecessors={%copy.14}
+<85 copy.23 @0>
+ positions:
+  copy.23
+  tuple.12 {7}
+ uses:
+  tuple.12, operand 7
+ from instruction: %copy.23 = u32[4]{0} copy(%copy.14), control-predecessors={%copy.15}
+<86 tuple.12{} @0>
+ positions:
+  tuple.12 {}
+ uses:
+ from instruction: %tuple.12 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) tuple(%add.35, %bitcast_add_fusion.1, %bitcast_add_fusion, %copy.19, %copy.20, /*index=5*/%copy.21, %copy.22, %copy.23)
+<107 constant.3 @0>
+ positions:
+  constant.3
+ uses:
+  copy.24, operand 0
+ from instruction: %constant.3 = s32[] constant(0)
+<108 copy.24 @0>
+ positions:
+  copy.24
+  tuple.10 {0}
+  tuple.13 {0}
+ uses:
+  call, operand 0 {0}
+  while.2, operand 0 {0}
+ from instruction: %copy.24 = s32[] copy(%constant.3)
+<109 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+ uses:
+  slice_add_fusion.1, operand 0
+  slice_add_fusion, operand 0
+  xor_xor_fusion, operand 0
+  slice_bitcast_fusion, operand 0
+  slice_bitcast_fusion.1, operand 0
+ from instruction: %Arg_0.1 = u32[2]{0} parameter(0), metadata={op_name="key"}
+<110 Arg_1.2 @0>
+ positions:
+  Arg_1.2
+ uses:
+  slice_add_fusion.1, operand 1
+  slice_add_fusion, operand 1
+ from instruction: %Arg_1.2 = u32[] parameter(1), metadata={op_name="data"}
+<111 slice_add_fusion.1 @0>
+ positions:
+  slice_add_fusion.1
+  tuple.10 {1}
+  tuple.13 {1}
+ uses:
+  call, operand 0 {1}
+  while.2, operand 0 {1}
+ from instruction: %slice_add_fusion.1 = u32[1]{0} fusion(%Arg_0.1, %Arg_1.2), kind=kLoop, calls=%fused_computation.6, metadata={op_name="jit(_threefry_fold_in)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<112 slice_add_fusion @0>
+ positions:
+  slice_add_fusion
+  tuple.10 {2}
+  tuple.13 {2}
+ uses:
+  call, operand 0 {2}
+  while.2, operand 0 {2}
+ from instruction: %slice_add_fusion = u32[1]{0} fusion(%Arg_0.1, %Arg_1.2), kind=kLoop, calls=%fused_computation.5, metadata={op_name="jit(_threefry_fold_in)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<113 slice_bitcast_fusion.1 @0>
+ positions:
+  slice_bitcast_fusion.1
+  tuple.10 {3}
+  tuple.13 {3}
+ uses:
+  call, operand 0 {3}
+  while.2, operand 0 {3}
+ from instruction: %slice_bitcast_fusion.1 = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.4, metadata={op_name="jit(_threefry_fold_in)/jit(main)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<114 xor_xor_fusion @0>
+ positions:
+  xor_xor_fusion
+  tuple.10 {4}
+  tuple.13 {4}
+ uses:
+  call, operand 0 {4}
+  while.2, operand 0 {4}
+ from instruction: %xor_xor_fusion = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.2, metadata={op_name="jit(_threefry_fold_in)/jit(main)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<115 slice_bitcast_fusion @0>
+ positions:
+  slice_bitcast_fusion
+  tuple.10 {5}
+  tuple.13 {5}
+ uses:
+  call, operand 0 {5}
+  while.2, operand 0 {5}
+ from instruction: %slice_bitcast_fusion = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.3, metadata={op_name="jit(_threefry_fold_in)/jit(main)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<116 constant.6 @0>
+ positions:
+  constant.6
+ uses:
+  copy.26, operand 0
+ from instruction: %constant.6 = u32[4]{0} constant({13, 15, 26, 6})
+<117 copy.26 @0>
+ positions:
+  copy.26
+  tuple.10 {6}
+  tuple.13 {6}
+ uses:
+  call, operand 0 {6}
+  while.2, operand 0 {6}
+ from instruction: %copy.26 = u32[4]{0} copy(%constant.6)
+<118 constant.5 @0>
+ positions:
+  constant.5
+ uses:
+  copy.25, operand 0
+ from instruction: %constant.5 = u32[4]{0} constant({17, 29, 16, 24})
+<119 copy.25 @0>
+ positions:
+  copy.25
+  tuple.10 {7}
+  tuple.13 {7}
+ uses:
+  call, operand 0 {7}
+  while.2, operand 0 {7}
+ from instruction: %copy.25 = u32[4]{0} copy(%constant.5)
+<120 tuple.10{} @0>
+ positions:
+  tuple.10 {}
+  tuple.13 {}
+ uses:
+  call, operand 0 {}
+  while.2, operand 0 {}
+ from instruction: %tuple.10 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) tuple(%copy.24, %slice_add_fusion.1, %slice_add_fusion, %slice_bitcast_fusion.1, %xor_xor_fusion, /*index=5*/%slice_bitcast_fusion, %copy.26, %copy.25)
+<121 concatenate.123 @0>
+ positions:
+  concatenate.123
+ uses:
+ from instruction: %concatenate.123 = u32[2]{0} concatenate(%get-tuple-element.116, %get-tuple-element.117), dimensions={0}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/concatenate" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+<122 arg_tuple.3{} (phi) @0>
+ positions:
+  arg_tuple.3 {}
+ uses:
+  get-tuple-element.77, operand 0 {}
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<123 arg_tuple.4{} (phi) @0>
+ positions:
+  arg_tuple.4 {}
+ uses:
+  get-tuple-element.137, operand 0 {}
+  get-tuple-element.136, operand 0 {}
+  get-tuple-element.135, operand 0 {}
+  get-tuple-element.134, operand 0 {}
+  get-tuple-element.133, operand 0 {}
+  get-tuple-element.132, operand 0 {}
+  get-tuple-element.131, operand 0 {}
+  get-tuple-element.130, operand 0 {}
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<124 arg_tuple.3{0} (phi) @0>
+ positions:
+  arg_tuple.3 {0}
+  get-tuple-element.77
+ uses:
+  compare.1, operand 0
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<125 arg_tuple.3{1} (phi) @0>
+ positions:
+  arg_tuple.3 {1}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<126 arg_tuple.3{2} (phi) @0>
+ positions:
+  arg_tuple.3 {2}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<127 arg_tuple.3{3} (phi) @0>
+ positions:
+  arg_tuple.3 {3}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<128 arg_tuple.3{4} (phi) @0>
+ positions:
+  arg_tuple.3 {4}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<129 arg_tuple.3{5} (phi) @0>
+ positions:
+  arg_tuple.3 {5}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<130 arg_tuple.3{6} (phi) @0>
+ positions:
+  arg_tuple.3 {6}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<131 arg_tuple.3{7} (phi) @0>
+ positions:
+  arg_tuple.3 {7}
+ uses:
+ from instruction: %arg_tuple.3 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<132 arg_tuple.4{0} (phi) @0>
+ positions:
+  arg_tuple.4 {0}
+  get-tuple-element.130
+ uses:
+  copy.8, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<133 arg_tuple.4{1} (phi) @0>
+ positions:
+  arg_tuple.4 {1}
+  get-tuple-element.131
+ uses:
+  copy.9, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<134 arg_tuple.4{2} (phi) @0>
+ positions:
+  arg_tuple.4 {2}
+  get-tuple-element.132
+ uses:
+  copy.10, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<135 arg_tuple.4{3} (phi) @0>
+ positions:
+  arg_tuple.4 {3}
+  get-tuple-element.133
+ uses:
+  copy.11, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<136 arg_tuple.4{4} (phi) @0>
+ positions:
+  arg_tuple.4 {4}
+  get-tuple-element.134
+ uses:
+  copy.12, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<137 arg_tuple.4{5} (phi) @0>
+ positions:
+  arg_tuple.4 {5}
+  get-tuple-element.135
+ uses:
+  copy.13, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<138 arg_tuple.4{6} (phi) @0>
+ positions:
+  arg_tuple.4 {6}
+  get-tuple-element.136
+ uses:
+  copy.14, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<139 arg_tuple.4{7} (phi) @0>
+ positions:
+  arg_tuple.4 {7}
+  get-tuple-element.137
+ uses:
+  copy.15, operand 0
+ from instruction: %arg_tuple.4 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+<140 while.2{} (phi) @0>
+ positions:
+  while.2 {}
+  call {}
+ uses:
+  get-tuple-element.117, operand 0 {}
+  get-tuple-element.116, operand 0 {}
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<141 while.2{0} (phi) @0>
+ positions:
+  while.2 {0}
+  call {0}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<142 while.2{1} (phi) @0>
+ positions:
+  while.2 {1}
+  get-tuple-element.116
+  call {1}
+ uses:
+  concatenate.123, operand 0
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<143 while.2{2} (phi) @0>
+ positions:
+  while.2 {2}
+  get-tuple-element.117
+  call {2}
+ uses:
+  concatenate.123, operand 1
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<144 while.2{3} (phi) @0>
+ positions:
+  while.2 {3}
+  call {3}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<145 while.2{4} (phi) @0>
+ positions:
+  while.2 {4}
+  call {4}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<146 while.2{5} (phi) @0>
+ positions:
+  while.2 {5}
+  call {5}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<147 while.2{6} (phi) @0>
+ positions:
+  while.2 {6}
+  call {6}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+<148 while.2{7} (phi) @0>
+ positions:
+  while.2 {7}
+  call {7}
+ uses:
+ from instruction: %while.2 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.13), condition=%region_1.111.clone.clone, body=%region_0.98.clone.clone.clone, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+
+
+HloLiveRange (max 51):
+  InstructionSequence:
+    0:Arg_0.1
+    1:Arg_1.2
+    2:constant.3
+    3:constant.5
+    4:constant.6
+    5:xor_xor_fusion
+    6:slice_bitcast_fusion
+    7:slice_bitcast_fusion.1
+    8:slice_add_fusion.1
+    9:slice_add_fusion
+    10:copy.24
+    11:copy.25
+    12:copy.26
+    13:tuple.10
+    14:tuple.13
+    15:arg_tuple.3
+    16:constant.18
+    17:get-tuple-element.77
+    18:compare.1
+    19:arg_tuple.4
+    20:constant.19
+    21:get-tuple-element.137
+    22:get-tuple-element.136
+    23:get-tuple-element.135
+    24:get-tuple-element.134
+    25:get-tuple-element.133
+    26:get-tuple-element.132
+    27:get-tuple-element.131
+    28:get-tuple-element.130
+    29:copy.15
+    30:copy.14
+    31:copy.13
+    32:copy.12
+    33:copy.11
+    34:copy.10
+    35:copy.9
+    36:copy.8
+    37:copy.23
+    38:copy.22
+    39:copy.20
+    40:copy.21
+    41:copy.19
+    42:bitcast_add_fusion.1
+    43:bitcast_add_fusion
+    44:add.35
+    45:tuple.12
+    46:while.2
+    47:call
+    48:get-tuple-element.117
+    49:get-tuple-element.116
+    50:concatenate.123
+  BufferLiveRange:
+    constant.18{}:16-18
+    compare.1{}:18-19
+    copy.8{}:36-44
+    constant.19{}:20-44
+    add.35{}:44-46
+    copy.11{}:33-42
+    copy.14{}:30-43
+    copy.10{}:34-43
+    copy.9{}:35-43
+    bitcast_add_fusion.1{}:42-46
+    copy.12{}:32-43
+    bitcast_add_fusion{}:43-46
+    copy.19{}:41-46
+    copy.13{}:31-39
+    copy.20{}:39-46
+    copy.21{}:40-46
+    copy.15{}:29-38
+    copy.22{}:38-46
+    copy.23{}:37-46
+    tuple.12{}:45-46
+    constant.3{}:2-10
+    copy.24{}:10-15
+    Arg_0.1{}:0-51
+    Arg_1.2{}:0-51
+    slice_add_fusion.1{}:8-15
+    slice_add_fusion{}:9-15
+    slice_bitcast_fusion.1{}:7-15
+    xor_xor_fusion{}:5-15
+    slice_bitcast_fusion{}:6-15
+    constant.6{}:4-12
+    copy.26{}:12-15
+    constant.5{}:3-11
+    copy.25{}:11-15
+    tuple.10{}:13-15
+    concatenate.123{}:50-51
+    arg_tuple.3{}:15-19
+    arg_tuple.4{}:19-28
+    arg_tuple.3{0}:15-19
+    arg_tuple.3{1}:15-19
+    arg_tuple.3{2}:15-19
+    arg_tuple.3{3}:15-19
+    arg_tuple.3{4}:15-19
+    arg_tuple.3{5}:15-19
+    arg_tuple.3{6}:15-19
+    arg_tuple.3{7}:15-19
+    arg_tuple.4{0}:19-36
+    arg_tuple.4{1}:19-35
+    arg_tuple.4{2}:19-34
+    arg_tuple.4{3}:19-33
+    arg_tuple.4{4}:19-32
+    arg_tuple.4{5}:19-31
+    arg_tuple.4{6}:19-30
+    arg_tuple.4{7}:19-29
+    while.2{}:46-49
+    while.2{0}:46-47
+    while.2{1}:46-50
+    while.2{2}:46-50
+    while.2{3}:46-47
+    while.2{4}:46-47
+    while.2{5}:46-47
+    while.2{6}:46-47
+    while.2{7}:46-47
+  Live ranges at 19 (peak):
+    arg_tuple.3{}: 64 bytes (cumulative: 64 bytes)
+    arg_tuple.4{}: 64 bytes (cumulative: 128 bytes)
+    arg_tuple.3{6}: 16 bytes (cumulative: 144 bytes)
+    arg_tuple.3{7}: 16 bytes (cumulative: 160 bytes)
+    arg_tuple.4{6}: 16 bytes (cumulative: 176 bytes)
+    arg_tuple.4{7}: 16 bytes (cumulative: 192 bytes)
+    Arg_0.1{}: 8 bytes (cumulative: 200 bytes)
+    Arg_1.2{}: 4 bytes (cumulative: 204 bytes)
+    arg_tuple.3{0}: 4 bytes (cumulative: 208 bytes)
+    arg_tuple.3{1}: 4 bytes (cumulative: 212 bytes)
+    arg_tuple.3{2}: 4 bytes (cumulative: 216 bytes)
+    arg_tuple.3{3}: 4 bytes (cumulative: 220 bytes)
+    arg_tuple.3{4}: 4 bytes (cumulative: 224 bytes)
+    arg_tuple.3{5}: 4 bytes (cumulative: 228 bytes)
+    arg_tuple.4{0}: 4 bytes (cumulative: 232 bytes)
+    arg_tuple.4{1}: 4 bytes (cumulative: 236 bytes)
+    arg_tuple.4{2}: 4 bytes (cumulative: 240 bytes)
+    arg_tuple.4{3}: 4 bytes (cumulative: 244 bytes)
+    arg_tuple.4{4}: 4 bytes (cumulative: 248 bytes)
+    arg_tuple.4{5}: 4 bytes (cumulative: 252 bytes)
+    compare.1{}: 1 bytes (cumulative: 253 bytes)

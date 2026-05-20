@@ -1,0 +1,9 @@
+HloModule demo
+
+// CholeskyExpander:
+// 将 Cholesky 分解展开为分块迭代算法
+// kCholesky → 分块的 dot + triangular-solve + cholesky(子块) 递归
+ENTRY main {
+  p0 = f32[4,4] parameter(0)
+  ROOT chol = f32[4,4] cholesky(p0), lower=true
+}

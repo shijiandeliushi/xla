@@ -185,6 +185,7 @@ absl::StatusOr<bool> HloPassPipeline::RunPassesInternal(
       compilation_stats_->StartPass(pass_name);
     }
     RecordPassStartMetadata(*hlo, pass_name, pipeline_name);
+    // Run the pass and record whether it changed the module.Runhelper 是执行函数
     auto status_or_changed = RunHelper<HloT>(pass, hlo, execution_threads);
     if (auto status = status_or_changed.status(); !status.ok()) {
       compilation_stats_->RecordPassError(

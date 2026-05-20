@@ -1,3 +1,5 @@
+> 本文翻译自 docs/developing_new_backend.md
+
 # 为 XLA 开发新后端
 
 本指南面向希望 XLA 能够输出高效运行于其硬件上的程序的系统工程师。本指南并非逐步教程，并假设读者了解[LLVM](http://llvm.org), [Bazel](https://bazel.build/), and XLA.

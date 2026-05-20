@@ -1,0 +1,11 @@
+HloModule demo
+
+// DynamicIndexSplitter:
+// 将 dynamic-slice 的向量索引拆分为标量索引
+// 输入: dynamic-slice(operand, [i,j,k] 向量)
+// 输出: dynamic-slice(operand, i, j, k)
+ENTRY main {
+  operand = s32[4,5,6] parameter(0)
+  indices = s32[3] parameter(1)
+  ROOT ds = s32[1,1,1] dynamic-slice(operand, indices), dynamic_slice_sizes={1,1,1}
+}

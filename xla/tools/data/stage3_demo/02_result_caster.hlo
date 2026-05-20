@@ -1,0 +1,11 @@
+HloModule demo
+
+// ResultCaster:
+// 当 Dot 的累加类型（F32）比输出类型（BF16）精度更高时，
+// 在结果后插入 Convert(F32->BF16)
+// 输入: f32 操作数 + bf16 输出 → 实际累加在 f32 空间，但声明输出 bf16
+ENTRY main {
+  p0 = f32[4,4] parameter(0)
+  p1 = f32[4,4] parameter(1)
+  ROOT dot = bf16[4,4] dot(p0, p1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+}

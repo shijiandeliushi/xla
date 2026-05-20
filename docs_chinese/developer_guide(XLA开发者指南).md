@@ -1,3 +1,5 @@
+> 本文翻译自 docs/developer_guide.md
+
 # XLA 开发者指南
 
 本指南向您展示如何开始开发 XLA 项目。

@@ -1,0 +1,10 @@
+HloModule demo
+
+// RngExpander:
+// 将 kRng 指令展开为显式的算术运算序列
+// RNG Uniform → 3个均匀分布值通过变换生成
+ENTRY main {
+  p0 = f32[] parameter(0)
+  p1 = f32[] parameter(1)
+  ROOT rng = f32[4,4] rng(p0, p1), distribution=rng_uniform
+}

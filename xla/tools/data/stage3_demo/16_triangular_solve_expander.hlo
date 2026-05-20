@@ -1,0 +1,11 @@
+HloModule demo
+
+// TriangularSolveExpander:
+// 将三角方程组求解展开为回代算法或分块 MAGMA 算法
+// kTriangularSolve → 小矩阵直接回代 / 大矩阵分块(逆矩阵 + dot)
+ENTRY main {
+  a = f32[4,4] parameter(0)
+  b = f32[4,3] parameter(1)
+  ROOT solve = f32[4,3] triangular-solve(a, b),
+    left_side=true, lower=true, unit_diagonal=false, transpose_a=NO_TRANSPOSE
+}

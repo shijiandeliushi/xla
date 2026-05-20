@@ -1,3 +1,5 @@
+> 本文翻译自 docs/contributing.md
+
 # Contributing to OpenXLA
 
 Everyone can contribute to OpenXLA, and we value everyone’s contributions. There

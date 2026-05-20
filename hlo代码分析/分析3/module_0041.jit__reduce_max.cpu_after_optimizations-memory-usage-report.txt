@@ -1,0 +1,31 @@
+Total bytes used: 554696736 (529.00MiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+ 512.00MiB( 97%);   17.00MiB; allocation 0: size 512.00MiB, parameter 0, shape |f32[32,16,512,512]| at ShapeIndex {}:
+ 528.00MiB(100%);    1.00MiB; allocation 10: size 16.00MiB, preallocated-temp:
+ 529.00MiB(100%);        32B; allocation 1: size 1.00MiB, output shape is |f32[32,16,512,1]|, maybe-live-out:
+ 529.00MiB(100%);        28B; allocation 2: size 4B, constant:
+ 529.00MiB(100%);        24B; allocation 3: size 4B, parameter 1, shape |f32[]| at ShapeIndex {}:
+ 529.00MiB(100%);        20B; allocation 4: size 4B, thread-local:
+ 529.00MiB(100%);        16B; allocation 5: size 4B, thread-local:
+ 529.00MiB(100%);        12B; allocation 6: size 4B, thread-local:
+ 529.00MiB(100%);         8B; allocation 7: size 4B, thread-local:
+ 529.00MiB(100%);         4B; allocation 8: size 4B, thread-local:
+ 529.00MiB(100%);         0B; allocation 9: size 4B, thread-local:
+
+
+Allocations sorted by size with their values:
+allocation 0: size 512.00MiB, parameter 0, shape |f32[32,16,512,512]| at ShapeIndex {}:
+allocation 10: size 16.00MiB, preallocated-temp:
+allocation 1: size 1.00MiB, output shape is |f32[32,16,512,1]|, maybe-live-out:
+allocation 2: size 4B, constant:
+allocation 3: size 4B, parameter 1, shape |f32[]| at ShapeIndex {}:
+allocation 4: size 4B, thread-local:
+allocation 5: size 4B, thread-local:
+allocation 6: size 4B, thread-local:
+allocation 7: size 4B, thread-local:
+allocation 8: size 4B, thread-local:
+allocation 9: size 4B, thread-local:

@@ -1,0 +1,43 @@
+BufferAssignment:
+allocation 0: size 536870912, output shape is |f32[32,16,512,512]|, maybe-live-out:
+ value: <2 dot.3 @0> (size=536870912,offset=0): f32[32,16,512,512]{3,2,1,0}
+allocation 1: size 67108864, parameter 0, shape |f32[32,16,512,64]| at ShapeIndex {}:
+ value: <0 Arg_0.1 @0> (size=67108864,offset=0): f32[32,16,512,64]{3,2,1,0}
+allocation 2: size 67108864, parameter 1, shape |f32[32,16,64,512]| at ShapeIndex {}:
+ value: <1 Arg_1.2 @0> (size=67108864,offset=0): f32[32,16,64,512]{3,2,1,0}
+
+Total bytes used: 671088640 (640.00MiB)
+
+Used values:
+<0 Arg_0.1 @0>
+ positions:
+  Arg_0.1
+ uses:
+  dot.3, operand 0
+ from instruction: %Arg_0.1 = f32[32,16,512,64]{3,2,1,0} parameter(0), metadata={op_name="a"}
+<1 Arg_1.2 @0>
+ positions:
+  Arg_1.2
+ uses:
+  dot.3, operand 1
+ from instruction: %Arg_1.2 = f32[32,16,64,512]{3,2,1,0} parameter(1), metadata={op_name="b"}
+<2 dot.3 @0>
+ positions:
+  dot.3
+ uses:
+ from instruction: %dot.3 = f32[32,16,512,512]{3,2,1,0} dot(%Arg_0.1, %Arg_1.2), lhs_batch_dims={0,1}, lhs_contracting_dims={3}, rhs_batch_dims={0,1}, rhs_contracting_dims={2}, metadata={op_name="jit(matmul)/jit(main)/dot_general" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=32}
+
+
+HloLiveRange (max 3):
+  InstructionSequence:
+    0:Arg_0.1
+    1:Arg_1.2
+    2:dot.3
+  BufferLiveRange:
+    Arg_0.1{}:0-3
+    Arg_1.2{}:0-3
+    dot.3{}:2-3
+  Live ranges at 2 (peak):
+    dot.3{}: 536870912 bytes (cumulative: 536870912 bytes)
+    Arg_0.1{}: 67108864 bytes (cumulative: 603979776 bytes)
+    Arg_1.2{}: 67108864 bytes (cumulative: 671088640 bytes)

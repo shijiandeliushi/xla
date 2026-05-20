@@ -1,0 +1,10 @@
+HloModule jit_dot_general, is_scheduled=true, entry_computation_layout={(f32[32,512,1024]{2,1,0}, f32[1024,1024]{1,0})->f32[32,512,1024]{2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.4 (Arg_0.1: f32[32,512,1024], Arg_1.2: f32[1024,1024]) -> f32[32,512,1024] {
+  %Arg_0.1 = f32[32,512,1024]{2,1,0} parameter(0), metadata={op_name="args[0]"}
+  %Arg_1.2 = f32[1024,1024]{1,0} parameter(1), metadata={op_name="args[1]"}
+  %bitcast = f32[16384,1024]{1,0} bitcast(%Arg_0.1), metadata={op_name="args[0]"}
+  %dot = f32[16384,1024]{1,0} dot(%bitcast, %Arg_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(dot_general)/jit(main)/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  ROOT %bitcast.1 = f32[32,512,1024]{2,1,0} bitcast(%dot), metadata={op_name="jit(dot_general)/jit(main)/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+}
+

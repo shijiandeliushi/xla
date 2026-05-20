@@ -1,0 +1,196 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0047.jit__reduce_sum.cpu_after_optimizations<br/>Computation main.9</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node5:hover ~ %23edge10 text { fill: %231976d2; }
+  %23node5:hover ~ %23edge10 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node5:hover ~ %23edge10 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge10 text { fill: %23d32f2f; }
+  %23node11:hover ~ %23edge10 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node11:hover ~ %23edge10 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge9 text { fill: %231976d2; }
+  %23node10:hover ~ %23edge9 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node10:hover ~ %23edge9 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge9 text { fill: %23d32f2f; }
+  %23node9:hover ~ %23edge9 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node9:hover ~ %23edge9 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust3:hover ~ %23edge9 text { fill: %23d32f2f; }
+  %23clust3:hover ~ %23edge9 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23clust3:hover ~ %23edge9 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge8 text { fill: %231976d2; }
+  %23node9:hover ~ %23edge8 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node9:hover ~ %23edge8 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge8 text { fill: %23d32f2f; }
+  %23node8:hover ~ %23edge8 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node8:hover ~ %23edge8 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge6 text { fill: %231976d2; }
+  %23node7:hover ~ %23edge6 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node7:hover ~ %23edge6 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge6 text { fill: %23d32f2f; }
+  %23node6:hover ~ %23edge6 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node6:hover ~ %23edge6 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge4 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge4 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge4 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge7 text { fill: %231976d2; }
+  %23node8:hover ~ %23edge7 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node8:hover ~ %23edge7 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge7 text { fill: %23d32f2f; }
+  %23node7:hover ~ %23edge7 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node7:hover ~ %23edge7 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge5 text { fill: %231976d2; }
+  %23node6:hover ~ %23edge5 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node6:hover ~ %23edge5 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge5 text { fill: %23d32f2f; }
+  %23node11:hover ~ %23edge5 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node11:hover ~ %23edge5 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23clust3:hover ~ %23edge5 text { fill: %231976d2; }
+  %23clust3:hover ~ %23edge5 path { stroke: %231976d2; stroke-width: .2em; }
+  %23clust3:hover ~ %23edge5 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node4:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node4:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge11 text { fill: %231976d2; }
+  %23node11:hover ~ %23edge11 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node11:hover ~ %23edge11 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node12:hover ~ %23edge11 text { fill: %23d32f2f; }
+  %23node12:hover ~ %23edge11 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node12:hover ~ %23edge11 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+100946499029152 [label=<<b>Parameter 0</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="a", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+subgraph cluster_100946514600272 {
+style=rounded; color=black;
+label = <Subcomputation for <b>call</b><br/>parallel_reduce-window>;
+labelloc = t;
+tooltip = " ";
+100946514654080 [label=<<b>reduce-window.clone</b><br/>Subcomputation: <b>add</b><br/>window={size=1x1x1x32 stride=1x1x1x32}<br/>f32[32,16,512,16]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
+100946517728704 [label=<<b>Parameter 0</b><br/>f32[32,16,512,512]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+100946517727280 [label=<<b>Parameter 1</b><br/>f32[]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+
+}  // cluster_100946514600272
+
+100946514694400 [label=<<b>call</b><br/>f32[32,16,512,16]{3,2,1,0}<br/><b>operand 1</b> = f32[] 0>, shape=rect, tooltip="", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+subgraph cluster_100946514688688 {
+style=rounded; color=black;
+label = <Subcomputation for <b>call.1</b><br/>parallel_bitcast_copy_fusion>;
+labelloc = t;
+tooltip = " ";
+subgraph cluster_100946515521472 {
+style="rounded,filled,bold"; fillcolor="#f5f5f5"; color="#c2c2c2;"
+label = <Fused expression for <b>bitcast_copy_fusion.clone</b><br/>loop fusion<br/>kind=kLoop>;
+labelloc = t;
+tooltip = " ";
+100946517601184 [label=<<b>copy.2</b><br/>f32[32,16,512,1]{3,2,1,0}>, shape=rect, tooltip="jit(_reduce_sum)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:35
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:35
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:62
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+100946516718928 [label=<<b>bitcast.2</b><br/>f32[32,16,512,1]{2,1,0,3}>, shape=rect, tooltip="jit(_reduce_sum)/jit(main)/reduce_sum
+source: /home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:35
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:35
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:62
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+100946517734368 [label=<<b>reduce.2</b><br/>Subcomputation: <b>add</b><br/>dimensions={3}<br/>f32[32,16,512]{2,1,0}<br/><b>operand 1</b> = f32[] 0>, shape=rect, tooltip="jit(_reduce_sum)/jit(main)/reduce_sum
+source: /home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:35
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:35
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析3/heavy_model.py:__call__:62
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:scope_fn:3094
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1079
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:wrapper:1115
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:init_with_output:2305", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
+100946517726688 [label=<<b>Parameter 0</b><br/>f32[32,16,512,16]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+
+}  // cluster_100946515521472
+
+100946517736528 [label=<<b>Parameter 0</b><br/>f32[32,16,512,16]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#c88719", fillcolor="#ffb74d"];
+
+}  // cluster_100946514688688
+
+100946517737600 [label=<<b>call.1</b><br/>f32[32,16,512,1]{3,2,1,0}>, shape=rect, tooltip="", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+cluster_100946517717936 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+100946514654080 -> 100946514694400 [ltail="cluster_100946514600272", style="dashed" tooltip="parallel_reduce-window -> call"];
+100946517728704 -> 100946514654080 [arrowhead=normal tooltip="p -> reduce-window.clone"  headlabel="0", labeldistance=2];
+100946517727280 -> 100946514654080 [arrowhead=empty tooltip="p.1 -> reduce-window.clone"  headlabel="1", labeldistance=2];
+100946499029152 -> 100946514694400 [arrowhead=normal tooltip="Arg_0.1 -> call"  headlabel="0", labeldistance=2];
+100946517601184 -> 100946517737600 [ltail="cluster_100946514688688", style="dashed" tooltip="parallel_bitcast_copy_fusion -> call.1"];
+100946516718928 -> 100946517601184 [arrowhead=normal tooltip="bitcast.2 -> copy.2" ];
+100946517734368 -> 100946516718928 [arrowhead=normal tooltip="reduce.2 -> bitcast.2" ];
+100946517726688 -> 100946517734368 [arrowhead=normal tooltip="param_0.3 -> reduce.2"  headlabel="0", labeldistance=2];
+100946517736528 -> 100946517726688 [arrowhead=normal tooltip="p.2 -> param_0.3" ];
+100946514694400 -> 100946517737600 [arrowhead=normal tooltip="call -> call.1" ];
+100946517737600 -> cluster_100946517717936 [tooltip=" "];
+}

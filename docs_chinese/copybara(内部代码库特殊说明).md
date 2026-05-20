@@ -1,3 +1,5 @@
+> 本文翻译自 docs/copybara.md
+
 # Copybara 特殊说明
 本文档旨在描述您在贡献代码时可能遇到的一些奇特现象，这些现象是由于用于管理从 Google 内部代码库来回复制源代码的工具造成的。该工具称为 [Copybara](https://github.com/google/copybara).
 

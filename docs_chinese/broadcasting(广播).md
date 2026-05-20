@@ -1,3 +1,5 @@
+> 本文翻译自 docs/broadcasting.md
+
 # 广播
 
 本文档描述了 XLA 中的广播语义。

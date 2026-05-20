@@ -1,0 +1,227 @@
+Total bytes used: 1645437224 (1.53GiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+   1.13GiB( 73%);  416.21MiB; allocation 148: size 1.13GiB, preallocated-temp:
+   1.19GiB( 78%);  352.21MiB; allocation 0: size 64.00MiB, output shape is |f32[32,512,1024]|, maybe-live-out:
+   1.25GiB( 82%);  288.21MiB; allocation 1: size 64.00MiB, parameter 72, shape |f32[32,512,1024]| at ShapeIndex {}:
+   1.27GiB( 83%);  272.21MiB; allocation 2: size 16.00MiB, parameter 9, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.28GiB( 84%);  256.21MiB; allocation 3: size 16.00MiB, parameter 11, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.30GiB( 85%);  240.21MiB; allocation 4: size 16.00MiB, parameter 21, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.31GiB( 86%);  224.21MiB; allocation 5: size 16.00MiB, parameter 23, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.33GiB( 87%);  208.21MiB; allocation 6: size 16.00MiB, parameter 33, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.34GiB( 88%);  192.21MiB; allocation 7: size 16.00MiB, parameter 35, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.36GiB( 89%);  176.21MiB; allocation 8: size 16.00MiB, parameter 45, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.38GiB( 90%);  160.21MiB; allocation 9: size 16.00MiB, parameter 47, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.39GiB( 91%);  144.21MiB; allocation 10: size 16.00MiB, parameter 57, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.41GiB( 92%);  128.21MiB; allocation 11: size 16.00MiB, parameter 59, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.42GiB( 93%);  112.21MiB; allocation 12: size 16.00MiB, parameter 69, shape |f32[1024,4096]| at ShapeIndex {}:
+   1.44GiB( 94%);   96.21MiB; allocation 13: size 16.00MiB, parameter 71, shape |f32[4096,1024]| at ShapeIndex {}:
+   1.44GiB( 94%);   92.21MiB; allocation 14: size 4.00MiB, parameter 1, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.45GiB( 94%);   88.21MiB; allocation 15: size 4.00MiB, parameter 3, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.45GiB( 95%);   84.21MiB; allocation 16: size 4.00MiB, parameter 5, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.45GiB( 95%);   80.21MiB; allocation 17: size 4.00MiB, parameter 7, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.46GiB( 95%);   76.21MiB; allocation 18: size 4.00MiB, parameter 13, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.46GiB( 95%);   72.21MiB; allocation 19: size 4.00MiB, parameter 15, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.47GiB( 96%);   68.21MiB; allocation 20: size 4.00MiB, parameter 17, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.47GiB( 96%);   64.21MiB; allocation 21: size 4.00MiB, parameter 19, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.47GiB( 96%);   60.21MiB; allocation 22: size 4.00MiB, parameter 25, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.48GiB( 96%);   56.21MiB; allocation 23: size 4.00MiB, parameter 27, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.48GiB( 97%);   52.21MiB; allocation 24: size 4.00MiB, parameter 29, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.49GiB( 97%);   48.21MiB; allocation 25: size 4.00MiB, parameter 31, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.49GiB( 97%);   44.21MiB; allocation 26: size 4.00MiB, parameter 37, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.49GiB( 97%);   40.21MiB; allocation 27: size 4.00MiB, parameter 39, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.50GiB( 98%);   36.21MiB; allocation 28: size 4.00MiB, parameter 41, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.50GiB( 98%);   32.21MiB; allocation 29: size 4.00MiB, parameter 43, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.50GiB( 98%);   28.21MiB; allocation 30: size 4.00MiB, parameter 49, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.51GiB( 98%);   24.21MiB; allocation 31: size 4.00MiB, parameter 51, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.51GiB( 99%);   20.21MiB; allocation 32: size 4.00MiB, parameter 53, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.52GiB( 99%);   16.21MiB; allocation 33: size 4.00MiB, parameter 55, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.52GiB( 99%);   12.21MiB; allocation 34: size 4.00MiB, parameter 61, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.52GiB( 99%);    8.21MiB; allocation 35: size 4.00MiB, parameter 63, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.53GiB(100%);    4.21MiB; allocation 36: size 4.00MiB, parameter 65, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.53GiB(100%);   216.3KiB; allocation 37: size 4.00MiB, parameter 67, shape |f32[1024,1024]| at ShapeIndex {}:
+   1.53GiB(100%);   200.3KiB; allocation 38: size 16.0KiB, parameter 8, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   184.3KiB; allocation 39: size 16.0KiB, parameter 20, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   168.3KiB; allocation 40: size 16.0KiB, parameter 32, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   152.3KiB; allocation 41: size 16.0KiB, parameter 44, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   136.3KiB; allocation 42: size 16.0KiB, parameter 56, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   120.3KiB; allocation 43: size 16.0KiB, parameter 68, shape |f32[4096]| at ShapeIndex {}:
+   1.53GiB(100%);   116.3KiB; allocation 44: size 4.0KiB, parameter 6, shape |f32[1024]| at ShapeIndex {}:
+   1.53GiB(100%);   112.3KiB; allocation 45: size 4.0KiB, parameter 0, shape |f32[1024]| at ShapeIndex {}:
+   1.53GiB(100%);   108.3KiB; allocation 46: size 4.0KiB, parameter 2, shape |f32[1024]| at ShapeIndex {}:
+   1.53GiB(100%);   104.3KiB; allocation 47: size 4.0KiB, parameter 4, shape |f32[1024]| at ShapeIndex {}:
+   1.53GiB(100%);   100.3KiB; allocation 48: size 4.0KiB, parameter 10, shape |f32[1024]| at ShapeIndex {}:
+   1.53GiB(100%);    96.3KiB; allocation 49: size 4.0KiB, parameter 18, shape |f32[1024]| at ShapeIndex {}:
+The rest 98 allocations are less than 5% of the total size and not shown.
+
+
+Allocations sorted by size with their values:
+allocation 148: size 1.13GiB, preallocated-temp:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	512.00MiB( 33%);  512.00MiB;    536870912;               24; 6×f32[32,512,1024], 6×f32[32,16,512,64], 12×f32[32,16,512,512]
+	  1.00GiB( 67%);  512.00MiB;            0;               25; 7×f32[16384,1024], 6×f32[16384,4096], 12×f32[32,16,512,512]
+	  1.25GiB( 83%);  256.00MiB;    268435456;                7; 6×f32[16384,4096], f32[16384,1024]
+	  1.31GiB( 87%);   64.00MiB;    671088640;                5; 5×f32[16384,1024]
+	  1.38GiB( 92%);   64.00MiB;    603979776;                6; 6×f32[16384,1024]
+	  1.44GiB( 96%);   64.00MiB;   1073741824;                6; f32[32,16,512,64], 5×f32[32,512,1024]
+	  1.50GiB(100%);   64.00MiB;   1140850688;                7; 5×f32[32,16,512,64], 2×f32[32,16,512]
+	  1.50GiB(100%);    1.00MiB;   1207959552;               10; 10×f32[32,16,512]
+
+allocation 0: size 64.00MiB, output shape is |f32[32,512,1024]|, maybe-live-out:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	 64.00MiB(100%);   64.00MiB;            0;               42; 6×f32[32,16,512,64], f32[32,512,1024], 12×f32[32,16,512,16], 6×f32[32,16,64,512], 17×f32[16384,1024]
+
+allocation 1: size 64.00MiB, parameter 72, shape |f32[32,512,1024]| at ShapeIndex {}:
+allocation 2: size 16.00MiB, parameter 9, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 3: size 16.00MiB, parameter 11, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 4: size 16.00MiB, parameter 21, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 5: size 16.00MiB, parameter 23, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 6: size 16.00MiB, parameter 33, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 7: size 16.00MiB, parameter 35, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 8: size 16.00MiB, parameter 45, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 9: size 16.00MiB, parameter 47, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 10: size 16.00MiB, parameter 57, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 11: size 16.00MiB, parameter 59, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 12: size 16.00MiB, parameter 69, shape |f32[1024,4096]| at ShapeIndex {}:
+allocation 13: size 16.00MiB, parameter 71, shape |f32[4096,1024]| at ShapeIndex {}:
+allocation 14: size 4.00MiB, parameter 1, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 15: size 4.00MiB, parameter 3, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 16: size 4.00MiB, parameter 5, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 17: size 4.00MiB, parameter 7, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 18: size 4.00MiB, parameter 13, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 19: size 4.00MiB, parameter 15, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 20: size 4.00MiB, parameter 17, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 21: size 4.00MiB, parameter 19, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 22: size 4.00MiB, parameter 25, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 23: size 4.00MiB, parameter 27, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 24: size 4.00MiB, parameter 29, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 25: size 4.00MiB, parameter 31, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 26: size 4.00MiB, parameter 37, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 27: size 4.00MiB, parameter 39, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 28: size 4.00MiB, parameter 41, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 29: size 4.00MiB, parameter 43, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 30: size 4.00MiB, parameter 49, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 31: size 4.00MiB, parameter 51, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 32: size 4.00MiB, parameter 53, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 33: size 4.00MiB, parameter 55, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 34: size 4.00MiB, parameter 61, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 35: size 4.00MiB, parameter 63, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 36: size 4.00MiB, parameter 65, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 37: size 4.00MiB, parameter 67, shape |f32[1024,1024]| at ShapeIndex {}:
+allocation 38: size 16.0KiB, parameter 8, shape |f32[4096]| at ShapeIndex {}:
+allocation 39: size 16.0KiB, parameter 20, shape |f32[4096]| at ShapeIndex {}:
+allocation 40: size 16.0KiB, parameter 32, shape |f32[4096]| at ShapeIndex {}:
+allocation 41: size 16.0KiB, parameter 44, shape |f32[4096]| at ShapeIndex {}:
+allocation 42: size 16.0KiB, parameter 56, shape |f32[4096]| at ShapeIndex {}:
+allocation 43: size 16.0KiB, parameter 68, shape |f32[4096]| at ShapeIndex {}:
+allocation 44: size 4.0KiB, parameter 6, shape |f32[1024]| at ShapeIndex {}:
+allocation 45: size 4.0KiB, parameter 0, shape |f32[1024]| at ShapeIndex {}:
+allocation 46: size 4.0KiB, parameter 2, shape |f32[1024]| at ShapeIndex {}:
+allocation 47: size 4.0KiB, parameter 4, shape |f32[1024]| at ShapeIndex {}:
+allocation 48: size 4.0KiB, parameter 10, shape |f32[1024]| at ShapeIndex {}:
+allocation 49: size 4.0KiB, parameter 18, shape |f32[1024]| at ShapeIndex {}:
+allocation 50: size 4.0KiB, parameter 12, shape |f32[1024]| at ShapeIndex {}:
+allocation 51: size 4.0KiB, parameter 14, shape |f32[1024]| at ShapeIndex {}:
+allocation 52: size 4.0KiB, parameter 16, shape |f32[1024]| at ShapeIndex {}:
+allocation 53: size 4.0KiB, parameter 22, shape |f32[1024]| at ShapeIndex {}:
+allocation 54: size 4.0KiB, parameter 30, shape |f32[1024]| at ShapeIndex {}:
+allocation 55: size 4.0KiB, parameter 24, shape |f32[1024]| at ShapeIndex {}:
+allocation 56: size 4.0KiB, parameter 26, shape |f32[1024]| at ShapeIndex {}:
+allocation 57: size 4.0KiB, parameter 28, shape |f32[1024]| at ShapeIndex {}:
+allocation 58: size 4.0KiB, parameter 34, shape |f32[1024]| at ShapeIndex {}:
+allocation 59: size 4.0KiB, parameter 42, shape |f32[1024]| at ShapeIndex {}:
+allocation 60: size 4.0KiB, parameter 36, shape |f32[1024]| at ShapeIndex {}:
+allocation 61: size 4.0KiB, parameter 38, shape |f32[1024]| at ShapeIndex {}:
+allocation 62: size 4.0KiB, parameter 40, shape |f32[1024]| at ShapeIndex {}:
+allocation 63: size 4.0KiB, parameter 46, shape |f32[1024]| at ShapeIndex {}:
+allocation 64: size 4.0KiB, parameter 54, shape |f32[1024]| at ShapeIndex {}:
+allocation 65: size 4.0KiB, parameter 48, shape |f32[1024]| at ShapeIndex {}:
+allocation 66: size 4.0KiB, parameter 50, shape |f32[1024]| at ShapeIndex {}:
+allocation 67: size 4.0KiB, parameter 52, shape |f32[1024]| at ShapeIndex {}:
+allocation 68: size 4.0KiB, parameter 58, shape |f32[1024]| at ShapeIndex {}:
+allocation 69: size 4.0KiB, parameter 66, shape |f32[1024]| at ShapeIndex {}:
+allocation 70: size 4.0KiB, parameter 60, shape |f32[1024]| at ShapeIndex {}:
+allocation 71: size 4.0KiB, parameter 62, shape |f32[1024]| at ShapeIndex {}:
+allocation 72: size 4.0KiB, parameter 64, shape |f32[1024]| at ShapeIndex {}:
+allocation 73: size 4.0KiB, parameter 70, shape |f32[1024]| at ShapeIndex {}:
+allocation 74: size 4B, constant:
+allocation 75: size 4B, constant:
+allocation 76: size 4B, thread-local:
+allocation 77: size 4B, thread-local:
+allocation 78: size 4B, thread-local:
+allocation 79: size 4B, thread-local:
+allocation 80: size 4B, thread-local:
+allocation 81: size 4B, thread-local:
+allocation 82: size 4B, thread-local:
+allocation 83: size 4B, thread-local:
+allocation 84: size 4B, thread-local:
+allocation 85: size 4B, thread-local:
+allocation 86: size 4B, thread-local:
+allocation 87: size 4B, thread-local:
+allocation 88: size 4B, thread-local:
+allocation 89: size 4B, thread-local:
+allocation 90: size 4B, thread-local:
+allocation 91: size 4B, thread-local:
+allocation 92: size 4B, thread-local:
+allocation 93: size 4B, thread-local:
+allocation 94: size 4B, thread-local:
+allocation 95: size 4B, thread-local:
+allocation 96: size 4B, thread-local:
+allocation 97: size 4B, thread-local:
+allocation 98: size 4B, thread-local:
+allocation 99: size 4B, thread-local:
+allocation 100: size 4B, thread-local:
+allocation 101: size 4B, thread-local:
+allocation 102: size 4B, thread-local:
+allocation 103: size 4B, thread-local:
+allocation 104: size 4B, thread-local:
+allocation 105: size 4B, thread-local:
+allocation 106: size 4B, thread-local:
+allocation 107: size 4B, thread-local:
+allocation 108: size 4B, thread-local:
+allocation 109: size 4B, thread-local:
+allocation 110: size 4B, thread-local:
+allocation 111: size 4B, thread-local:
+allocation 112: size 4B, thread-local:
+allocation 113: size 4B, thread-local:
+allocation 114: size 4B, thread-local:
+allocation 115: size 4B, thread-local:
+allocation 116: size 4B, thread-local:
+allocation 117: size 4B, thread-local:
+allocation 118: size 4B, thread-local:
+allocation 119: size 4B, thread-local:
+allocation 120: size 4B, thread-local:
+allocation 121: size 4B, thread-local:
+allocation 122: size 4B, thread-local:
+allocation 123: size 4B, thread-local:
+allocation 124: size 4B, thread-local:
+allocation 125: size 4B, thread-local:
+allocation 126: size 4B, thread-local:
+allocation 127: size 4B, thread-local:
+allocation 128: size 4B, thread-local:
+allocation 129: size 4B, thread-local:
+allocation 130: size 4B, thread-local:
+allocation 131: size 4B, thread-local:
+allocation 132: size 4B, thread-local:
+allocation 133: size 4B, thread-local:
+allocation 134: size 4B, thread-local:
+allocation 135: size 4B, thread-local:
+allocation 136: size 4B, thread-local:
+allocation 137: size 4B, thread-local:
+allocation 138: size 4B, thread-local:
+allocation 139: size 4B, thread-local:
+allocation 140: size 4B, thread-local:
+allocation 141: size 4B, thread-local:
+allocation 142: size 4B, thread-local:
+allocation 143: size 4B, thread-local:
+allocation 144: size 4B, thread-local:
+allocation 145: size 4B, thread-local:
+allocation 146: size 4B, thread-local:
+allocation 147: size 4B, thread-local:

@@ -1,0 +1,134 @@
+HloModule jit__threefry_fold_in, entry_computation_layout={(u32[2]{0}, u32[])->u32[2]{0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%None.86 (Arg_0.30: s32[], Arg_1.31: u32[1], Arg_2.32: u32[1], Arg_3.33: u32[], Arg_4.34: u32[], Arg_5.35: u32[], Arg_6.36: u32[4], Arg_7.37: u32[4]) -> (s32[], u32[1], u32[1], u32[], u32[], /*index=5*/u32[], u32[4], u32[4]) {
+  %Arg_0.30 = s32[] parameter(0), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %constant.39 = s32[] constant(1)
+  %add.40 = s32[] add(%Arg_0.30, %constant.39), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_1.31 = u32[1]{0} parameter(1), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %Arg_2.32 = u32[1]{0} parameter(2), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %add.43 = u32[1]{0} add(%Arg_1.31, %Arg_2.32), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_6.36 = u32[4]{0} parameter(6), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %slice.41 = u32[1]{0} slice(%Arg_6.36), slice={[0:1]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-left.44 = u32[1]{0} shift-left(%Arg_2.32, %slice.41), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %constant.38 = u32[] constant(32)
+  %reshape.42 = u32[] reshape(%slice.41), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %subtract.45 = u32[] subtract(%constant.38, %reshape.42), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.46 = u32[1]{0} reshape(%subtract.45), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-right-logical.47 = u32[1]{0} shift-right-logical(%Arg_2.32, %reshape.46), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %or.48 = u32[1]{0} or(%shift-left.44, %shift-right-logical.47), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %xor.49 = u32[1]{0} xor(%add.43, %or.48), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.52 = u32[1]{0} add(%add.43, %xor.49), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %slice.50 = u32[1]{0} slice(%Arg_6.36), slice={[1:2]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-left.53 = u32[1]{0} shift-left(%xor.49, %slice.50), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.51 = u32[] reshape(%slice.50), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %subtract.54 = u32[] subtract(%constant.38, %reshape.51), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.55 = u32[1]{0} reshape(%subtract.54), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-right-logical.56 = u32[1]{0} shift-right-logical(%xor.49, %reshape.55), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %or.57 = u32[1]{0} or(%shift-left.53, %shift-right-logical.56), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %xor.58 = u32[1]{0} xor(%add.52, %or.57), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.61 = u32[1]{0} add(%add.52, %xor.58), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %slice.59 = u32[1]{0} slice(%Arg_6.36), slice={[2:3]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-left.62 = u32[1]{0} shift-left(%xor.58, %slice.59), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.60 = u32[] reshape(%slice.59), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %subtract.63 = u32[] subtract(%constant.38, %reshape.60), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.64 = u32[1]{0} reshape(%subtract.63), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-right-logical.65 = u32[1]{0} shift-right-logical(%xor.58, %reshape.64), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %or.66 = u32[1]{0} or(%shift-left.62, %shift-right-logical.65), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %xor.67 = u32[1]{0} xor(%add.61, %or.66), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.70 = u32[1]{0} add(%add.61, %xor.67), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_3.33 = u32[] parameter(3), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %reshape.77 = u32[1]{0} reshape(%Arg_3.33), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.78 = u32[1]{0} add(%add.70, %reshape.77), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %slice.68 = u32[1]{0} slice(%Arg_6.36), slice={[3:4]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-left.71 = u32[1]{0} shift-left(%xor.67, %slice.68), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.69 = u32[] reshape(%slice.68), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %subtract.72 = u32[] subtract(%constant.38, %reshape.69), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.73 = u32[1]{0} reshape(%subtract.72), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %shift-right-logical.74 = u32[1]{0} shift-right-logical(%xor.67, %reshape.73), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %or.75 = u32[1]{0} or(%shift-left.71, %shift-right-logical.74), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %xor.76 = u32[1]{0} xor(%add.70, %or.75), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_4.34 = u32[] parameter(4), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %reshape.79 = u32[1]{0} reshape(%Arg_4.34), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.80 = u32[1]{0} add(%xor.76, %reshape.79), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.81 = s32[] add(%Arg_0.30, %constant.39), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %convert.82 = u32[] convert(%add.81), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.83 = u32[1]{0} reshape(%convert.82), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.84 = u32[1]{0} add(%add.80, %reshape.83), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_5.35 = u32[] parameter(5), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  %Arg_7.37 = u32[4]{0} parameter(7), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/closed_call"}
+  ROOT %tuple.85 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) tuple(%add.40, %add.78, %add.84, %Arg_4.34, %Arg_5.35, /*index=5*/%Arg_3.33, %Arg_7.37, %Arg_6.36)
+}
+
+%region_0.98 (arg_tuple.19: (s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[], u32[4], u32[4])) -> (s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[], u32[4], u32[4]) {
+  %arg_tuple.19 = (s32[], s32[], u32[1]{0}, u32[1]{0}, u32[], /*index=5*/u32[], u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+  %get-tuple-element.20 = s32[] get-tuple-element(%arg_tuple.19), index=0
+  %constant.29 = s32[] constant(1)
+  %add.96 = s32[] add(%get-tuple-element.20, %constant.29), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.21 = s32[] get-tuple-element(%arg_tuple.19), index=1
+  %get-tuple-element.22 = u32[1]{0} get-tuple-element(%arg_tuple.19), index=2
+  %get-tuple-element.23 = u32[1]{0} get-tuple-element(%arg_tuple.19), index=3
+  %get-tuple-element.24 = u32[] get-tuple-element(%arg_tuple.19), index=4
+  %get-tuple-element.25 = u32[] get-tuple-element(%arg_tuple.19), index=5
+  %get-tuple-element.26 = u32[] get-tuple-element(%arg_tuple.19), index=6
+  %get-tuple-element.27 = u32[4]{0} get-tuple-element(%arg_tuple.19), index=7
+  %get-tuple-element.28 = u32[4]{0} get-tuple-element(%arg_tuple.19), index=8
+  %call.87 = (s32[], u32[1]{0}, u32[1]{0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) call(%get-tuple-element.21, %get-tuple-element.22, %get-tuple-element.23, %get-tuple-element.24, %get-tuple-element.25, /*index=5*/%get-tuple-element.26, %get-tuple-element.27, %get-tuple-element.28), to_apply=%None.86
+  %get-tuple-element.88 = s32[] get-tuple-element(%call.87), index=0
+  %get-tuple-element.89 = u32[1]{0} get-tuple-element(%call.87), index=1
+  %get-tuple-element.90 = u32[1]{0} get-tuple-element(%call.87), index=2
+  %get-tuple-element.91 = u32[] get-tuple-element(%call.87), index=3
+  %get-tuple-element.92 = u32[] get-tuple-element(%call.87), index=4
+  %get-tuple-element.93 = u32[] get-tuple-element(%call.87), index=5
+  %get-tuple-element.94 = u32[4]{0} get-tuple-element(%call.87), index=6
+  %get-tuple-element.95 = u32[4]{0} get-tuple-element(%call.87), index=7
+  ROOT %tuple.97 = (s32[], s32[], u32[1]{0}, u32[1]{0}, u32[], /*index=5*/u32[], u32[], u32[4]{0}, u32[4]{0}) tuple(%add.96, %get-tuple-element.88, %get-tuple-element.89, %get-tuple-element.90, %get-tuple-element.91, /*index=5*/%get-tuple-element.92, %get-tuple-element.93, %get-tuple-element.94, %get-tuple-element.95)
+}
+
+%region_1.111 (arg_tuple.99: (s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[], u32[4], u32[4])) -> pred[] {
+  %arg_tuple.99 = (s32[], s32[], u32[1]{0}, u32[1]{0}, u32[], /*index=5*/u32[], u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+  %get-tuple-element.101 = s32[] get-tuple-element(%arg_tuple.99), index=1
+  %get-tuple-element.102 = u32[1]{0} get-tuple-element(%arg_tuple.99), index=2
+  %get-tuple-element.103 = u32[1]{0} get-tuple-element(%arg_tuple.99), index=3
+  %get-tuple-element.104 = u32[] get-tuple-element(%arg_tuple.99), index=4
+  %get-tuple-element.105 = u32[] get-tuple-element(%arg_tuple.99), index=5
+  %get-tuple-element.106 = u32[] get-tuple-element(%arg_tuple.99), index=6
+  %get-tuple-element.107 = u32[4]{0} get-tuple-element(%arg_tuple.99), index=7
+  %get-tuple-element.108 = u32[4]{0} get-tuple-element(%arg_tuple.99), index=8
+  %get-tuple-element.100 = s32[] get-tuple-element(%arg_tuple.99), index=0
+  %constant.109 = s32[] constant(5)
+  ROOT %compare.110 = pred[] compare(%get-tuple-element.100, %constant.109), direction=LT, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while/cond/lt" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+}
+
+ENTRY %main.124 (Arg_0.1: u32[2], Arg_1.2: u32[]) -> u32[2] {
+  %constant.3 = s32[] constant(0)
+  %Arg_1.2 = u32[] parameter(1), metadata={op_name="data"}
+  %constant.7 = u32[] constant(32)
+  %shift-right-logical.8 = u32[] shift-right-logical(%Arg_1.2, %constant.7), metadata={op_name="jit(_threefry_fold_in)/jit(main)/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.9 = u32[1]{0} reshape(%shift-right-logical.8), metadata={op_name="jit(_threefry_fold_in)/jit(main)/broadcast_in_dim" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %Arg_0.1 = u32[2]{0} parameter(0), metadata={op_name="key"}
+  %slice.11 = u32[1]{0} slice(%Arg_0.1), slice={[0:1]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.17 = u32[1]{0} add(%reshape.9, %slice.11), metadata={op_name="jit(_threefry_fold_in)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.10 = u32[1]{0} reshape(%Arg_1.2), metadata={op_name="jit(_threefry_fold_in)/jit(main)/broadcast_in_dim" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %slice.13 = u32[1]{0} slice(%Arg_0.1), slice={[1:2]}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %add.18 = u32[1]{0} add(%reshape.10, %slice.13), metadata={op_name="jit(_threefry_fold_in)/jit(main)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.14 = u32[] reshape(%slice.13), metadata={op_name="jit(_threefry_fold_in)/jit(main)/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %reshape.12 = u32[] reshape(%slice.11), metadata={op_name="jit(_threefry_fold_in)/jit(main)/squeeze" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %xor.15 = u32[] xor(%reshape.12, %reshape.14), metadata={op_name="jit(_threefry_fold_in)/jit(main)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %constant.4 = u32[] constant(466688986)
+  %xor.16 = u32[] xor(%xor.15, %constant.4), metadata={op_name="jit(_threefry_fold_in)/jit(main)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %constant.6 = u32[4]{0} constant({13, 15, 26, 6})
+  %constant.5 = u32[4]{0} constant({17, 29, 16, 24})
+  %tuple.112 = (s32[], s32[], u32[1]{0}, u32[1]{0}, u32[], /*index=5*/u32[], u32[], u32[4]{0}, u32[4]{0}) tuple(%constant.3, %constant.3, %add.17, %add.18, %reshape.14, /*index=5*/%xor.16, %reshape.12, %constant.6, %constant.5), metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %while.113 = (s32[], s32[], u32[1]{0}, u32[1]{0}, u32[], /*index=5*/u32[], u32[], u32[4]{0}, u32[4]{0}) while(%tuple.112), condition=%region_1.111, body=%region_0.98, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.114 = s32[] get-tuple-element(%while.113), index=0, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.115 = s32[] get-tuple-element(%while.113), index=1, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.118 = u32[] get-tuple-element(%while.113), index=4, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.119 = u32[] get-tuple-element(%while.113), index=5, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.120 = u32[] get-tuple-element(%while.113), index=6, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.121 = u32[4]{0} get-tuple-element(%while.113), index=7, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.122 = u32[4]{0} get-tuple-element(%while.113), index=8, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.116 = u32[1]{0} get-tuple-element(%while.113), index=2, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  %get-tuple-element.117 = u32[1]{0} get-tuple-element(%while.113), index=3, metadata={op_name="jit(_threefry_fold_in)/jit(main)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+  ROOT %concatenate.123 = u32[2]{0} concatenate(%get-tuple-element.116, %get-tuple-element.117), dimensions={0}, metadata={op_name="jit(_threefry_fold_in)/jit(main)/concatenate" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=140}
+}
+

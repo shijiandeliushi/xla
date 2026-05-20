@@ -1,0 +1,46 @@
+HloModule jit_forward_step, entry_computation_layout={(f32[512]{0}, f32[1024,512]{1,0}, f32[256]{0}, f32[512,256]{1,0}, f32[128]{0}, /*index=5*/f32[256,128]{1,0}, f32[64,1024]{1,0})->f32[64,128]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true,true,true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%relu.18 (Arg_0.14: f32[64,512]) -> f32[64,512] {
+  %Arg_0.14 = f32[64,512]{1,0} parameter(0), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/pjit"}
+  %constant.15 = f32[] constant(0)
+  %broadcast.16 = f32[64,512]{1,0} broadcast(%constant.15), dimensions={}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  ROOT %maximum.17 = f32[64,512]{1,0} maximum(%Arg_0.14, %broadcast.16), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+
+%relu_0.30 (Arg_0.26: f32[64,256]) -> f32[64,256] {
+  %Arg_0.26 = f32[64,256]{1,0} parameter(0), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/pjit"}
+  %constant.27 = f32[] constant(0)
+  %broadcast.28 = f32[64,256]{1,0} broadcast(%constant.27), dimensions={}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  ROOT %maximum.29 = f32[64,256]{1,0} maximum(%Arg_0.26, %broadcast.28), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+
+ENTRY %main.38 (Arg_0.1: f32[512], Arg_1.2: f32[1024,512], Arg_2.3: f32[256], Arg_3.4: f32[512,256], Arg_4.5: f32[128], Arg_5.6: f32[256,128], Arg_6.7: f32[64,1024]) -> f32[64,128] {
+  %Arg_6.7 = f32[64,1024]{1,0} parameter(6), metadata={op_name="x"}
+  %Arg_1.2 = f32[1024,512]{1,0} parameter(1), metadata={op_name="params[\'params\'][\'Dense_0\'][\'kernel\']"}
+  %dot.8 = f32[64,512]{1,0} dot(%Arg_6.7, %Arg_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  %Arg_0.1 = f32[512]{0} parameter(0), metadata={op_name="params[\'params\'][\'Dense_0\'][\'bias\']"}
+  %reshape.9 = f32[1,512]{1,0} reshape(%Arg_0.1), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/reshape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.10 = f32[1,512]{1,0} broadcast(%reshape.9), dimensions={0,1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %reshape.11 = f32[512]{0} reshape(%broadcast.10), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.12 = f32[64,512]{1,0} broadcast(%reshape.11), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %add.13 = f32[64,512]{1,0} add(%dot.8, %broadcast.12), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %call.19 = f32[64,512]{1,0} call(%add.13), to_apply=%relu.18
+  %Arg_3.4 = f32[512,256]{1,0} parameter(3), metadata={op_name="params[\'params\'][\'Dense_1\'][\'kernel\']"}
+  %dot.20 = f32[64,256]{1,0} dot(%call.19, %Arg_3.4), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  %Arg_2.3 = f32[256]{0} parameter(2), metadata={op_name="params[\'params\'][\'Dense_1\'][\'bias\']"}
+  %reshape.21 = f32[1,256]{1,0} reshape(%Arg_2.3), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/reshape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.22 = f32[1,256]{1,0} broadcast(%reshape.21), dimensions={0,1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %reshape.23 = f32[256]{0} reshape(%broadcast.22), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.24 = f32[64,256]{1,0} broadcast(%reshape.23), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %add.25 = f32[64,256]{1,0} add(%dot.20, %broadcast.24), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %call.31 = f32[64,256]{1,0} call(%add.25), to_apply=%relu_0.30
+  %Arg_5.6 = f32[256,128]{1,0} parameter(5), metadata={op_name="params[\'params\'][\'Dense_2\'][\'kernel\']"}
+  %dot.32 = f32[64,128]{1,0} dot(%call.31, %Arg_5.6), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  %Arg_4.5 = f32[128]{0} parameter(4), metadata={op_name="params[\'params\'][\'Dense_2\'][\'bias\']"}
+  %reshape.33 = f32[1,128]{1,0} reshape(%Arg_4.5), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/reshape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.34 = f32[1,128]{1,0} broadcast(%reshape.33), dimensions={0,1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %reshape.35 = f32[128]{0} reshape(%broadcast.34), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %broadcast.36 = f32[64,128]{1,0} broadcast(%reshape.35), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  ROOT %add.37 = f32[64,128]{1,0} add(%dot.32, %broadcast.36), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+}
+

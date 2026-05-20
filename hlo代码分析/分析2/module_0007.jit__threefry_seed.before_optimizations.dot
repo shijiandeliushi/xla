@@ -1,0 +1,112 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0007.jit__threefry_seed.before_optimizations<br/>Computation main.9</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node7:hover ~ %23edge8 text { fill: %231976d2; }
+  %23node7:hover ~ %23edge8 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node7:hover ~ %23edge8 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge8 text { fill: %23d32f2f; }
+  %23node8:hover ~ %23edge8 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node8:hover ~ %23edge8 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge6 text { fill: %231976d2; }
+  %23node4:hover ~ %23edge6 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node4:hover ~ %23edge6 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge6 text { fill: %23d32f2f; }
+  %23node7:hover ~ %23edge6 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node7:hover ~ %23edge6 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge5 text { fill: %231976d2; }
+  %23node5:hover ~ %23edge5 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node5:hover ~ %23edge5 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge5 text { fill: %23d32f2f; }
+  %23node6:hover ~ %23edge5 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node6:hover ~ %23edge5 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge7 text { fill: %231976d2; }
+  %23node6:hover ~ %23edge7 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node6:hover ~ %23edge7 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge7 text { fill: %23d32f2f; }
+  %23node7:hover ~ %23edge7 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node7:hover ~ %23edge7 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge4 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge4 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge4 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node2:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+107297893054080 [label=<<b>Parameter 0</b><br/>s32[]>, shape=rect, tooltip="seed", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+107297893826304 [label=<<b>shift-right-logical.3</b><br/>s32[]<br/><b>operand 1</b> = s32[] 32>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/shift_right_logical
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+107297893826832 [label=<<b>convert.4</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/convert_element_type
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+107297894154864 [label=<<b>reshape.5</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+107297893927840 [label=<<b>convert.6</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/convert_element_type
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+107297894818080 [label=<<b>reshape.7</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+107297894193168 [label=<<b>concatenate.8</b><br/>dimensions={0}<br/>u32[2]>, shape=rect, tooltip="jit(_threefry_seed)/jit(main)/concatenate
+source: /home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:37
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:<module>:37", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+cluster_107297894869360 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+107297893054080 -> 107297893826304 [arrowhead=empty tooltip="Arg_0.1 -> shift-right-logical.3"  headlabel="0", labeldistance=2];
+107297893826304 -> 107297893826832 [arrowhead=empty tooltip="shift-right-logical.3 -> convert.4" ];
+107297893826832 -> 107297894154864 [arrowhead=empty tooltip="convert.4 -> reshape.5" ];
+107297893054080 -> 107297893927840 [arrowhead=empty tooltip="Arg_0.1 -> convert.6" ];
+107297893927840 -> 107297894818080 [arrowhead=empty tooltip="convert.6 -> reshape.7" ];
+107297894154864 -> 107297894193168 [arrowhead=empty tooltip="reshape.5 -> concatenate.8"  headlabel="0", labeldistance=2];
+107297894818080 -> 107297894193168 [arrowhead=empty tooltip="reshape.7 -> concatenate.8"  headlabel="1", labeldistance=2];
+107297894193168 -> cluster_107297894869360 [tooltip=" "];
+}

@@ -1,0 +1,1789 @@
+digraph G {
+rankdir = TB;
+compound = true;
+label = <<b>module_0011.jit__threefry_fold_in.before_optimizations<br/>Computation main.124</b>>;
+labelloc = t;
+// Disable the tooltip.  Interestingly, "" doesn't work!
+tooltip = " ";
+// DOT graphs accept a stylesheet as a URI.  So naturally, an inline
+// stylesheet is a data URI!
+stylesheet=<
+  data:text/css,
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+  svg text {
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+    %23node73:hover ~ %23edge110 text { fill: %231976d2; }
+  %23node73:hover ~ %23edge110 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node73:hover ~ %23edge110 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node74:hover ~ %23edge110 text { fill: %23d32f2f; }
+  %23node74:hover ~ %23edge110 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node74:hover ~ %23edge110 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node73:hover ~ %23edge109 text { fill: %231976d2; }
+  %23node73:hover ~ %23edge109 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node73:hover ~ %23edge109 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node74:hover ~ %23edge109 text { fill: %23d32f2f; }
+  %23node74:hover ~ %23edge109 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node74:hover ~ %23edge109 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node74:hover ~ %23edge111 text { fill: %231976d2; }
+  %23node74:hover ~ %23edge111 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node74:hover ~ %23edge111 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node75:hover ~ %23edge111 text { fill: %23d32f2f; }
+  %23node75:hover ~ %23edge111 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node75:hover ~ %23edge111 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge108 text { fill: %231976d2; }
+  %23node14:hover ~ %23edge108 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node14:hover ~ %23edge108 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node73:hover ~ %23edge108 text { fill: %23d32f2f; }
+  %23node73:hover ~ %23edge108 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node73:hover ~ %23edge108 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node18:hover ~ %23edge95 text { fill: %231976d2; }
+  %23node18:hover ~ %23edge95 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node18:hover ~ %23edge95 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge95 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge95 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge95 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node67:hover ~ %23edge92 text { fill: %231976d2; }
+  %23node67:hover ~ %23edge92 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node67:hover ~ %23edge92 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge92 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge92 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge92 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node61:hover ~ %23edge91 text { fill: %231976d2; }
+  %23node61:hover ~ %23edge91 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node61:hover ~ %23edge91 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge91 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge91 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge91 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node23:hover ~ %23edge90 text { fill: %231976d2; }
+  %23node23:hover ~ %23edge90 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node23:hover ~ %23edge90 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge90 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge90 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge90 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node66:hover ~ %23edge89 text { fill: %231976d2; }
+  %23node66:hover ~ %23edge89 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node66:hover ~ %23edge89 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node67:hover ~ %23edge89 text { fill: %23d32f2f; }
+  %23node67:hover ~ %23edge89 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node67:hover ~ %23edge89 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node63:hover ~ %23edge88 text { fill: %231976d2; }
+  %23node63:hover ~ %23edge88 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node63:hover ~ %23edge88 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node67:hover ~ %23edge88 text { fill: %23d32f2f; }
+  %23node67:hover ~ %23edge88 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node67:hover ~ %23edge88 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node65:hover ~ %23edge87 text { fill: %231976d2; }
+  %23node65:hover ~ %23edge87 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node65:hover ~ %23edge87 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node66:hover ~ %23edge87 text { fill: %23d32f2f; }
+  %23node66:hover ~ %23edge87 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node66:hover ~ %23edge87 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node15:hover ~ %23edge85 text { fill: %231976d2; }
+  %23node15:hover ~ %23edge85 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node15:hover ~ %23edge85 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node64:hover ~ %23edge85 text { fill: %23d32f2f; }
+  %23node64:hover ~ %23edge85 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node64:hover ~ %23edge85 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node62:hover ~ %23edge84 text { fill: %231976d2; }
+  %23node62:hover ~ %23edge84 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node62:hover ~ %23edge84 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node63:hover ~ %23edge84 text { fill: %23d32f2f; }
+  %23node63:hover ~ %23edge84 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node63:hover ~ %23edge84 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node59:hover ~ %23edge83 text { fill: %231976d2; }
+  %23node59:hover ~ %23edge83 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node59:hover ~ %23edge83 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node63:hover ~ %23edge83 text { fill: %23d32f2f; }
+  %23node63:hover ~ %23edge83 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node63:hover ~ %23edge83 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node53:hover ~ %23edge80 text { fill: %231976d2; }
+  %23node53:hover ~ %23edge80 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node53:hover ~ %23edge80 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node61:hover ~ %23edge80 text { fill: %23d32f2f; }
+  %23node61:hover ~ %23edge80 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node61:hover ~ %23edge80 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node57:hover ~ %23edge76 text { fill: %231976d2; }
+  %23node57:hover ~ %23edge76 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node57:hover ~ %23edge76 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node58:hover ~ %23edge76 text { fill: %23d32f2f; }
+  %23node58:hover ~ %23edge76 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node58:hover ~ %23edge76 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node56:hover ~ %23edge74 text { fill: %231976d2; }
+  %23node56:hover ~ %23edge74 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node56:hover ~ %23edge74 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node57:hover ~ %23edge74 text { fill: %23d32f2f; }
+  %23node57:hover ~ %23edge74 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node57:hover ~ %23edge74 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node55:hover ~ %23edge72 text { fill: %231976d2; }
+  %23node55:hover ~ %23edge72 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node55:hover ~ %23edge72 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node56:hover ~ %23edge72 text { fill: %23d32f2f; }
+  %23node56:hover ~ %23edge72 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node56:hover ~ %23edge72 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node19:hover ~ %23edge93 text { fill: %231976d2; }
+  %23node19:hover ~ %23edge93 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node19:hover ~ %23edge93 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge93 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge93 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge93 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node51:hover ~ %23edge70 text { fill: %231976d2; }
+  %23node51:hover ~ %23edge70 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node51:hover ~ %23edge70 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node54:hover ~ %23edge70 text { fill: %23d32f2f; }
+  %23node54:hover ~ %23edge70 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node54:hover ~ %23edge70 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node50:hover ~ %23edge69 text { fill: %231976d2; }
+  %23node50:hover ~ %23edge69 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node50:hover ~ %23edge69 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node54:hover ~ %23edge69 text { fill: %23d32f2f; }
+  %23node54:hover ~ %23edge69 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node54:hover ~ %23edge69 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node21:hover ~ %23edge65 text { fill: %231976d2; }
+  %23node21:hover ~ %23edge65 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node21:hover ~ %23edge65 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node51:hover ~ %23edge65 text { fill: %23d32f2f; }
+  %23node51:hover ~ %23edge65 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node51:hover ~ %23edge65 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node20:hover ~ %23edge94 text { fill: %231976d2; }
+  %23node20:hover ~ %23edge94 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node20:hover ~ %23edge94 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge94 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge94 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge94 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node48:hover ~ %23edge62 text { fill: %231976d2; }
+  %23node48:hover ~ %23edge62 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node48:hover ~ %23edge62 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node49:hover ~ %23edge62 text { fill: %23d32f2f; }
+  %23node49:hover ~ %23edge62 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node49:hover ~ %23edge62 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node19:hover ~ %23edge82 text { fill: %231976d2; }
+  %23node19:hover ~ %23edge82 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node19:hover ~ %23edge82 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node62:hover ~ %23edge82 text { fill: %23d32f2f; }
+  %23node62:hover ~ %23edge82 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node62:hover ~ %23edge82 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node45:hover ~ %23edge61 text { fill: %231976d2; }
+  %23node45:hover ~ %23edge61 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node45:hover ~ %23edge61 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node49:hover ~ %23edge61 text { fill: %23d32f2f; }
+  %23node49:hover ~ %23edge61 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node49:hover ~ %23edge61 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node64:hover ~ %23edge86 text { fill: %231976d2; }
+  %23node64:hover ~ %23edge86 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node64:hover ~ %23edge86 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node65:hover ~ %23edge86 text { fill: %23d32f2f; }
+  %23node65:hover ~ %23edge86 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node65:hover ~ %23edge86 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node47:hover ~ %23edge60 text { fill: %231976d2; }
+  %23node47:hover ~ %23edge60 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node47:hover ~ %23edge60 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node48:hover ~ %23edge60 text { fill: %23d32f2f; }
+  %23node48:hover ~ %23edge60 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node48:hover ~ %23edge60 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node18:hover ~ %23edge79 text { fill: %231976d2; }
+  %23node18:hover ~ %23edge79 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node18:hover ~ %23edge79 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node60:hover ~ %23edge79 text { fill: %23d32f2f; }
+  %23node60:hover ~ %23edge79 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node60:hover ~ %23edge79 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge21 text { fill: %231976d2; }
+  %23node68:hover ~ %23edge21 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node68:hover ~ %23edge21 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge21 text { fill: %23d32f2f; }
+  %23node69:hover ~ %23edge21 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node69:hover ~ %23edge21 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node21:hover ~ %23edge51 text { fill: %231976d2; }
+  %23node21:hover ~ %23edge51 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node21:hover ~ %23edge51 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node42:hover ~ %23edge51 text { fill: %23d32f2f; }
+  %23node42:hover ~ %23edge51 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node42:hover ~ %23edge51 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node24:hover ~ %23edge28 text { fill: %231976d2; }
+  %23node24:hover ~ %23edge28 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node24:hover ~ %23edge28 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node27:hover ~ %23edge28 text { fill: %23d32f2f; }
+  %23node27:hover ~ %23edge28 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node27:hover ~ %23edge28 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node60:hover ~ %23edge81 text { fill: %231976d2; }
+  %23node60:hover ~ %23edge81 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node60:hover ~ %23edge81 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node61:hover ~ %23edge81 text { fill: %23d32f2f; }
+  %23node61:hover ~ %23edge81 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node61:hover ~ %23edge81 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node17:hover ~ %23edge26 text { fill: %231976d2; }
+  %23node17:hover ~ %23edge26 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node17:hover ~ %23edge26 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node26:hover ~ %23edge26 text { fill: %23d32f2f; }
+  %23node26:hover ~ %23edge26 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node26:hover ~ %23edge26 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node16:hover ~ %23edge25 text { fill: %231976d2; }
+  %23node16:hover ~ %23edge25 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node16:hover ~ %23edge25 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node26:hover ~ %23edge25 text { fill: %23d32f2f; }
+  %23node26:hover ~ %23edge25 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node26:hover ~ %23edge25 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node70:hover ~ %23edge98 text { fill: %231976d2; }
+  %23node70:hover ~ %23edge98 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node70:hover ~ %23edge98 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge98 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge98 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge98 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node41:hover ~ %23edge55 text { fill: %231976d2; }
+  %23node41:hover ~ %23edge55 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node41:hover ~ %23edge55 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node45:hover ~ %23edge55 text { fill: %23d32f2f; }
+  %23node45:hover ~ %23edge55 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node45:hover ~ %23edge55 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node15:hover ~ %23edge22 text { fill: %231976d2; }
+  %23node15:hover ~ %23edge22 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node15:hover ~ %23edge22 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node23:hover ~ %23edge22 text { fill: %23d32f2f; }
+  %23node23:hover ~ %23edge22 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node23:hover ~ %23edge22 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node21:hover ~ %23edge97 text { fill: %231976d2; }
+  %23node21:hover ~ %23edge97 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node21:hover ~ %23edge97 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge97 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge97 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge97 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge17 text { fill: %231976d2; }
+  %23node9:hover ~ %23edge17 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node9:hover ~ %23edge17 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge17 text { fill: %23d32f2f; }
+  %23node14:hover ~ %23edge17 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node14:hover ~ %23edge17 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge9 text { fill: %231976d2; }
+  %23node9:hover ~ %23edge9 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node9:hover ~ %23edge9 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge9 text { fill: %23d32f2f; }
+  %23node10:hover ~ %23edge9 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node10:hover ~ %23edge9 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node50:hover ~ %23edge73 text { fill: %231976d2; }
+  %23node50:hover ~ %23edge73 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node50:hover ~ %23edge73 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node57:hover ~ %23edge73 text { fill: %23d32f2f; }
+  %23node57:hover ~ %23edge73 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node57:hover ~ %23edge73 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge20 text { fill: %231976d2; }
+  %23node71:hover ~ %23edge20 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node71:hover ~ %23edge20 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node73:hover ~ %23edge20 text { fill: %23d32f2f; }
+  %23node73:hover ~ %23edge20 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node73:hover ~ %23edge20 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge14 text { fill: %231976d2; }
+  %23node8:hover ~ %23edge14 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node8:hover ~ %23edge14 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node13:hover ~ %23edge14 text { fill: %23d32f2f; }
+  %23node13:hover ~ %23edge14 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node13:hover ~ %23edge14 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node44:hover ~ %23edge67 text { fill: %231976d2; }
+  %23node44:hover ~ %23edge67 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node44:hover ~ %23edge67 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node53:hover ~ %23edge67 text { fill: %23d32f2f; }
+  %23node53:hover ~ %23edge67 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node53:hover ~ %23edge67 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node29:hover ~ %23edge32 text { fill: %231976d2; }
+  %23node29:hover ~ %23edge32 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node29:hover ~ %23edge32 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node30:hover ~ %23edge32 text { fill: %23d32f2f; }
+  %23node30:hover ~ %23edge32 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node30:hover ~ %23edge32 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge2 text { fill: %231976d2; }
+  %23node3:hover ~ %23edge2 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node3:hover ~ %23edge2 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge2 text { fill: %23d32f2f; }
+  %23node4:hover ~ %23edge2 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node4:hover ~ %23edge2 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge19 text { fill: %231976d2; }
+  %23node7:hover ~ %23edge19 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node7:hover ~ %23edge19 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge19 text { fill: %23d32f2f; }
+  %23node14:hover ~ %23edge19 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node14:hover ~ %23edge19 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node44:hover ~ %23edge63 text { fill: %231976d2; }
+  %23node44:hover ~ %23edge63 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node44:hover ~ %23edge63 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node50:hover ~ %23edge63 text { fill: %23d32f2f; }
+  %23node50:hover ~ %23edge63 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node50:hover ~ %23edge63 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node21:hover ~ %23edge37 text { fill: %231976d2; }
+  %23node21:hover ~ %23edge37 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node21:hover ~ %23edge37 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node33:hover ~ %23edge37 text { fill: %23d32f2f; }
+  %23node33:hover ~ %23edge37 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node33:hover ~ %23edge37 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node32:hover ~ %23edge40 text { fill: %231976d2; }
+  %23node32:hover ~ %23edge40 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node32:hover ~ %23edge40 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node35:hover ~ %23edge40 text { fill: %23d32f2f; }
+  %23node35:hover ~ %23edge40 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node35:hover ~ %23edge40 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node26:hover ~ %23edge35 text { fill: %231976d2; }
+  %23node26:hover ~ %23edge35 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node26:hover ~ %23edge35 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node32:hover ~ %23edge35 text { fill: %23d32f2f; }
+  %23node32:hover ~ %23edge35 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node32:hover ~ %23edge35 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node12:hover ~ %23edge15 text { fill: %231976d2; }
+  %23node12:hover ~ %23edge15 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node12:hover ~ %23edge15 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge15 text { fill: %23d32f2f; }
+  %23node14:hover ~ %23edge15 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node14:hover ~ %23edge15 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge106 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge106 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge106 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge106 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge106 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge106 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge105 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge105 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge105 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge105 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge105 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge105 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge104 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge104 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge104 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge104 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge104 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge104 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge103 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge103 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge103 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge103 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge103 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge103 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge102 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge102 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge102 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge102 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge102 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge102 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge101 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge101 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge101 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge101 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge101 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge101 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge100 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge100 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge100 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge100 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge100 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge100 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node69:hover ~ %23edge99 text { fill: %231976d2; }
+  %23node69:hover ~ %23edge99 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node69:hover ~ %23edge99 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node71:hover ~ %23edge99 text { fill: %23d32f2f; }
+  %23node71:hover ~ %23edge99 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node71:hover ~ %23edge99 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node25:hover ~ %23edge29 text { fill: %231976d2; }
+  %23node25:hover ~ %23edge29 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node25:hover ~ %23edge29 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node28:hover ~ %23edge29 text { fill: %23d32f2f; }
+  %23node28:hover ~ %23edge29 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node28:hover ~ %23edge29 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node13:hover ~ %23edge16 text { fill: %231976d2; }
+  %23node13:hover ~ %23edge16 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node13:hover ~ %23edge16 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge16 text { fill: %23d32f2f; }
+  %23node14:hover ~ %23edge16 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node14:hover ~ %23edge16 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge3 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge3 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge3 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge3 text { fill: %23d32f2f; }
+  %23node5:hover ~ %23edge3 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node5:hover ~ %23edge3 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node58:hover ~ %23edge78 text { fill: %231976d2; }
+  %23node58:hover ~ %23edge78 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node58:hover ~ %23edge78 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node59:hover ~ %23edge78 text { fill: %23d32f2f; }
+  %23node59:hover ~ %23edge78 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node59:hover ~ %23edge78 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node4:hover ~ %23edge11 text { fill: %231976d2; }
+  %23node4:hover ~ %23edge11 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node4:hover ~ %23edge11 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node12:hover ~ %23edge11 text { fill: %23d32f2f; }
+  %23node12:hover ~ %23edge11 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node12:hover ~ %23edge11 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node17:hover ~ %23edge27 text { fill: %231976d2; }
+  %23node17:hover ~ %23edge27 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node17:hover ~ %23edge27 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node27:hover ~ %23edge27 text { fill: %23d32f2f; }
+  %23node27:hover ~ %23edge27 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node27:hover ~ %23edge27 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge5 text { fill: %231976d2; }
+  %23node6:hover ~ %23edge5 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node6:hover ~ %23edge5 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge5 text { fill: %23d32f2f; }
+  %23node7:hover ~ %23edge5 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node7:hover ~ %23edge5 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge4 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge4 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge4 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge4 text { fill: %23d32f2f; }
+  %23node6:hover ~ %23edge4 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node6:hover ~ %23edge4 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge10 text { fill: %231976d2; }
+  %23node10:hover ~ %23edge10 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node10:hover ~ %23edge10 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge10 text { fill: %23d32f2f; }
+  %23node11:hover ~ %23edge10 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node11:hover ~ %23edge10 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node50:hover ~ %23edge68 text { fill: %231976d2; }
+  %23node50:hover ~ %23edge68 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node50:hover ~ %23edge68 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node53:hover ~ %23edge68 text { fill: %23d32f2f; }
+  %23node53:hover ~ %23edge68 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node53:hover ~ %23edge68 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node6:hover ~ %23edge12 text { fill: %231976d2; }
+  %23node6:hover ~ %23edge12 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node6:hover ~ %23edge12 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node12:hover ~ %23edge12 text { fill: %23d32f2f; }
+  %23node12:hover ~ %23edge12 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node12:hover ~ %23edge12 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node52:hover ~ %23edge71 text { fill: %231976d2; }
+  %23node52:hover ~ %23edge71 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node52:hover ~ %23edge71 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node55:hover ~ %23edge71 text { fill: %23d32f2f; }
+  %23node55:hover ~ %23edge71 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node55:hover ~ %23edge71 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node41:hover ~ %23edge54 text { fill: %231976d2; }
+  %23node41:hover ~ %23edge54 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node41:hover ~ %23edge54 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node44:hover ~ %23edge54 text { fill: %23d32f2f; }
+  %23node44:hover ~ %23edge54 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node44:hover ~ %23edge54 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node2:hover ~ %23edge1 text { fill: %231976d2; }
+  %23node2:hover ~ %23edge1 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node2:hover ~ %23edge1 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node3:hover ~ %23edge1 text { fill: %23d32f2f; }
+  %23node3:hover ~ %23edge1 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node3:hover ~ %23edge1 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node1:hover ~ %23edge6 text { fill: %231976d2; }
+  %23node1:hover ~ %23edge6 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node1:hover ~ %23edge6 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge6 text { fill: %23d32f2f; }
+  %23node8:hover ~ %23edge6 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node8:hover ~ %23edge6 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node40:hover ~ %23edge50 text { fill: %231976d2; }
+  %23node40:hover ~ %23edge50 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node40:hover ~ %23edge50 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node41:hover ~ %23edge50 text { fill: %23d32f2f; }
+  %23node41:hover ~ %23edge50 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node41:hover ~ %23edge50 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node24:hover ~ %23edge24 text { fill: %231976d2; }
+  %23node24:hover ~ %23edge24 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node24:hover ~ %23edge24 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node25:hover ~ %23edge24 text { fill: %23d32f2f; }
+  %23node25:hover ~ %23edge24 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node25:hover ~ %23edge24 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node7:hover ~ %23edge8 text { fill: %231976d2; }
+  %23node7:hover ~ %23edge8 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node7:hover ~ %23edge8 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node10:hover ~ %23edge8 text { fill: %23d32f2f; }
+  %23node10:hover ~ %23edge8 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node10:hover ~ %23edge8 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node43:hover ~ %23edge57 text { fill: %231976d2; }
+  %23node43:hover ~ %23edge57 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node43:hover ~ %23edge57 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node46:hover ~ %23edge57 text { fill: %23d32f2f; }
+  %23node46:hover ~ %23edge57 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node46:hover ~ %23edge57 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node5:hover ~ %23edge13 text { fill: %231976d2; }
+  %23node5:hover ~ %23edge13 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node5:hover ~ %23edge13 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node13:hover ~ %23edge13 text { fill: %23d32f2f; }
+  %23node13:hover ~ %23edge13 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node13:hover ~ %23edge13 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node21:hover ~ %23edge23 text { fill: %231976d2; }
+  %23node21:hover ~ %23edge23 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node21:hover ~ %23edge23 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node24:hover ~ %23edge23 text { fill: %23d32f2f; }
+  %23node24:hover ~ %23edge23 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node24:hover ~ %23edge23 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node22:hover ~ %23edge96 text { fill: %231976d2; }
+  %23node22:hover ~ %23edge96 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node22:hover ~ %23edge96 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node68:hover ~ %23edge96 text { fill: %23d32f2f; }
+  %23node68:hover ~ %23edge96 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node68:hover ~ %23edge96 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node8:hover ~ %23edge7 text { fill: %231976d2; }
+  %23node8:hover ~ %23edge7 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node8:hover ~ %23edge7 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node9:hover ~ %23edge7 text { fill: %23d32f2f; }
+  %23node9:hover ~ %23edge7 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node9:hover ~ %23edge7 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node28:hover ~ %23edge30 text { fill: %231976d2; }
+  %23node28:hover ~ %23edge30 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node28:hover ~ %23edge30 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node29:hover ~ %23edge30 text { fill: %23d32f2f; }
+  %23node29:hover ~ %23edge30 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node29:hover ~ %23edge30 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node17:hover ~ %23edge31 text { fill: %231976d2; }
+  %23node17:hover ~ %23edge31 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node17:hover ~ %23edge31 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node30:hover ~ %23edge31 text { fill: %23d32f2f; }
+  %23node30:hover ~ %23edge31 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node30:hover ~ %23edge31 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node27:hover ~ %23edge33 text { fill: %231976d2; }
+  %23node27:hover ~ %23edge33 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node27:hover ~ %23edge33 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node31:hover ~ %23edge33 text { fill: %23d32f2f; }
+  %23node31:hover ~ %23edge33 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node31:hover ~ %23edge33 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node51:hover ~ %23edge66 text { fill: %231976d2; }
+  %23node51:hover ~ %23edge66 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node51:hover ~ %23edge66 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node52:hover ~ %23edge66 text { fill: %23d32f2f; }
+  %23node52:hover ~ %23edge66 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node52:hover ~ %23edge66 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node11:hover ~ %23edge18 text { fill: %231976d2; }
+  %23node11:hover ~ %23edge18 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node11:hover ~ %23edge18 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node14:hover ~ %23edge18 text { fill: %23d32f2f; }
+  %23node14:hover ~ %23edge18 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node14:hover ~ %23edge18 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node31:hover ~ %23edge36 text { fill: %231976d2; }
+  %23node31:hover ~ %23edge36 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node31:hover ~ %23edge36 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node32:hover ~ %23edge36 text { fill: %23d32f2f; }
+  %23node32:hover ~ %23edge36 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node32:hover ~ %23edge36 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node30:hover ~ %23edge34 text { fill: %231976d2; }
+  %23node30:hover ~ %23edge34 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node30:hover ~ %23edge34 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node31:hover ~ %23edge34 text { fill: %23d32f2f; }
+  %23node31:hover ~ %23edge34 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node31:hover ~ %23edge34 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node33:hover ~ %23edge38 text { fill: %231976d2; }
+  %23node33:hover ~ %23edge38 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node33:hover ~ %23edge38 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node34:hover ~ %23edge38 text { fill: %23d32f2f; }
+  %23node34:hover ~ %23edge38 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node34:hover ~ %23edge38 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node32:hover ~ %23edge41 text { fill: %231976d2; }
+  %23node32:hover ~ %23edge41 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node32:hover ~ %23edge41 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node36:hover ~ %23edge41 text { fill: %23d32f2f; }
+  %23node36:hover ~ %23edge41 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node36:hover ~ %23edge41 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node26:hover ~ %23edge39 text { fill: %231976d2; }
+  %23node26:hover ~ %23edge39 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node26:hover ~ %23edge39 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node35:hover ~ %23edge39 text { fill: %23d32f2f; }
+  %23node35:hover ~ %23edge39 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node35:hover ~ %23edge39 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node33:hover ~ %23edge42 text { fill: %231976d2; }
+  %23node33:hover ~ %23edge42 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node33:hover ~ %23edge42 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node36:hover ~ %23edge42 text { fill: %23d32f2f; }
+  %23node36:hover ~ %23edge42 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node36:hover ~ %23edge42 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node34:hover ~ %23edge43 text { fill: %231976d2; }
+  %23node34:hover ~ %23edge43 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node34:hover ~ %23edge43 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node37:hover ~ %23edge43 text { fill: %23d32f2f; }
+  %23node37:hover ~ %23edge43 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node37:hover ~ %23edge43 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node37:hover ~ %23edge44 text { fill: %231976d2; }
+  %23node37:hover ~ %23edge44 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node37:hover ~ %23edge44 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node38:hover ~ %23edge44 text { fill: %23d32f2f; }
+  %23node38:hover ~ %23edge44 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node38:hover ~ %23edge44 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node32:hover ~ %23edge45 text { fill: %231976d2; }
+  %23node32:hover ~ %23edge45 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node32:hover ~ %23edge45 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node39:hover ~ %23edge45 text { fill: %23d32f2f; }
+  %23node39:hover ~ %23edge45 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node39:hover ~ %23edge45 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node39:hover ~ %23edge48 text { fill: %231976d2; }
+  %23node39:hover ~ %23edge48 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node39:hover ~ %23edge48 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node40:hover ~ %23edge48 text { fill: %23d32f2f; }
+  %23node40:hover ~ %23edge48 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node40:hover ~ %23edge48 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node72:hover ~ %23edge107 text { fill: %231976d2; }
+  %23node72:hover ~ %23edge107 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node72:hover ~ %23edge107 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node73:hover ~ %23edge107 text { fill: %23d32f2f; }
+  %23node73:hover ~ %23edge107 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node73:hover ~ %23edge107 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node38:hover ~ %23edge46 text { fill: %231976d2; }
+  %23node38:hover ~ %23edge46 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node38:hover ~ %23edge46 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node39:hover ~ %23edge46 text { fill: %23d32f2f; }
+  %23node39:hover ~ %23edge46 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node39:hover ~ %23edge46 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node36:hover ~ %23edge47 text { fill: %231976d2; }
+  %23node36:hover ~ %23edge47 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node36:hover ~ %23edge47 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node40:hover ~ %23edge47 text { fill: %23d32f2f; }
+  %23node40:hover ~ %23edge47 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node40:hover ~ %23edge47 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node35:hover ~ %23edge49 text { fill: %231976d2; }
+  %23node35:hover ~ %23edge49 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node35:hover ~ %23edge49 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node41:hover ~ %23edge49 text { fill: %23d32f2f; }
+  %23node41:hover ~ %23edge49 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node41:hover ~ %23edge49 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node42:hover ~ %23edge52 text { fill: %231976d2; }
+  %23node42:hover ~ %23edge52 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node42:hover ~ %23edge52 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node43:hover ~ %23edge52 text { fill: %23d32f2f; }
+  %23node43:hover ~ %23edge52 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node43:hover ~ %23edge52 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node35:hover ~ %23edge53 text { fill: %231976d2; }
+  %23node35:hover ~ %23edge53 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node35:hover ~ %23edge53 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node44:hover ~ %23edge53 text { fill: %23d32f2f; }
+  %23node44:hover ~ %23edge53 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node44:hover ~ %23edge53 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node53:hover ~ %23edge77 text { fill: %231976d2; }
+  %23node53:hover ~ %23edge77 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node53:hover ~ %23edge77 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node59:hover ~ %23edge77 text { fill: %23d32f2f; }
+  %23node59:hover ~ %23edge77 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node59:hover ~ %23edge77 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node42:hover ~ %23edge56 text { fill: %231976d2; }
+  %23node42:hover ~ %23edge56 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node42:hover ~ %23edge56 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node45:hover ~ %23edge56 text { fill: %23d32f2f; }
+  %23node45:hover ~ %23edge56 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node45:hover ~ %23edge56 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node49:hover ~ %23edge64 text { fill: %231976d2; }
+  %23node49:hover ~ %23edge64 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node49:hover ~ %23edge64 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node50:hover ~ %23edge64 text { fill: %23d32f2f; }
+  %23node50:hover ~ %23edge64 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node50:hover ~ %23edge64 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node46:hover ~ %23edge58 text { fill: %231976d2; }
+  %23node46:hover ~ %23edge58 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node46:hover ~ %23edge58 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node47:hover ~ %23edge58 text { fill: %23d32f2f; }
+  %23node47:hover ~ %23edge58 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node47:hover ~ %23edge58 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node54:hover ~ %23edge75 text { fill: %231976d2; }
+  %23node54:hover ~ %23edge75 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node54:hover ~ %23edge75 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node58:hover ~ %23edge75 text { fill: %23d32f2f; }
+  %23node58:hover ~ %23edge75 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node58:hover ~ %23edge75 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+  %23node41:hover ~ %23edge59 text { fill: %231976d2; }
+  %23node41:hover ~ %23edge59 path { stroke: %231976d2; stroke-width: .2em; }
+  %23node41:hover ~ %23edge59 polygon { fill: %231976d2; stroke: %231976d2; stroke-width: .2em; }
+
+  %23node48:hover ~ %23edge59 text { fill: %23d32f2f; }
+  %23node48:hover ~ %23edge59 path { stroke: %23d32f2f; stroke-width: .2em; }
+  %23node48:hover ~ %23edge59 polygon { fill: %23d32f2f; stroke: %23d32f2f; stroke-width: .2em; }
+
+>
+
+95122800313536 [label=<<b>Parameter 0</b><br/>u32[2]>, shape=rect, tooltip="key", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122800290816 [label=<<b>Parameter 1</b><br/>u32[]>, shape=rect, tooltip="data", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122800350608 [label=<<b>shift-right-logical.8</b><br/>u32[]<br/><b>operand 1</b> = u32[] 32>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800312544 [label=<<b>reshape.9</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800282192 [label=<<b>reshape.10</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/broadcast_in_dim
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122799542128 [label=<<b>slice.11</b><br/>slice={[0:1]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800413408 [label=<<b>reshape.12</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800432752 [label=<<b>slice.13</b><br/>slice={[1:2]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800401840 [label=<<b>reshape.14</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800414656 [label=<<b>xor.15</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800232928 [label=<<b>xor.16</b><br/>u32[]<br/><b>operand 1</b> = u32[] 466688986>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800281024 [label=<<b>add.17</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800400672 [label=<<b>add.18</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800453984 [label=<<b>tuple.112</b><br/>(s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[]...<br/><b>operand 0</b> = s32[] 0<br/><b>operand 1</b> = s32[] 0<br/><b>operand 7</b> = u32[4] {13, 15, 26, 6}<br/><b>operand 8</b> = u32[4] {17, 29, 16, 24}>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+subgraph cluster_95122800242272 {
+style=rounded; color=black;
+label = <Subcomputation for <b>while.113</b><br/>region_0.98>;
+labelloc = t;
+tooltip = " ";
+subgraph cluster_95122800333136 {
+style=rounded; color=black;
+label = <Subcomputation for <b>call.87</b><br/>None.86>;
+labelloc = t;
+tooltip = " ";
+95122800349072 [label=<<b>Parameter 0</b><br/>s32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122799485952 [label=<<b>Parameter 1</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122799484768 [label=<<b>Parameter 2</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122799453984 [label=<<b>Parameter 3</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122799485360 [label=<<b>Parameter 4</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122798467456 [label=<<b>Parameter 5</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122799486544 [label=<<b>Parameter 6</b><br/>u32[4]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122800365664 [label=<<b>Parameter 7</b><br/>u32[4]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/closed_call", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
+95122800446800 [label=<<b>add.40</b><br/>s32[]<br/><b>operand 1</b> = s32[] 1>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800314288 [label=<<b>slice.41</b><br/>slice={[0:1]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800436320 [label=<<b>reshape.42</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800446000 [label=<<b>add.43</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800445200 [label=<<b>shift-left.44</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_left
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800321120 [label=<<b>subtract.45</b><br/>u32[]<br/><b>operand 0</b> = u32[] 32>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/sub
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122799852160 [label=<<b>reshape.46</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800426128 [label=<<b>shift-right-logical.47</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122799581392 [label=<<b>or.48</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/or
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122799588448 [label=<<b>xor.49</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800358464 [label=<<b>slice.50</b><br/>slice={[1:2]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800365120 [label=<<b>reshape.51</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122799537344 [label=<<b>add.52</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800221712 [label=<<b>shift-left.53</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_left
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800328288 [label=<<b>subtract.54</b><br/>u32[]<br/><b>operand 0</b> = u32[] 32>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/sub
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800251424 [label=<<b>reshape.55</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800640320 [label=<<b>shift-right-logical.56</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800634400 [label=<<b>or.57</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/or
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800631104 [label=<<b>xor.58</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800276432 [label=<<b>slice.59</b><br/>slice={[2:3]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800443552 [label=<<b>reshape.60</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800630208 [label=<<b>add.61</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800348496 [label=<<b>shift-left.62</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_left
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800236656 [label=<<b>subtract.63</b><br/>u32[]<br/><b>operand 0</b> = u32[] 32>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/sub
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800530624 [label=<<b>reshape.64</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800531424 [label=<<b>shift-right-logical.65</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800532224 [label=<<b>or.66</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/or
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800364240 [label=<<b>xor.67</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800529072 [label=<<b>slice.68</b><br/>slice={[3:4]}<br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/slice
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800231216 [label=<<b>reshape.69</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/squeeze
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800685648 [label=<<b>add.70</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800354192 [label=<<b>shift-left.71</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_left
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800437888 [label=<<b>subtract.72</b><br/>u32[]<br/><b>operand 0</b> = u32[] 32>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/sub
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800270032 [label=<<b>reshape.73</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800223104 [label=<<b>shift-right-logical.74</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/shift_right_logical
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800347088 [label=<<b>or.75</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/or
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800057072 [label=<<b>xor.76</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/xor
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800733344 [label=<<b>reshape.77</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800737504 [label=<<b>add.78</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800283168 [label=<<b>reshape.79</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122799845712 [label=<<b>add.80</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122799846864 [label=<<b>add.81</b><br/>s32[]<br/><b>operand 1</b> = s32[] 1>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800326256 [label=<<b>convert.82</b><br/>u32[]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/convert_element_type
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800244800 [label=<<b>reshape.83</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+95122800237744 [label=<<b>add.84</b><br/>u32[1]>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800275648 [label=<<b>tuple.85</b><br/>(s32[], u32[1], u32[1], u32[], u32[], /*index=5*/u32[], u32[4...>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+
+}  // cluster_95122800333136
+
+95122800460816 [label=<<b>call.87</b><br/>(s32[], u32[1], u32[1], u32[], u32[], /*index=5*/u32[], u32[4...<br/><b>operand 0</b> = tuple-element 1 of arg_tuple.19 s32[]<br/><b>operand 1</b> = tuple-element 2 of arg_tuple.19 u32[1]{0}<br/><b>operand 2</b> = tuple-element 3 of arg_tuple.19 u32[1]{0}<br/><b>operand 3</b> = tuple-element 4 of arg_tuple.19 u32[]<br/><b>operand 4</b> = tuple-element 5 of arg_tuple.19 u32[]<br/><b>operand 5</b> = tuple-element 6 of arg_tuple.19 u32[]<br/><b>operand 6</b> = tuple-element 7 of arg_tuple.19 u32[4]{0}<br/><b>operand 7</b> = tuple-element 8 of arg_tuple.19 u32[4]{0}>, shape=rect, tooltip="", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+95122800533824 [label=<<b>add.96</b><br/>s32[]<br/><b>operand 0</b> = tuple-element 0 of arg_tuple.19 s32[]<br/><b>operand 1</b> = s32[] 1>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/body/add
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+95122800361952 [label=<<b>tuple.97</b><br/>(s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[]...<br/><b>operand 1</b> = tuple-element 0 of call.87 s32[]<br/><b>operand 2</b> = tuple-element 1 of call.87 u32[1]{0}<br/><b>operand 3</b> = tuple-element 2 of call.87 u32[1]{0}<br/><b>operand 4</b> = tuple-element 3 of call.87 u32[]<br/><b>operand 5</b> = tuple-element 4 of call.87 u32[]<br/><b>operand 6</b> = tuple-element 5 of call.87 u32[]<br/><b>operand 7</b> = tuple-element 6 of call.87 u32[4]{0}<br/><b>operand 8</b> = tuple-element 7 of call.87 u32[4]{0}>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+
+}  // cluster_95122800242272
+
+subgraph cluster_95122800225776 {
+style=rounded; color=black;
+label = <Subcomputation for <b>while.113</b><br/>region_1.111>;
+labelloc = t;
+tooltip = " ";
+95122800270784 [label=<<b>compare.110</b><br/>direction=LT<br/>pred[]<br/><b>operand 0</b> = tuple-element 0 of arg_tuple.99 s32[]<br/><b>operand 1</b> = s32[] 5>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/while/cond/lt
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#9e9e9e", fillcolor="white"];
+
+}  // cluster_95122800225776
+
+95122800454512 [label=<<b>while.113</b><br/>(s32[], s32[], u32[1], u32[1], u32[], /*index=5*/u32[], u32[]...>, shape=ellipse, tooltip="jit(_threefry_fold_in)/jit(main)/while
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="white", color="#005005", fillcolor="#2e7d32"];
+95122800234800 [label=<<b>concatenate.123</b><br/>dimensions={0}<br/>u32[2]<br/><b>operand 0</b> = tuple-element 2 of while.113 u32[1]{0}<br/><b>operand 1</b> = tuple-element 3 of while.113 u32[1]{0}>, shape=rect, tooltip="jit(_threefry_fold_in)/jit(main)/concatenate
+source: /home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:_fold_in_static:140
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:as_jax_rng:94
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:make_rng:732
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py:param:968
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:param:1876
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py:__call__:264
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:wrapped_module_method:699
+/home/xianghonghui/xla/hlo代码分析/分析2/your_flax_model.py:__call__:16
+/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/module.py:_call_wrapped_method:1216", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+cluster_95122800436864 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
+95122800290816 -> 95122800350608 [arrowhead=empty tooltip="Arg_1.2 -> shift-right-logical.8"  headlabel="0", labeldistance=2];
+95122800350608 -> 95122800312544 [arrowhead=empty tooltip="shift-right-logical.8 -> reshape.9" ];
+95122800290816 -> 95122800282192 [arrowhead=empty tooltip="Arg_1.2 -> reshape.10" ];
+95122800313536 -> 95122799542128 [arrowhead=empty tooltip="Arg_0.1 -> slice.11" ];
+95122799542128 -> 95122800413408 [arrowhead=empty tooltip="slice.11 -> reshape.12" ];
+95122800313536 -> 95122800432752 [arrowhead=empty tooltip="Arg_0.1 -> slice.13" ];
+95122800432752 -> 95122800401840 [arrowhead=empty tooltip="slice.13 -> reshape.14" ];
+95122800413408 -> 95122800414656 [arrowhead=empty tooltip="reshape.12 -> xor.15"  headlabel="0", labeldistance=2];
+95122800401840 -> 95122800414656 [arrowhead=empty tooltip="reshape.14 -> xor.15"  headlabel="1", labeldistance=2];
+95122800414656 -> 95122800232928 [arrowhead=empty tooltip="xor.15 -> xor.16"  headlabel="0", labeldistance=2];
+95122800312544 -> 95122800281024 [arrowhead=empty tooltip="reshape.9 -> add.17"  headlabel="0", labeldistance=2];
+95122799542128 -> 95122800281024 [arrowhead=empty tooltip="slice.11 -> add.17"  headlabel="1", labeldistance=2];
+95122800282192 -> 95122800400672 [arrowhead=empty tooltip="reshape.10 -> add.18"  headlabel="0", labeldistance=2];
+95122800432752 -> 95122800400672 [arrowhead=empty tooltip="slice.13 -> add.18"  headlabel="1", labeldistance=2];
+95122800281024 -> 95122800453984 [arrowhead=empty tooltip="add.17 -> tuple.112"  headlabel="2", labeldistance=2];
+95122800400672 -> 95122800453984 [arrowhead=empty tooltip="add.18 -> tuple.112"  headlabel="3", labeldistance=2];
+95122800401840 -> 95122800453984 [arrowhead=empty tooltip="reshape.14 -> tuple.112"  headlabel="4", labeldistance=2];
+95122800232928 -> 95122800453984 [arrowhead=empty tooltip="xor.16 -> tuple.112"  headlabel="5", labeldistance=2];
+95122800413408 -> 95122800453984 [arrowhead=empty tooltip="reshape.12 -> tuple.112"  headlabel="6", labeldistance=2];
+95122800361952 -> 95122800454512 [ltail="cluster_95122800242272", style="dashed" tooltip="region_0.98 -> while.113"];
+95122800275648 -> 95122800460816 [ltail="cluster_95122800333136", style="dashed" tooltip="None.86 -> call.87"];
+95122800349072 -> 95122800446800 [arrowhead=empty tooltip="Arg_0.30 -> add.40"  headlabel="0", labeldistance=2];
+95122799486544 -> 95122800314288 [arrowhead=empty tooltip="Arg_6.36 -> slice.41" ];
+95122800314288 -> 95122800436320 [arrowhead=empty tooltip="slice.41 -> reshape.42" ];
+95122799485952 -> 95122800446000 [arrowhead=empty tooltip="Arg_1.31 -> add.43"  headlabel="0", labeldistance=2];
+95122799484768 -> 95122800446000 [arrowhead=empty tooltip="Arg_2.32 -> add.43"  headlabel="1", labeldistance=2];
+95122799484768 -> 95122800445200 [arrowhead=empty tooltip="Arg_2.32 -> shift-left.44"  headlabel="0", labeldistance=2];
+95122800314288 -> 95122800445200 [arrowhead=empty tooltip="slice.41 -> shift-left.44"  headlabel="1", labeldistance=2];
+95122800436320 -> 95122800321120 [arrowhead=empty tooltip="reshape.42 -> subtract.45"  headlabel="1", labeldistance=2];
+95122800321120 -> 95122799852160 [arrowhead=empty tooltip="subtract.45 -> reshape.46" ];
+95122799484768 -> 95122800426128 [arrowhead=empty tooltip="Arg_2.32 -> shift-right-logical.47"  headlabel="0", labeldistance=2];
+95122799852160 -> 95122800426128 [arrowhead=empty tooltip="reshape.46 -> shift-right-logical.47"  headlabel="1", labeldistance=2];
+95122800445200 -> 95122799581392 [arrowhead=empty tooltip="shift-left.44 -> or.48"  headlabel="0", labeldistance=2];
+95122800426128 -> 95122799581392 [arrowhead=empty tooltip="shift-right-logical.47 -> or.48"  headlabel="1", labeldistance=2];
+95122800446000 -> 95122799588448 [arrowhead=empty tooltip="add.43 -> xor.49"  headlabel="0", labeldistance=2];
+95122799581392 -> 95122799588448 [arrowhead=empty tooltip="or.48 -> xor.49"  headlabel="1", labeldistance=2];
+95122799486544 -> 95122800358464 [arrowhead=empty tooltip="Arg_6.36 -> slice.50" ];
+95122800358464 -> 95122800365120 [arrowhead=empty tooltip="slice.50 -> reshape.51" ];
+95122800446000 -> 95122799537344 [arrowhead=empty tooltip="add.43 -> add.52"  headlabel="0", labeldistance=2];
+95122799588448 -> 95122799537344 [arrowhead=empty tooltip="xor.49 -> add.52"  headlabel="1", labeldistance=2];
+95122799588448 -> 95122800221712 [arrowhead=empty tooltip="xor.49 -> shift-left.53"  headlabel="0", labeldistance=2];
+95122800358464 -> 95122800221712 [arrowhead=empty tooltip="slice.50 -> shift-left.53"  headlabel="1", labeldistance=2];
+95122800365120 -> 95122800328288 [arrowhead=empty tooltip="reshape.51 -> subtract.54"  headlabel="1", labeldistance=2];
+95122800328288 -> 95122800251424 [arrowhead=empty tooltip="subtract.54 -> reshape.55" ];
+95122799588448 -> 95122800640320 [arrowhead=empty tooltip="xor.49 -> shift-right-logical.56"  headlabel="0", labeldistance=2];
+95122800251424 -> 95122800640320 [arrowhead=empty tooltip="reshape.55 -> shift-right-logical.56"  headlabel="1", labeldistance=2];
+95122800221712 -> 95122800634400 [arrowhead=empty tooltip="shift-left.53 -> or.57"  headlabel="0", labeldistance=2];
+95122800640320 -> 95122800634400 [arrowhead=empty tooltip="shift-right-logical.56 -> or.57"  headlabel="1", labeldistance=2];
+95122799537344 -> 95122800631104 [arrowhead=empty tooltip="add.52 -> xor.58"  headlabel="0", labeldistance=2];
+95122800634400 -> 95122800631104 [arrowhead=empty tooltip="or.57 -> xor.58"  headlabel="1", labeldistance=2];
+95122799486544 -> 95122800276432 [arrowhead=empty tooltip="Arg_6.36 -> slice.59" ];
+95122800276432 -> 95122800443552 [arrowhead=empty tooltip="slice.59 -> reshape.60" ];
+95122799537344 -> 95122800630208 [arrowhead=empty tooltip="add.52 -> add.61"  headlabel="0", labeldistance=2];
+95122800631104 -> 95122800630208 [arrowhead=empty tooltip="xor.58 -> add.61"  headlabel="1", labeldistance=2];
+95122800631104 -> 95122800348496 [arrowhead=empty tooltip="xor.58 -> shift-left.62"  headlabel="0", labeldistance=2];
+95122800276432 -> 95122800348496 [arrowhead=empty tooltip="slice.59 -> shift-left.62"  headlabel="1", labeldistance=2];
+95122800443552 -> 95122800236656 [arrowhead=empty tooltip="reshape.60 -> subtract.63"  headlabel="1", labeldistance=2];
+95122800236656 -> 95122800530624 [arrowhead=empty tooltip="subtract.63 -> reshape.64" ];
+95122800631104 -> 95122800531424 [arrowhead=empty tooltip="xor.58 -> shift-right-logical.65"  headlabel="0", labeldistance=2];
+95122800530624 -> 95122800531424 [arrowhead=empty tooltip="reshape.64 -> shift-right-logical.65"  headlabel="1", labeldistance=2];
+95122800348496 -> 95122800532224 [arrowhead=empty tooltip="shift-left.62 -> or.66"  headlabel="0", labeldistance=2];
+95122800531424 -> 95122800532224 [arrowhead=empty tooltip="shift-right-logical.65 -> or.66"  headlabel="1", labeldistance=2];
+95122800630208 -> 95122800364240 [arrowhead=empty tooltip="add.61 -> xor.67"  headlabel="0", labeldistance=2];
+95122800532224 -> 95122800364240 [arrowhead=empty tooltip="or.66 -> xor.67"  headlabel="1", labeldistance=2];
+95122799486544 -> 95122800529072 [arrowhead=empty tooltip="Arg_6.36 -> slice.68" ];
+95122800529072 -> 95122800231216 [arrowhead=empty tooltip="slice.68 -> reshape.69" ];
+95122800630208 -> 95122800685648 [arrowhead=empty tooltip="add.61 -> add.70"  headlabel="0", labeldistance=2];
+95122800364240 -> 95122800685648 [arrowhead=empty tooltip="xor.67 -> add.70"  headlabel="1", labeldistance=2];
+95122800364240 -> 95122800354192 [arrowhead=empty tooltip="xor.67 -> shift-left.71"  headlabel="0", labeldistance=2];
+95122800529072 -> 95122800354192 [arrowhead=empty tooltip="slice.68 -> shift-left.71"  headlabel="1", labeldistance=2];
+95122800231216 -> 95122800437888 [arrowhead=empty tooltip="reshape.69 -> subtract.72"  headlabel="1", labeldistance=2];
+95122800437888 -> 95122800270032 [arrowhead=empty tooltip="subtract.72 -> reshape.73" ];
+95122800364240 -> 95122800223104 [arrowhead=empty tooltip="xor.67 -> shift-right-logical.74"  headlabel="0", labeldistance=2];
+95122800270032 -> 95122800223104 [arrowhead=empty tooltip="reshape.73 -> shift-right-logical.74"  headlabel="1", labeldistance=2];
+95122800354192 -> 95122800347088 [arrowhead=empty tooltip="shift-left.71 -> or.75"  headlabel="0", labeldistance=2];
+95122800223104 -> 95122800347088 [arrowhead=empty tooltip="shift-right-logical.74 -> or.75"  headlabel="1", labeldistance=2];
+95122800685648 -> 95122800057072 [arrowhead=empty tooltip="add.70 -> xor.76"  headlabel="0", labeldistance=2];
+95122800347088 -> 95122800057072 [arrowhead=empty tooltip="or.75 -> xor.76"  headlabel="1", labeldistance=2];
+95122799453984 -> 95122800733344 [arrowhead=empty tooltip="Arg_3.33 -> reshape.77" ];
+95122800685648 -> 95122800737504 [arrowhead=empty tooltip="add.70 -> add.78"  headlabel="0", labeldistance=2];
+95122800733344 -> 95122800737504 [arrowhead=empty tooltip="reshape.77 -> add.78"  headlabel="1", labeldistance=2];
+95122799485360 -> 95122800283168 [arrowhead=empty tooltip="Arg_4.34 -> reshape.79" ];
+95122800057072 -> 95122799845712 [arrowhead=empty tooltip="xor.76 -> add.80"  headlabel="0", labeldistance=2];
+95122800283168 -> 95122799845712 [arrowhead=empty tooltip="reshape.79 -> add.80"  headlabel="1", labeldistance=2];
+95122800349072 -> 95122799846864 [arrowhead=empty tooltip="Arg_0.30 -> add.81"  headlabel="0", labeldistance=2];
+95122799846864 -> 95122800326256 [arrowhead=empty tooltip="add.81 -> convert.82" ];
+95122800326256 -> 95122800244800 [arrowhead=empty tooltip="convert.82 -> reshape.83" ];
+95122799845712 -> 95122800237744 [arrowhead=empty tooltip="add.80 -> add.84"  headlabel="0", labeldistance=2];
+95122800244800 -> 95122800237744 [arrowhead=empty tooltip="reshape.83 -> add.84"  headlabel="1", labeldistance=2];
+95122800446800 -> 95122800275648 [arrowhead=empty tooltip="add.40 -> tuple.85"  headlabel="0", labeldistance=2];
+95122800737504 -> 95122800275648 [arrowhead=empty tooltip="add.78 -> tuple.85"  headlabel="1", labeldistance=2];
+95122800237744 -> 95122800275648 [arrowhead=empty tooltip="add.84 -> tuple.85"  headlabel="2", labeldistance=2];
+95122799485360 -> 95122800275648 [arrowhead=empty tooltip="Arg_4.34 -> tuple.85"  headlabel="3", labeldistance=2];
+95122798467456 -> 95122800275648 [arrowhead=empty tooltip="Arg_5.35 -> tuple.85"  headlabel="4", labeldistance=2];
+95122799453984 -> 95122800275648 [arrowhead=empty tooltip="Arg_3.33 -> tuple.85"  headlabel="5", labeldistance=2];
+95122800365664 -> 95122800275648 [arrowhead=empty tooltip="Arg_7.37 -> tuple.85"  headlabel="6", labeldistance=2];
+95122799486544 -> 95122800275648 [arrowhead=empty tooltip="Arg_6.36 -> tuple.85"  headlabel="7", labeldistance=2];
+95122800533824 -> 95122800361952 [arrowhead=empty tooltip="add.96 -> tuple.97"  headlabel="0", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="1", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="2", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="3", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="4", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="5", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="6", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="7", labeldistance=2];
+95122800460816 -> 95122800361952 [arrowhead=empty tooltip="call.87 -> tuple.97"  headlabel="8", labeldistance=2];
+95122800270784 -> 95122800454512 [ltail="cluster_95122800225776", style="dashed" tooltip="region_1.111 -> while.113"];
+95122800453984 -> 95122800454512 [arrowhead=empty tooltip="tuple.112 -> while.113" ];
+95122800454512 -> 95122800234800 [arrowhead=empty tooltip="while.113 -> concatenate.123"  headlabel="0", labeldistance=2];
+95122800454512 -> 95122800234800 [arrowhead=empty tooltip="while.113 -> concatenate.123"  headlabel="1", labeldistance=2];
+95122800234800 -> cluster_95122800436864 [tooltip=" "];
+}

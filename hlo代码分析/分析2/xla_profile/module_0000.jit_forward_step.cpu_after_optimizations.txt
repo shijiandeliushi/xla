@@ -1,0 +1,45 @@
+HloModule jit_forward_step, is_scheduled=true, entry_computation_layout={(f32[512]{0}, f32[1024,512]{1,0}, f32[256]{0}, f32[512,256]{1,0}, f32[128]{0}, /*index=5*/f32[256,128]{1,0}, f32[64,1024]{1,0})->f32[64,128]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true,true,true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0: f32[64,128], param_1.1: f32[128]) -> f32[64,128] {
+  %param_0 = f32[64,128]{1,0} parameter(0)
+  %param_1.1 = f32[128]{0} parameter(1)
+  %broadcast.5 = f32[64,128]{1,0} broadcast(%param_1.1), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  ROOT %add.0 = f32[64,128]{1,0} add(%param_0, %broadcast.5), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+}
+
+%fused_computation.1 (param_0.3: f32[64,256], param_1.5: f32[256]) -> f32[64,256] {
+  %param_0.3 = f32[64,256]{1,0} parameter(0)
+  %param_1.5 = f32[256]{0} parameter(1)
+  %broadcast.7 = f32[64,256]{1,0} broadcast(%param_1.5), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %add.1 = f32[64,256]{1,0} add(%param_0.3, %broadcast.7), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %constant.2 = f32[] constant(0)
+  %broadcast.6 = f32[64,256]{1,0} broadcast(%constant.2), dimensions={}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  ROOT %maximum.2 = f32[64,256]{1,0} maximum(%add.1, %broadcast.6), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+
+%fused_computation.2 (param_0.5: f32[64,512], param_1.9: f32[512]) -> f32[64,512] {
+  %param_0.5 = f32[64,512]{1,0} parameter(0)
+  %param_1.9 = f32[512]{0} parameter(1)
+  %broadcast.9 = f32[64,512]{1,0} broadcast(%param_1.9), dimensions={1}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %add.2 = f32[64,512]{1,0} add(%param_0.5, %broadcast.9), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+  %constant.3 = f32[] constant(0)
+  %broadcast.8 = f32[64,512]{1,0} broadcast(%constant.3), dimensions={}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  ROOT %maximum.3 = f32[64,512]{1,0} maximum(%add.2, %broadcast.8), metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+
+ENTRY %main.38 (Arg_0.1: f32[512], Arg_1.2: f32[1024,512], Arg_2.3: f32[256], Arg_3.4: f32[512,256], Arg_4.5: f32[128], Arg_5.6: f32[256,128], Arg_6.7: f32[64,1024]) -> f32[64,128] {
+  %Arg_6.7 = f32[64,1024]{1,0} parameter(6), metadata={op_name="x"}
+  %Arg_1.2 = f32[1024,512]{1,0} parameter(1), metadata={op_name="params[\'params\'][\'Dense_0\'][\'kernel\']"}
+  %Arg_0.1 = f32[512]{0} parameter(0), metadata={op_name="params[\'params\'][\'Dense_0\'][\'bias\']"}
+  %Arg_3.4 = f32[512,256]{1,0} parameter(3), metadata={op_name="params[\'params\'][\'Dense_1\'][\'kernel\']"}
+  %Arg_2.3 = f32[256]{0} parameter(2), metadata={op_name="params[\'params\'][\'Dense_1\'][\'bias\']"}
+  %Arg_5.6 = f32[256,128]{1,0} parameter(5), metadata={op_name="params[\'params\'][\'Dense_2\'][\'kernel\']"}
+  %Arg_4.5 = f32[128]{0} parameter(4), metadata={op_name="params[\'params\'][\'Dense_2\'][\'bias\']"}
+  %dot.8 = f32[64,512]{1,0} dot(%Arg_6.7, %Arg_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_0/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  %broadcast_maximum_fusion.1 = f32[64,512]{1,0} fusion(%dot.8, %Arg_0.1), kind=kLoop, calls=%fused_computation.2, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  %dot.20 = f32[64,256]{1,0} dot(%broadcast_maximum_fusion.1, %Arg_3.4), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_1/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  %broadcast_maximum_fusion = f32[64,256]{1,0} fusion(%dot.20, %Arg_2.3), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/jit(relu)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  %dot.32 = f32[64,128]{1,0} dot(%broadcast_maximum_fusion, %Arg_5.6), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/dot_general" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=288}
+  ROOT %broadcast_add_fusion = f32[64,128]{1,0} fusion(%dot.32, %Arg_4.5), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(forward_step)/jit(main)/SimpleMLP/Dense_2/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/linen/linear.py" source_line=295}
+}
+

@@ -667,15 +667,28 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
 
 
 
-  //第三阶段：算子拆解与标准化 
+  // ============================================================
+  // 第三阶段：算子拆解与标准化
+  // 目标：将复合/高级算子拆解为基础算子，消除特殊形式，统一IR表示
+  // 为后续的类型归一化和Layout赋值做准备
+  // ============================================================
   HloPassPipeline pipeline("HLO passes through layout assignment");
   AddHloVerifier(&pipeline);
+
+  // --- 步骤3.1：基础标准化 ---
+  // BatchedGatherScatterNormalizer: 将批量gather/scatter拆分为非批量形式，
+  // 便于后续Pass统一处理
   pipeline.AddPass<BatchedGatherScatterNormalizer>();
+  // ResultCaster: 将计算结果的类型转换为与输出参数一致的精度
   pipeline.AddPass<ResultCaster>();
 
+  // --- 步骤3.2：Dot算子处理策略判断 ---
+  // 根据目标CPU特性判断Dot是否可由Eigen库高效实现
   auto library_supports_dot =
       LibrarySupportsDot(module, target_machine_features);
 
+  // 判断Dot指令是否会调用外部数学库（Eigen）而非走YNNPACK/手写Thunk
+  // 调用库的Dot不应被OperandUpcaster处理
   auto call_library_for_dot = [&](const HloInstruction& instr) {
     if (instr.opcode() != HloOpcode::kDot) {
       return false;
@@ -685,55 +698,75 @@ absl::Status CpuCompiler::RunHloPassesThroughLayoutAssn(
         module->config(), instr, *target_machine_features,
         /*allow_runtime_calls=*/true);
     if (dot_strategy != DotImplementationStrategy::kEigen) {
-      // We aren't going to call a library for this dot.
+      // 非Eigen策略（如YNNPACK），不走库调用，需要后续Upcaster处理
       return false;
     }
 
     return library_supports_dot(instr);
   };
 
-  // If YNNPACK is enabled, we only need to upcast dots that YnnDotThunk does
-  // not support. `upcaster_filter` returns false if the instruction shouldn't
-  // be processed.
+  // upcaster_filter: 当YNNPACK启用时，只对YnnDotThunk不支持的Dot做类型提升
+  // 返回true表示需要处理，返回false表示跳过（走库调用的Dot不需要Upcaster）
+  // 逻辑：!call_library_for_dot，即"不调用库的Dot"才需要Upcaster
   HloPredicate upcaster_filter = [&](const HloInstruction* instr) {
     return !call_library_for_dot(*instr);
   };
 
-  // xla::cpu::GetDotImplementationStrategy (used by call_library_for_dot)
-  // relies on the canonical form of dots.
+  // DotDecomposer: 将特殊Dot（如带batch维度）分解为规范形式
+  // 必须放在OperandUpcaster之前，因为Dot策略判断依赖规范形式的Dot
   pipeline.AddPass<DotDecomposer>();
+  // OperandUpcaster: 将Dot操作数提升到更高精度（如BF16->F32）
+  // 仅处理不走库调用的Dot，避免对库调用Dot做不必要的类型转换
   pipeline.AddPass<OperandUpcaster>(upcaster_filter);
 
-  // Expand random number generation.
+  // --- 步骤3.3：随机数算子展开 ---
+  // RngExpander: 将kRng指令展开为显式的随机数生成序列（三个均匀分布→正态分布等）
   pipeline.AddPass<RngExpander>();
+  // RngBitGeneratorExpander: 将kRngBitGenerator展开为Philox算法的底层位运算
   pipeline.AddPass<RngBitGeneratorExpander>(RandomAlgorithm::RNG_PHILOX);
 
-  // Remove zero-sized HLO from the input so that other passes don't have to
-  // handle it.
+  // --- 步骤3.4：特殊形式消除 ---
+  // ZeroSizedHloElimination: 消除零尺寸张量的HLO指令
+  // 提前清理，避免后续Pass需要处理边界情况
   pipeline.AddPass<ZeroSizedHloElimination>();
 
+  // DynamicIndexSplitter: 将动态索引操作（如kDynamicSlice）拆分为静态可分析形式
   pipeline.AddPass<DynamicIndexSplitter>();
 
+  // ConditionalToSelect: 将条件分支（kConditional）转换为kSelect，
+  // 当分支体足够简单时消除控制流
   pipeline.AddPass<ConditionalToSelect>();
+  // MapInliner: 将kMap操作内联展开为其嵌套computation的内容
   pipeline.AddPass<MapInliner>();
 
-  // The TopkDecomposer generates a compare op with type=TOTALORDER and must
-  // run before the ComparisonExpander which rewrites such comparisons.
+  // --- 步骤3.5：数学算子展开（将高级线性代数算子拆解为基础运算）---
+  // TopkDecomposer生成TOTALORDER类型的比较操作，因此必须在
+  // ComparisonExpander之前运行（后者会重写此类比较）
   pipeline.AddPass<TopkDecomposer>([&](const HloInstruction* instr) {
     return instr->opcode() == HloOpcode::kTopK;
   });
 
+  // ComparisonExpander: 将复杂比较（TOTALORDER等）展开为基础比较+算术运算
   pipeline.AddPass<ComparisonExpander>();
+  // CholeskyExpander: 将Cholesky分解展开为分块迭代的基础运算序列
   pipeline.AddPass<CholeskyExpander>();
+  // QrExpander: 将QR分解展开为基础线性代数运算
   pipeline.AddPass<QrExpander>();
+  // EighExpander: 将对称矩阵特征值分解展开为基础运算
   pipeline.AddPass<EighExpander>();
+  // TriangularSolveExpander: 将三角方程组求解展开为基础运算
   pipeline.AddPass<TriangularSolveExpander>();
+  // AllToAllDecomposer: 将kAllToAll（SPMD通信操作）分解为更基本的通信+数据重排
   pipeline.AddPass<AllToAllDecomposer>();
+  // StochasticConvertDecomposer: 将随机舍入类型转换分解为基础操作
   pipeline.AddPass<StochasticConvertDecomposer>();
 
-  // Inline computations with a single call site.
+  // --- 步骤3.6：收尾优化 ---
+  // CallInliner: 内联只有单一调用点的computation，减少调用开销
   pipeline.AddPass<CallInliner>(/*single_call_site=*/true);
+  // BatchDotSimplification: 将batch matmul简化（合并/拆分batch维度）
   pipeline.AddPass<BatchDotSimplification>();
+  // DotDecomposer: 再次运行，因为BatchDotSimplification可能产生新的非规范Dot
   pipeline.AddPass<DotDecomposer>();
 
 

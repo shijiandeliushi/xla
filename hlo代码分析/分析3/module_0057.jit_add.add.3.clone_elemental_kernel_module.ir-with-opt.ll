@@ -1,0 +1,186 @@
+; ModuleID = '__compute_module_add.3.clone_elemental_kernel_module'
+source_filename = "__compute_module_add.3.clone_elemental_kernel_module"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+@add.3.clone_parallel_bounds = private unnamed_addr constant [4 x [1 x [2 x i64]]] [[1 x [2 x i64]] [[2 x i64] [i64 0, i64 8]], [1 x [2 x i64]] [[2 x i64] [i64 8, i64 16]], [1 x [2 x i64]] [[2 x i64] [i64 16, i64 24]], [1 x [2 x i64]] [[2 x i64] [i64 24, i64 32]]]
+
+; Function Attrs: nofree norecurse nosync nounwind memory(readwrite, inaccessiblemem: none) uwtable
+define noalias noundef ptr @add.3.clone_kernel(ptr readonly captures(none) %0) local_unnamed_addr #0 {
+  %workgroup_id_gep = getelementptr inbounds nuw i8, ptr %0, i64 8
+  %workgroup_id = load ptr, ptr %workgroup_id_gep, align 8
+  %workgroup_id_x = load i64, ptr %workgroup_id, align 4
+  %args_gep = getelementptr inbounds nuw i8, ptr %0, i64 24
+  %args = load ptr, ptr %args_gep, align 8
+  %arg0 = load ptr, ptr %args, align 8, !invariant.load !1, !dereferenceable !2, !align !3
+  %arg1_gep = getelementptr i8, ptr %args, i64 16
+  %arg1 = load ptr, ptr %arg1_gep, align 8, !invariant.load !1, !dereferenceable !2, !align !3
+  %arg2_gep = getelementptr i8, ptr %args, i64 32
+  %arg2 = load ptr, ptr %arg2_gep, align 8, !invariant.load !1, !dereferenceable !2, !align !3
+  %lo_dim_0_gep = getelementptr inbounds [4 x [1 x [2 x i64]]], ptr @add.3.clone_parallel_bounds, i64 0, i64 %workgroup_id_x, i64 0, i64 0
+  %up_dim_0_gep = getelementptr inbounds [4 x [1 x [2 x i64]]], ptr @add.3.clone_parallel_bounds, i64 0, i64 %workgroup_id_x, i64 0, i64 1
+  %lo_dim_0 = load i64, ptr %lo_dim_0_gep, align 16
+  %up_dim_0 = load i64, ptr %up_dim_0_gep, align 8
+  %.not9 = icmp ult i64 %lo_dim_0, %up_dim_0
+  br i1 %.not9, label %add.3.clone.loop_header.dim.1.preheader, label %return
+
+add.3.clone.loop_header.dim.1.preheader:          ; preds = %1, %add.3.clone.loop_exit.dim.1
+  %add.3.clone.invar_address.dim.0.010 = phi i64 [ %invar.inc, %add.3.clone.loop_exit.dim.1 ], [ %lo_dim_0, %1 ]
+  br label %vector.ph
+
+vector.ph:                                        ; preds = %add.3.clone.loop_exit.dim.2, %add.3.clone.loop_header.dim.1.preheader
+  %add.3.clone.invar_address.dim.1.08 = phi i64 [ 0, %add.3.clone.loop_header.dim.1.preheader ], [ %invar.inc5, %add.3.clone.loop_exit.dim.2 ]
+  br label %vector.body
+
+vector.body:                                      ; preds = %vector.body, %vector.ph
+  %index = phi i64 [ 0, %vector.ph ], [ %index.next.3, %vector.body ]
+  %2 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg0, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index
+  %3 = getelementptr inbounds nuw i8, ptr %2, i64 32
+  %4 = getelementptr inbounds nuw i8, ptr %2, i64 64
+  %5 = getelementptr inbounds nuw i8, ptr %2, i64 96
+  %wide.load = load <8 x float>, ptr %2, align 64, !invariant.load !1, !noalias !4
+  %wide.load13 = load <8 x float>, ptr %3, align 32, !invariant.load !1, !noalias !4
+  %wide.load14 = load <8 x float>, ptr %4, align 64, !invariant.load !1, !noalias !4
+  %wide.load15 = load <8 x float>, ptr %5, align 32, !invariant.load !1, !noalias !4
+  %6 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg1, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index
+  %7 = getelementptr inbounds nuw i8, ptr %6, i64 32
+  %8 = getelementptr inbounds nuw i8, ptr %6, i64 64
+  %9 = getelementptr inbounds nuw i8, ptr %6, i64 96
+  %wide.load16 = load <8 x float>, ptr %6, align 64, !invariant.load !1, !noalias !4
+  %wide.load17 = load <8 x float>, ptr %7, align 32, !invariant.load !1, !noalias !4
+  %wide.load18 = load <8 x float>, ptr %8, align 64, !invariant.load !1, !noalias !4
+  %wide.load19 = load <8 x float>, ptr %9, align 32, !invariant.load !1, !noalias !4
+  %10 = fadd <8 x float> %wide.load, %wide.load16
+  %11 = fadd <8 x float> %wide.load13, %wide.load17
+  %12 = fadd <8 x float> %wide.load14, %wide.load18
+  %13 = fadd <8 x float> %wide.load15, %wide.load19
+  %14 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg2, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index
+  %15 = getelementptr inbounds nuw i8, ptr %14, i64 32
+  %16 = getelementptr inbounds nuw i8, ptr %14, i64 64
+  %17 = getelementptr inbounds nuw i8, ptr %14, i64 96
+  store <8 x float> %10, ptr %14, align 64, !alias.scope !4
+  store <8 x float> %11, ptr %15, align 32, !alias.scope !4
+  store <8 x float> %12, ptr %16, align 64, !alias.scope !4
+  store <8 x float> %13, ptr %17, align 32, !alias.scope !4
+  %index.next = or disjoint i64 %index, 32
+  %18 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg0, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next
+  %19 = getelementptr inbounds nuw i8, ptr %18, i64 32
+  %20 = getelementptr inbounds nuw i8, ptr %18, i64 64
+  %21 = getelementptr inbounds nuw i8, ptr %18, i64 96
+  %wide.load.1 = load <8 x float>, ptr %18, align 64, !invariant.load !1, !noalias !4
+  %wide.load13.1 = load <8 x float>, ptr %19, align 32, !invariant.load !1, !noalias !4
+  %wide.load14.1 = load <8 x float>, ptr %20, align 64, !invariant.load !1, !noalias !4
+  %wide.load15.1 = load <8 x float>, ptr %21, align 32, !invariant.load !1, !noalias !4
+  %22 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg1, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next
+  %23 = getelementptr inbounds nuw i8, ptr %22, i64 32
+  %24 = getelementptr inbounds nuw i8, ptr %22, i64 64
+  %25 = getelementptr inbounds nuw i8, ptr %22, i64 96
+  %wide.load16.1 = load <8 x float>, ptr %22, align 64, !invariant.load !1, !noalias !4
+  %wide.load17.1 = load <8 x float>, ptr %23, align 32, !invariant.load !1, !noalias !4
+  %wide.load18.1 = load <8 x float>, ptr %24, align 64, !invariant.load !1, !noalias !4
+  %wide.load19.1 = load <8 x float>, ptr %25, align 32, !invariant.load !1, !noalias !4
+  %26 = fadd <8 x float> %wide.load.1, %wide.load16.1
+  %27 = fadd <8 x float> %wide.load13.1, %wide.load17.1
+  %28 = fadd <8 x float> %wide.load14.1, %wide.load18.1
+  %29 = fadd <8 x float> %wide.load15.1, %wide.load19.1
+  %30 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg2, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next
+  %31 = getelementptr inbounds nuw i8, ptr %30, i64 32
+  %32 = getelementptr inbounds nuw i8, ptr %30, i64 64
+  %33 = getelementptr inbounds nuw i8, ptr %30, i64 96
+  store <8 x float> %26, ptr %30, align 64, !alias.scope !4
+  store <8 x float> %27, ptr %31, align 32, !alias.scope !4
+  store <8 x float> %28, ptr %32, align 64, !alias.scope !4
+  store <8 x float> %29, ptr %33, align 32, !alias.scope !4
+  %index.next.1 = or disjoint i64 %index, 64
+  %34 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg0, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.1
+  %35 = getelementptr inbounds nuw i8, ptr %34, i64 32
+  %36 = getelementptr inbounds nuw i8, ptr %34, i64 64
+  %37 = getelementptr inbounds nuw i8, ptr %34, i64 96
+  %wide.load.2 = load <8 x float>, ptr %34, align 64, !invariant.load !1, !noalias !4
+  %wide.load13.2 = load <8 x float>, ptr %35, align 32, !invariant.load !1, !noalias !4
+  %wide.load14.2 = load <8 x float>, ptr %36, align 64, !invariant.load !1, !noalias !4
+  %wide.load15.2 = load <8 x float>, ptr %37, align 32, !invariant.load !1, !noalias !4
+  %38 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg1, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.1
+  %39 = getelementptr inbounds nuw i8, ptr %38, i64 32
+  %40 = getelementptr inbounds nuw i8, ptr %38, i64 64
+  %41 = getelementptr inbounds nuw i8, ptr %38, i64 96
+  %wide.load16.2 = load <8 x float>, ptr %38, align 64, !invariant.load !1, !noalias !4
+  %wide.load17.2 = load <8 x float>, ptr %39, align 32, !invariant.load !1, !noalias !4
+  %wide.load18.2 = load <8 x float>, ptr %40, align 64, !invariant.load !1, !noalias !4
+  %wide.load19.2 = load <8 x float>, ptr %41, align 32, !invariant.load !1, !noalias !4
+  %42 = fadd <8 x float> %wide.load.2, %wide.load16.2
+  %43 = fadd <8 x float> %wide.load13.2, %wide.load17.2
+  %44 = fadd <8 x float> %wide.load14.2, %wide.load18.2
+  %45 = fadd <8 x float> %wide.load15.2, %wide.load19.2
+  %46 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg2, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.1
+  %47 = getelementptr inbounds nuw i8, ptr %46, i64 32
+  %48 = getelementptr inbounds nuw i8, ptr %46, i64 64
+  %49 = getelementptr inbounds nuw i8, ptr %46, i64 96
+  store <8 x float> %42, ptr %46, align 64, !alias.scope !4
+  store <8 x float> %43, ptr %47, align 32, !alias.scope !4
+  store <8 x float> %44, ptr %48, align 64, !alias.scope !4
+  store <8 x float> %45, ptr %49, align 32, !alias.scope !4
+  %index.next.2 = or disjoint i64 %index, 96
+  %50 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg0, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.2
+  %51 = getelementptr inbounds nuw i8, ptr %50, i64 32
+  %52 = getelementptr inbounds nuw i8, ptr %50, i64 64
+  %53 = getelementptr inbounds nuw i8, ptr %50, i64 96
+  %wide.load.3 = load <8 x float>, ptr %50, align 64, !invariant.load !1, !noalias !4
+  %wide.load13.3 = load <8 x float>, ptr %51, align 32, !invariant.load !1, !noalias !4
+  %wide.load14.3 = load <8 x float>, ptr %52, align 64, !invariant.load !1, !noalias !4
+  %wide.load15.3 = load <8 x float>, ptr %53, align 32, !invariant.load !1, !noalias !4
+  %54 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg1, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.2
+  %55 = getelementptr inbounds nuw i8, ptr %54, i64 32
+  %56 = getelementptr inbounds nuw i8, ptr %54, i64 64
+  %57 = getelementptr inbounds nuw i8, ptr %54, i64 96
+  %wide.load16.3 = load <8 x float>, ptr %54, align 64, !invariant.load !1, !noalias !4
+  %wide.load17.3 = load <8 x float>, ptr %55, align 32, !invariant.load !1, !noalias !4
+  %wide.load18.3 = load <8 x float>, ptr %56, align 64, !invariant.load !1, !noalias !4
+  %wide.load19.3 = load <8 x float>, ptr %57, align 32, !invariant.load !1, !noalias !4
+  %58 = fadd <8 x float> %wide.load.3, %wide.load16.3
+  %59 = fadd <8 x float> %wide.load13.3, %wide.load17.3
+  %60 = fadd <8 x float> %wide.load14.3, %wide.load18.3
+  %61 = fadd <8 x float> %wide.load15.3, %wide.load19.3
+  %62 = getelementptr inbounds [32 x [512 x [1024 x float]]], ptr %arg2, i64 0, i64 %add.3.clone.invar_address.dim.0.010, i64 %add.3.clone.invar_address.dim.1.08, i64 %index.next.2
+  %63 = getelementptr inbounds nuw i8, ptr %62, i64 32
+  %64 = getelementptr inbounds nuw i8, ptr %62, i64 64
+  %65 = getelementptr inbounds nuw i8, ptr %62, i64 96
+  store <8 x float> %58, ptr %62, align 64, !alias.scope !4
+  store <8 x float> %59, ptr %63, align 32, !alias.scope !4
+  store <8 x float> %60, ptr %64, align 64, !alias.scope !4
+  store <8 x float> %61, ptr %65, align 32, !alias.scope !4
+  %index.next.3 = add nuw nsw i64 %index, 128
+  %66 = icmp eq i64 %index.next.3, 1024
+  br i1 %66, label %add.3.clone.loop_exit.dim.2, label %vector.body, !llvm.loop !7
+
+add.3.clone.loop_exit.dim.2:                      ; preds = %vector.body
+  %invar.inc5 = add nuw nsw i64 %add.3.clone.invar_address.dim.1.08, 1
+  %exitcond11 = icmp eq i64 %invar.inc5, 512
+  br i1 %exitcond11, label %add.3.clone.loop_exit.dim.1, label %vector.ph, !llvm.loop !10
+
+add.3.clone.loop_exit.dim.1:                      ; preds = %add.3.clone.loop_exit.dim.2
+  %invar.inc = add nuw nsw i64 %add.3.clone.invar_address.dim.0.010, 1
+  %exitcond12.not = icmp eq i64 %invar.inc, %up_dim_0
+  br i1 %exitcond12.not, label %return, label %add.3.clone.loop_header.dim.1.preheader, !llvm.loop !12
+
+return:                                           ; preds = %add.3.clone.loop_exit.dim.1, %1
+  ret ptr null
+}
+
+attributes #0 = { nofree norecurse nosync nounwind memory(readwrite, inaccessiblemem: none) uwtable "frame-pointer"="all" "prefer-vector-width"="256" }
+
+!llvm.module.flags = !{!0}
+
+!0 = !{i32 1, !"xla_dylib_index", i64 0}
+!1 = !{}
+!2 = !{i64 67108864}
+!3 = !{i64 64}
+!4 = !{!5}
+!5 = !{!"result slice: {index:0, offset:0, size:67108864}", !6}
+!6 = !{!"XLA host kernel add.3.clone_kernel AA domain"}
+!7 = distinct !{!7, !8, !9}
+!8 = !{!"llvm.loop.isvectorized", i32 1}
+!9 = !{!"llvm.loop.unroll.runtime.disable"}
+!10 = distinct !{!10, !11}
+!11 = !{!"llvm.loop.unroll.disable"}
+!12 = distinct !{!12, !11}

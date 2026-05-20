@@ -1,0 +1,431 @@
+HloModule jit__truncated_normal, is_scheduled=true, entry_computation_layout={(u32[2]{0}, s32[], s32[])->f32[4096,1024]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation.clone (param_0.25: u32[], param_1.42: u32[4], param_2.32: u32[4096,1024], param_3.28: u32[4096,1024], param_4.44: s32[]) -> u32[4096,1024] {
+  %param_3.28 = u32[4096,1024]{1,0} parameter(3)
+  %param_2.32 = u32[4096,1024]{1,0} parameter(2)
+  %add.84 = u32[4096,1024]{1,0} add(%param_3.28, %param_2.32), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_1.42 = u32[4]{0} parameter(1)
+  %slice.34 = u32[1]{0} slice(%param_1.42), slice={[0:1]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.22 = u32[] bitcast(%slice.34), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.177 = u32[4096,1024]{1,0} broadcast(%bitcast.22), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.26 = u32[4096,1024]{1,0} shift-left(%param_2.32, %broadcast.177), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.132 = u32[] constant(32)
+  %subtract.30 = u32[] subtract(%constant.132, %bitcast.22), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.176 = u32[4096,1024]{1,0} broadcast(%subtract.30), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.30 = u32[4096,1024]{1,0} shift-right-logical(%param_2.32, %broadcast.176), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.30 = u32[4096,1024]{1,0} or(%shift-left.26, %shift-right-logical.30), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.32 = u32[4096,1024]{1,0} xor(%add.84, %or.30), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.83 = u32[4096,1024]{1,0} add(%add.84, %xor.32), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.33 = u32[1]{0} slice(%param_1.42), slice={[1:2]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.21 = u32[] bitcast(%slice.33), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.175 = u32[4096,1024]{1,0} broadcast(%bitcast.21), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.25 = u32[4096,1024]{1,0} shift-left(%xor.32, %broadcast.175), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %subtract.29 = u32[] subtract(%constant.132, %bitcast.21), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.173 = u32[4096,1024]{1,0} broadcast(%subtract.29), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.29 = u32[4096,1024]{1,0} shift-right-logical(%xor.32, %broadcast.173), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.29 = u32[4096,1024]{1,0} or(%shift-left.25, %shift-right-logical.29), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.31 = u32[4096,1024]{1,0} xor(%add.83, %or.29), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.82 = u32[4096,1024]{1,0} add(%add.83, %xor.31), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.32 = u32[1]{0} slice(%param_1.42), slice={[2:3]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.20 = u32[] bitcast(%slice.32), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.172 = u32[4096,1024]{1,0} broadcast(%bitcast.20), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.24 = u32[4096,1024]{1,0} shift-left(%xor.31, %broadcast.172), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %subtract.28 = u32[] subtract(%constant.132, %bitcast.20), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.171 = u32[4096,1024]{1,0} broadcast(%subtract.28), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.28 = u32[4096,1024]{1,0} shift-right-logical(%xor.31, %broadcast.171), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.28 = u32[4096,1024]{1,0} or(%shift-left.24, %shift-right-logical.28), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.30 = u32[4096,1024]{1,0} xor(%add.82, %or.28), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.81 = u32[4096,1024]{1,0} add(%add.82, %xor.30), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.31 = u32[1]{0} slice(%param_1.42), slice={[3:4]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.19 = u32[] bitcast(%slice.31), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.169 = u32[4096,1024]{1,0} broadcast(%bitcast.19), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.23 = u32[4096,1024]{1,0} shift-left(%xor.30, %broadcast.169), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %subtract.27 = u32[] subtract(%constant.132, %bitcast.19), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.167 = u32[4096,1024]{1,0} broadcast(%subtract.27), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.27 = u32[4096,1024]{1,0} shift-right-logical(%xor.30, %broadcast.167), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.27 = u32[4096,1024]{1,0} or(%shift-left.23, %shift-right-logical.27), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.29 = u32[4096,1024]{1,0} xor(%add.81, %or.27), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_0.25 = u32[] parameter(0)
+  %broadcast.166 = u32[4096,1024]{1,0} broadcast(%param_0.25), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.80 = u32[4096,1024]{1,0} add(%xor.29, %broadcast.166), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_4.44 = s32[] parameter(4)
+  %constant.133 = s32[] constant(1)
+  %add.85 = s32[] add(%param_4.44, %constant.133), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %convert.13 = u32[] convert(%add.85), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.165 = u32[4096,1024]{1,0} broadcast(%convert.13), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %add.79 = u32[4096,1024]{1,0} add(%add.80, %broadcast.165), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%parallel_broadcast_add_fusion (p: u32[], p.1: u32[4], p.2: u32[4096,1024], p.3: u32[4096,1024], p.4: s32[]) -> u32[4096,1024] {
+  %p = u32[] parameter(0)
+  %p.1 = u32[4]{0} parameter(1)
+  %p.2 = u32[4096,1024]{1,0} parameter(2)
+  %p.3 = u32[4096,1024]{1,0} parameter(3)
+  %p.4 = s32[] parameter(4)
+  ROOT %broadcast_add_fusion.clone = u32[4096,1024]{1,0} fusion(%p, %p.1, %p.2, %p.3, %p.4), kind=kLoop, calls=%fused_computation.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"outer_dimension_partitions":["12"]}
+}
+
+%fused_computation.1.clone (param_0.26: u32[], param_1.43: u32[4], param_2.33: u32[4096,1024], param_3.29: u32[4096,1024]) -> u32[4096,1024] {
+  %param_3.29 = u32[4096,1024]{1,0} parameter(3)
+  %param_2.33 = u32[4096,1024]{1,0} parameter(2)
+  %add.90 = u32[4096,1024]{1,0} add(%param_3.29, %param_2.33), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_1.43 = u32[4]{0} parameter(1)
+  %slice.37 = u32[1]{0} slice(%param_1.43), slice={[0:1]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.25 = u32[] bitcast(%slice.37), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.184 = u32[4096,1024]{1,0} broadcast(%bitcast.25), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.29 = u32[4096,1024]{1,0} shift-left(%param_2.33, %broadcast.184), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.134 = u32[] constant(32)
+  %subtract.33 = u32[] subtract(%constant.134, %bitcast.25), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.183 = u32[4096,1024]{1,0} broadcast(%subtract.33), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.33 = u32[4096,1024]{1,0} shift-right-logical(%param_2.33, %broadcast.183), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.33 = u32[4096,1024]{1,0} or(%shift-left.29, %shift-right-logical.33), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.35 = u32[4096,1024]{1,0} xor(%add.90, %or.33), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.89 = u32[4096,1024]{1,0} add(%add.90, %xor.35), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.36 = u32[1]{0} slice(%param_1.43), slice={[1:2]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.24 = u32[] bitcast(%slice.36), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.182 = u32[4096,1024]{1,0} broadcast(%bitcast.24), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.28 = u32[4096,1024]{1,0} shift-left(%xor.35, %broadcast.182), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %subtract.32 = u32[] subtract(%constant.134, %bitcast.24), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.181 = u32[4096,1024]{1,0} broadcast(%subtract.32), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.32 = u32[4096,1024]{1,0} shift-right-logical(%xor.35, %broadcast.181), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.32 = u32[4096,1024]{1,0} or(%shift-left.28, %shift-right-logical.32), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.34 = u32[4096,1024]{1,0} xor(%add.89, %or.32), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.88 = u32[4096,1024]{1,0} add(%add.89, %xor.34), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.35 = u32[1]{0} slice(%param_1.43), slice={[2:3]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.23 = u32[] bitcast(%slice.35), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.180 = u32[4096,1024]{1,0} broadcast(%bitcast.23), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-left.27 = u32[4096,1024]{1,0} shift-left(%xor.34, %broadcast.180), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_left" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %subtract.31 = u32[] subtract(%constant.134, %bitcast.23), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.179 = u32[4096,1024]{1,0} broadcast(%subtract.31), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %shift-right-logical.31 = u32[4096,1024]{1,0} shift-right-logical(%xor.34, %broadcast.179), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.31 = u32[4096,1024]{1,0} or(%shift-left.27, %shift-right-logical.31), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.33 = u32[4096,1024]{1,0} xor(%add.88, %or.31), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.87 = u32[4096,1024]{1,0} add(%add.88, %xor.33), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_0.26 = u32[] parameter(0)
+  %broadcast.178 = u32[4096,1024]{1,0} broadcast(%param_0.26), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %add.86 = u32[4096,1024]{1,0} add(%add.87, %broadcast.178), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%parallel_broadcast_add_fusion.1 (p.5: u32[], p.6: u32[4], p.7: u32[4096,1024], p.8: u32[4096,1024]) -> u32[4096,1024] {
+  %p.5 = u32[] parameter(0)
+  %p.6 = u32[4]{0} parameter(1)
+  %p.7 = u32[4096,1024]{1,0} parameter(2)
+  %p.8 = u32[4096,1024]{1,0} parameter(3)
+  ROOT %broadcast_add_fusion.1.clone = u32[4096,1024]{1,0} fusion(%p.5, %p.6, %p.7, %p.8), kind=kLoop, calls=%fused_computation.1.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"outer_dimension_partitions":["12"]}
+}
+
+%region_0.189.clone.clone.clone (arg_tuple.4: (s32[], u32[4096,1024], u32[4096,1024], u32[], u32[], /*index=5*/u32[], u32[4], u32[4])) -> (s32[], u32[4096,1024], u32[4096,1024], u32[], u32[], /*index=5*/u32[], u32[4], u32[4]) {
+  %arg_tuple.4 = (s32[], u32[4096,1024]{1,0}, u32[4096,1024]{1,0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+  %constant.72 = s32[] constant(1)
+  %get-tuple-element.104 = u32[4]{0} get-tuple-element(%arg_tuple.4), index=7
+  %get-tuple-element.103 = u32[4]{0} get-tuple-element(%arg_tuple.4), index=6
+  %get-tuple-element.102 = u32[] get-tuple-element(%arg_tuple.4), index=5
+  %get-tuple-element.101 = u32[] get-tuple-element(%arg_tuple.4), index=4
+  %get-tuple-element.100 = u32[] get-tuple-element(%arg_tuple.4), index=3
+  %get-tuple-element.99 = u32[4096,1024]{1,0} get-tuple-element(%arg_tuple.4), index=2
+  %get-tuple-element.98 = u32[4096,1024]{1,0} get-tuple-element(%arg_tuple.4), index=1
+  %get-tuple-element.97 = s32[] get-tuple-element(%arg_tuple.4), index=0
+  %copy.16 = u32[4]{0} copy(%get-tuple-element.104)
+  %copy.15 = u32[4]{0} copy(%get-tuple-element.103)
+  %copy.14 = u32[] copy(%get-tuple-element.102)
+  %copy.13 = u32[] copy(%get-tuple-element.101)
+  %copy.12 = u32[] copy(%get-tuple-element.100)
+  %copy.11 = u32[4096,1024]{1,0} copy(%get-tuple-element.99)
+  %copy.10 = u32[4096,1024]{1,0} copy(%get-tuple-element.98)
+  %copy.9 = s32[] copy(%get-tuple-element.97)
+  %copy.24 = u32[4]{0} copy(%copy.15), control-predecessors={%copy.16}
+  %copy.23 = u32[4]{0} copy(%copy.16), control-predecessors={%copy.15}
+  %copy.21 = u32[] copy(%copy.14), control-predecessors={%copy.13}
+  %copy.22 = u32[] copy(%copy.12), control-predecessors={%copy.14}
+  %copy.20 = u32[] copy(%copy.13), control-predecessors={%copy.12}
+  %call.1 = u32[4096,1024]{1,0} call(%copy.12, %copy.15, %copy.11, %copy.10), to_apply=%parallel_broadcast_add_fusion.1
+  %call = u32[4096,1024]{1,0} call(%copy.13, %copy.15, %copy.11, %copy.10, %copy.9), to_apply=%parallel_broadcast_add_fusion
+  %add.40 = s32[] add(%copy.9, %constant.72), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/body/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %tuple.13 = (s32[], u32[4096,1024]{1,0}, u32[4096,1024]{1,0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) tuple(%add.40, %call.1, %call, %copy.20, %copy.21, /*index=5*/%copy.22, %copy.23, %copy.24)
+}
+
+%region_1.202.clone.clone (arg_tuple.3: (s32[], u32[4096,1024], u32[4096,1024], u32[], u32[], /*index=5*/u32[], u32[4], u32[4])) -> pred[] {
+  %arg_tuple.3 = (s32[], u32[4096,1024]{1,0}, u32[4096,1024]{1,0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) parameter(0)
+  %constant.70 = s32[] constant(5)
+  %get-tuple-element.70 = s32[] get-tuple-element(%arg_tuple.3), index=0
+  ROOT %compare.1 = pred[] compare(%get-tuple-element.70, %constant.70), direction=LT, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while/cond/lt" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.3 (param_0.9: s32[]) -> f32[] {
+  %param_0.9 = s32[] parameter(0)
+  %convert.9 = f32[] convert(%param_0.9), metadata={op_name="jit(_truncated_normal)/jit(main)/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.124 = f32[] constant(0.707106769)
+  %multiply.22 = f32[] multiply(%convert.9, %constant.124), metadata={op_name="jit(_truncated_normal)/jit(main)/div" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %erf.0 = f32[] erf(%multiply.22), metadata={op_name="jit(_truncated_normal)/jit(main)/erf" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.4 (param_0.13: u32[2]) -> u32[] {
+  %param_0.13 = u32[2]{0} parameter(0)
+  %slice.26 = u32[1]{0} slice(%param_0.13), slice={[0:1]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.14 = u32[] bitcast(%slice.26), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice.25 = u32[1]{0} slice(%param_0.13), slice={[1:2]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.13 = u32[] bitcast(%slice.25), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor.28 = u32[] xor(%bitcast.14, %bitcast.13), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.127 = u32[] constant(466688986)
+  ROOT %xor.27 = u32[] xor(%xor.28, %constant.127), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.6 (param_0.17: u32[2]) -> u32[] {
+  %param_0.17 = u32[2]{0} parameter(0)
+  %slice.28 = u32[1]{0} slice(%param_0.17), slice={[1:2]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %bitcast.16 = u32[] bitcast(%slice.28), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.8 (param_0.21: u32[2]) -> u32[] {
+  %param_0.21 = u32[2]{0} parameter(0)
+  %slice.30 = u32[1]{0} slice(%param_0.21), slice={[0:1]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %bitcast.18 = u32[] bitcast(%slice.30), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.9 (param_0.24: s32[]) -> f32[] {
+  %param_0.24 = s32[] parameter(0)
+  %convert.12 = f32[] convert(%param_0.24), metadata={op_name="jit(_truncated_normal)/jit(main)/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.131 = f32[] constant(0.707106769)
+  %multiply.25 = f32[] multiply(%convert.12, %constant.131), metadata={op_name="jit(_truncated_normal)/jit(main)/div" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %erf.1 = f32[] erf(%multiply.25), metadata={op_name="jit(_truncated_normal)/jit(main)/erf" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%fused_computation.2.clone (param_0.27: f32[], param_1.44: f32[], param_2.34: u32[4096,1024], param_3.30: u32[4096,1024], param_4.45: s32[], param_5.55: s32[]) -> f32[4096,1024] {
+  %param_5.55 = s32[] parameter(5)
+  %convert.15 = f32[] convert(%param_5.55), metadata={op_name="jit(_truncated_normal)/jit(main)/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.25 = pred[] compare(%convert.15, %convert.15), direction=NE, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.171 = s32[] constant(2143289344), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.170 = f32[] constant(-inf)
+  %compare.24 = pred[] compare(%convert.15, %constant.170), direction=EQ, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.169 = s32[] constant(-8388608), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast-convert.10 = s32[] bitcast-convert(%convert.15), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.168 = s32[] constant(2147483647)
+  %and.7 = s32[] and(%bitcast-convert.10, %constant.168), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.167 = s32[] constant(0)
+  %compare.23 = pred[] compare(%and.7, %constant.167), direction=EQ, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.166 = s32[] constant(-2147483647), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.165 = s32[] constant(2139095040), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.22 = pred[] compare(%and.7, %constant.165), direction=GT, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.164 = s32[] constant(-2147483648)
+  %and.6 = s32[] and(%bitcast-convert.10, %constant.164), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.21 = pred[] compare(%and.6, %constant.164), direction=NE, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.36 = pred[] or(%compare.22, %compare.21), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.163 = s32[] constant(-1)
+  %constant.162 = s32[] constant(1)
+  %select.37 = s32[] select(%or.36, %constant.163, %constant.162), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.107 = s32[] add(%bitcast-convert.10, %select.37), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.36 = s32[] select(%compare.23, %constant.166, %add.107), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.35 = s32[] select(%compare.24, %constant.169, %select.36), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.34 = s32[] select(%compare.25, %constant.171, %select.35), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast-convert.9 = f32[] bitcast-convert(%select.34), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.215 = f32[4096,1024]{1,0} broadcast(%bitcast-convert.9), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(clip)/min" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_4.45 = s32[] parameter(4)
+  %convert.14 = f32[] convert(%param_4.45), metadata={op_name="jit(_truncated_normal)/jit(main)/convert_element_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.20 = pred[] compare(%convert.14, %convert.14), direction=NE, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.161 = f32[] constant(inf)
+  %compare.19 = pred[] compare(%convert.14, %constant.161), direction=EQ, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast-convert.8 = s32[] bitcast-convert(%convert.14), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %and.5 = s32[] and(%bitcast-convert.8, %constant.168), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.18 = pred[] compare(%and.5, %constant.167), direction=EQ, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.17 = pred[] compare(%and.5, %constant.165), direction=GT, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %and.4 = s32[] and(%bitcast-convert.8, %constant.164), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %compare.16 = pred[] compare(%and.4, %constant.167), direction=NE, metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %or.35 = pred[] or(%compare.17, %compare.16), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.33 = s32[] select(%or.35, %constant.163, %constant.162), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.106 = s32[] add(%bitcast-convert.8, %select.33), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.32 = s32[] select(%compare.18, %constant.162, %add.106), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.31 = s32[] select(%compare.19, %constant.165, %select.32), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.30 = s32[] select(%compare.20, %constant.171, %select.31), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast-convert.7 = f32[] bitcast-convert(%select.30), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.214 = f32[4096,1024]{1,0} broadcast(%bitcast-convert.7), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(clip)/max" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_1.44 = f32[] parameter(1)
+  %broadcast.213 = f32[4096,1024]{1,0} broadcast(%param_1.44), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/max" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_2.34 = u32[4096,1024]{1,0} parameter(2)
+  %param_3.30 = u32[4096,1024]{1,0} parameter(3)
+  %xor.36 = u32[4096,1024]{1,0} xor(%param_2.34, %param_3.30), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.160 = u32[] constant(9)
+  %broadcast.212 = u32[4096,1024]{1,0} broadcast(%constant.160), dimensions={}
+  %shift-right-logical.34 = u32[4096,1024]{1,0} shift-right-logical(%xor.36, %broadcast.212), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/shift_right_logical" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.159 = u32[] constant(1065353216)
+  %broadcast.211 = u32[4096,1024]{1,0} broadcast(%constant.159), dimensions={}
+  %or.34 = u32[4096,1024]{1,0} or(%shift-right-logical.34, %broadcast.211), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/or" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast-convert.6 = f32[4096,1024]{1,0} bitcast-convert(%or.34), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/bitcast_convert_type" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.158 = f32[] constant(-1)
+  %broadcast.210 = f32[4096,1024]{1,0} broadcast(%constant.158), dimensions={}
+  %add.104 = f32[4096,1024]{1,0} add(%bitcast-convert.6, %broadcast.210), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_0.27 = f32[] parameter(0)
+  %subtract.34 = f32[] subtract(%param_0.27, %param_1.44), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/sub" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.209 = f32[4096,1024]{1,0} broadcast(%subtract.34), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.38 = f32[4096,1024]{1,0} multiply(%add.104, %broadcast.209), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.102 = f32[4096,1024]{1,0} add(%multiply.38, %broadcast.213), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %maximum.5 = f32[4096,1024]{1,0} maximum(%broadcast.213, %add.102), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/max" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %abs.1 = f32[4096,1024]{1,0} abs(%maximum.5), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.157 = f32[] constant(1)
+  %broadcast.208 = f32[4096,1024]{1,0} broadcast(%constant.157), dimensions={}
+  %compare.15 = pred[4096,1024]{1,0} compare(%abs.1, %broadcast.208), direction=EQ, metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.207 = f32[4096,1024]{1,0} broadcast(%constant.161), dimensions={}
+  %multiply.37 = f32[4096,1024]{1,0} multiply(%maximum.5, %broadcast.207), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %negate.6 = f32[4096,1024]{1,0} negate(%maximum.5), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.36 = f32[4096,1024]{1,0} multiply(%maximum.5, %negate.6), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %log-plus-one.1 = f32[4096,1024]{1,0} log-plus-one(%multiply.36), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %negate.5 = f32[4096,1024]{1,0} negate(%log-plus-one.1), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.156 = f32[] constant(5)
+  %broadcast.206 = f32[4096,1024]{1,0} broadcast(%constant.156), dimensions={}
+  %compare.14 = pred[4096,1024]{1,0} compare(%negate.5, %broadcast.206), direction=LT, metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.155 = f32[] constant(1.50140941)
+  %broadcast.205 = f32[4096,1024]{1,0} broadcast(%constant.155), dimensions={}
+  %constant.154 = f32[] constant(2.83297682)
+  %broadcast.204 = f32[4096,1024]{1,0} broadcast(%constant.154), dimensions={}
+  %select.29 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.205, %broadcast.204), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.153 = f32[] constant(0.246640727)
+  %broadcast.203 = f32[4096,1024]{1,0} broadcast(%constant.153), dimensions={}
+  %constant.152 = f32[] constant(1.00167406)
+  %broadcast.202 = f32[4096,1024]{1,0} broadcast(%constant.152), dimensions={}
+  %select.28 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.203, %broadcast.202), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.151 = f32[] constant(-0.00417768164)
+  %broadcast.201 = f32[4096,1024]{1,0} broadcast(%constant.151), dimensions={}
+  %constant.150 = f32[] constant(0.00943887047)
+  %broadcast.200 = f32[4096,1024]{1,0} broadcast(%constant.150), dimensions={}
+  %select.27 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.201, %broadcast.200), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.149 = f32[] constant(-0.00125372503)
+  %broadcast.199 = f32[4096,1024]{1,0} broadcast(%constant.149), dimensions={}
+  %constant.148 = f32[] constant(-0.0076224613)
+  %broadcast.198 = f32[4096,1024]{1,0} broadcast(%constant.148), dimensions={}
+  %select.26 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.199, %broadcast.198), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.147 = f32[] constant(0.00021858087)
+  %broadcast.197 = f32[4096,1024]{1,0} broadcast(%constant.147), dimensions={}
+  %constant.146 = f32[] constant(0.00573950773)
+  %broadcast.196 = f32[4096,1024]{1,0} broadcast(%constant.146), dimensions={}
+  %select.25 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.197, %broadcast.196), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.145 = f32[] constant(-4.39150654e-06)
+  %broadcast.195 = f32[4096,1024]{1,0} broadcast(%constant.145), dimensions={}
+  %constant.144 = f32[] constant(-0.00367342844)
+  %broadcast.194 = f32[4096,1024]{1,0} broadcast(%constant.144), dimensions={}
+  %select.24 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.195, %broadcast.194), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.143 = f32[] constant(-3.5233877e-06)
+  %broadcast.193 = f32[4096,1024]{1,0} broadcast(%constant.143), dimensions={}
+  %constant.142 = f32[] constant(0.00134934322)
+  %broadcast.192 = f32[4096,1024]{1,0} broadcast(%constant.142), dimensions={}
+  %select.23 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.193, %broadcast.192), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.141 = f32[] constant(3.43273939e-07)
+  %broadcast.191 = f32[4096,1024]{1,0} broadcast(%constant.141), dimensions={}
+  %constant.140 = f32[] constant(0.000100950558)
+  %broadcast.190 = f32[4096,1024]{1,0} broadcast(%constant.140), dimensions={}
+  %select.22 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.191, %broadcast.190), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.139 = f32[] constant(2.81022636e-08)
+  %broadcast.189 = f32[4096,1024]{1,0} broadcast(%constant.139), dimensions={}
+  %constant.138 = f32[] constant(-0.000200214257)
+  %broadcast.188 = f32[4096,1024]{1,0} broadcast(%constant.138), dimensions={}
+  %select.21 = f32[4096,1024]{1,0} select(%compare.14, %broadcast.189, %broadcast.188), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.137 = f32[] constant(-2.5)
+  %broadcast.187 = f32[4096,1024]{1,0} broadcast(%constant.137), dimensions={}
+  %add.101 = f32[4096,1024]{1,0} add(%negate.5, %broadcast.187), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %sqrt.1 = f32[4096,1024]{1,0} sqrt(%negate.5), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.136 = f32[] constant(-3)
+  %broadcast.186 = f32[4096,1024]{1,0} broadcast(%constant.136), dimensions={}
+  %add.100 = f32[4096,1024]{1,0} add(%sqrt.1, %broadcast.186), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.20 = f32[4096,1024]{1,0} select(%compare.14, %add.101, %add.100), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.35 = f32[4096,1024]{1,0} multiply(%select.21, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.99 = f32[4096,1024]{1,0} add(%select.22, %multiply.35), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.34 = f32[4096,1024]{1,0} multiply(%add.99, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.98 = f32[4096,1024]{1,0} add(%select.23, %multiply.34), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.33 = f32[4096,1024]{1,0} multiply(%add.98, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.97 = f32[4096,1024]{1,0} add(%select.24, %multiply.33), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.32 = f32[4096,1024]{1,0} multiply(%add.97, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.95 = f32[4096,1024]{1,0} add(%select.25, %multiply.32), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.31 = f32[4096,1024]{1,0} multiply(%add.95, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.94 = f32[4096,1024]{1,0} add(%select.26, %multiply.31), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.30 = f32[4096,1024]{1,0} multiply(%add.94, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.93 = f32[4096,1024]{1,0} add(%select.27, %multiply.30), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.29 = f32[4096,1024]{1,0} multiply(%add.93, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.92 = f32[4096,1024]{1,0} add(%select.28, %multiply.29), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.28 = f32[4096,1024]{1,0} multiply(%add.92, %select.20), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.91 = f32[4096,1024]{1,0} add(%select.29, %multiply.28), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply.27 = f32[4096,1024]{1,0} multiply(%add.91, %maximum.5), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %select.19 = f32[4096,1024]{1,0} select(%compare.15, %multiply.37, %multiply.27), metadata={op_name="jit(_truncated_normal)/jit(main)/erf_inv" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.135 = f32[] constant(1.41421354)
+  %broadcast.185 = f32[4096,1024]{1,0} broadcast(%constant.135), dimensions={}
+  %multiply.26 = f32[4096,1024]{1,0} multiply(%select.19, %broadcast.185), metadata={op_name="jit(_truncated_normal)/jit(main)/mul" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %maximum.4 = f32[4096,1024]{1,0} maximum(%broadcast.214, %multiply.26), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(clip)/max" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %minimum.2 = f32[4096,1024]{1,0} minimum(%broadcast.215, %maximum.4), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(clip)/min" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%parallel_maximum_minimum_fusion (p.9: f32[], p.10: f32[], p.11: u32[4096,1024], p.12: u32[4096,1024], p.13: s32[], p.14: s32[]) -> f32[4096,1024] {
+  %p.9 = f32[] parameter(0)
+  %p.10 = f32[] parameter(1)
+  %p.11 = u32[4096,1024]{1,0} parameter(2)
+  %p.12 = u32[4096,1024]{1,0} parameter(3)
+  %p.13 = s32[] parameter(4)
+  %p.14 = s32[] parameter(5)
+  ROOT %maximum_minimum_fusion.clone = f32[4096,1024]{1,0} fusion(%p.9, %p.10, %p.11, %p.12, %p.13, /*index=5*/%p.14), kind=kLoop, calls=%fused_computation.2.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(clip)/min" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"outer_dimension_partitions":["12"]}
+}
+
+%fused_computation.5.clone (param_0.28: u32[2]) -> u32[4096,1024] {
+  %iota.9 = u64[4096]{0} iota(), iota_dimension=0, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.172 = u64[] constant(1024)
+  %broadcast.218 = u64[4096]{0} broadcast(%constant.172), dimensions={}
+  %multiply.39 = u64[4096]{0} multiply(%iota.9, %broadcast.218), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.217 = u64[4096,1024]{1,0} broadcast(%multiply.39), dimensions={0}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %iota.8 = u64[4096,1024]{1,0} iota(), iota_dimension=1, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.109 = u64[4096,1024]{1,0} add(%broadcast.217, %iota.8), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %convert.16 = u32[4096,1024]{1,0} convert(%add.109), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_0.28 = u32[2]{0} parameter(0)
+  %slice.38 = u32[1]{0} slice(%param_0.28), slice={[1:2]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.26 = u32[] bitcast(%slice.38), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.216 = u32[4096,1024]{1,0} broadcast(%bitcast.26), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %add.108 = u32[4096,1024]{1,0} add(%convert.16, %broadcast.216), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%parallel_broadcast_add_fusion.2 (p.15: u32[2]) -> u32[4096,1024] {
+  %p.15 = u32[2]{0} parameter(0)
+  ROOT %broadcast_add_fusion.2.clone = u32[4096,1024]{1,0} fusion(%p.15), kind=kLoop, calls=%fused_computation.5.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"outer_dimension_partitions":["4"]}
+}
+
+%fused_computation.7.clone (param_0.29: u32[2]) -> u32[4096,1024] {
+  %iota.11 = u64[4096]{0} iota(), iota_dimension=0, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.174 = u64[] constant(1024)
+  %broadcast.225 = u64[4096]{0} broadcast(%constant.174), dimensions={}
+  %multiply.40 = u64[4096]{0} multiply(%iota.11, %broadcast.225), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.223 = u64[4096,1024]{1,0} broadcast(%multiply.40), dimensions={0}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %iota.10 = u64[4096,1024]{1,0} iota(), iota_dimension=1, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %add.111 = u64[4096,1024]{1,0} add(%broadcast.223, %iota.10), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %constant.173 = u64[] constant(32)
+  %broadcast.221 = u64[4096,1024]{1,0} broadcast(%constant.173), dimensions={}
+  %shift-right-logical.35 = u64[4096,1024]{1,0} shift-right-logical(%add.111, %broadcast.221), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %convert.17 = u32[4096,1024]{1,0} convert(%shift-right-logical.35), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/iota_2x32_shape" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %param_0.29 = u32[2]{0} parameter(0)
+  %slice.39 = u32[1]{0} slice(%param_0.29), slice={[0:1]}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %bitcast.27 = u32[] bitcast(%slice.39), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %broadcast.219 = u32[4096,1024]{1,0} broadcast(%bitcast.27), dimensions={}, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %add.110 = u32[4096,1024]{1,0} add(%convert.17, %broadcast.219), metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+}
+
+%parallel_broadcast_add_fusion.3 (p.16: u32[2]) -> u32[4096,1024] {
+  %p.16 = u32[2]{0} parameter(0)
+  ROOT %broadcast_add_fusion.3.clone = u32[4096,1024]{1,0} fusion(%p.16), kind=kLoop, calls=%fused_computation.7.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/add" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"outer_dimension_partitions":["12"]}
+}
+
+ENTRY %main.327 (Arg_0.1: u32[2], Arg_1.2: s32[], Arg_2.3: s32[]) -> f32[4096,1024] {
+  %Arg_0.1 = u32[2]{0} parameter(0), metadata={op_name="key"}
+  %Arg_1.2 = s32[] parameter(1), metadata={op_name="lower"}
+  %Arg_2.3 = s32[] parameter(2), metadata={op_name="upper"}
+  %constant.9 = s32[] constant(0)
+  %constant.17 = u32[4]{0} constant({13, 15, 26, 6})
+  %constant.19 = u32[4]{0} constant({17, 29, 16, 24})
+  %slice_bitcast_fusion = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.6, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %slice_bitcast_fusion.1 = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.8, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/slice" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %xor_xor_fusion = u32[] fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation.4, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/xor" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %call.3 = u32[4096,1024]{1,0} call(%Arg_0.1), to_apply=%parallel_broadcast_add_fusion.2
+  %call.4 = u32[4096,1024]{1,0} call(%Arg_0.1), to_apply=%parallel_broadcast_add_fusion.3
+  %multiply_erf_fusion.1 = f32[] fusion(%Arg_1.2), kind=kLoop, calls=%fused_computation.9, metadata={op_name="jit(_truncated_normal)/jit(main)/erf" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %multiply_erf_fusion = f32[] fusion(%Arg_2.3), kind=kLoop, calls=%fused_computation.3, metadata={op_name="jit(_truncated_normal)/jit(main)/erf" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %copy.25 = s32[] copy(%constant.9)
+  %copy.26 = u32[4]{0} copy(%constant.17)
+  %copy.27 = u32[4]{0} copy(%constant.19)
+  %tuple.11 = (s32[], u32[4096,1024]{1,0}, u32[4096,1024]{1,0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) tuple(%copy.25, %call.4, %call.3, %slice_bitcast_fusion, %xor_xor_fusion, /*index=5*/%slice_bitcast_fusion.1, %copy.26, %copy.27)
+  %while.2 = (s32[], u32[4096,1024]{1,0}, u32[4096,1024]{1,0}, u32[], u32[], /*index=5*/u32[], u32[4]{0}, u32[4]{0}) while(%tuple.11), condition=%region_1.202.clone.clone, body=%region_0.189.clone.clone.clone, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}, backend_config={"known_trip_count":{"n":"5"},"known_init_step":{"init":"0","step":"1"},"known_induction_variable":{"tuple_index":"0"}}
+  %get-tuple-element.1 = u32[4096,1024]{1,0} get-tuple-element(%while.2), index=2, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  %get-tuple-element.0 = u32[4096,1024]{1,0} get-tuple-element(%while.2), index=1, metadata={op_name="jit(_truncated_normal)/jit(main)/jit(_uniform)/while" source_file="/home/xianghonghui/xla/xla_venv/lib/python3.10/site-packages/flax/core/scope.py" source_line=968}
+  ROOT %call.2 = f32[4096,1024]{1,0} call(%multiply_erf_fusion, %multiply_erf_fusion.1, %get-tuple-element.0, %get-tuple-element.1, %Arg_1.2, /*index=5*/%Arg_2.3), to_apply=%parallel_maximum_minimum_fusion
+}
+

@@ -1,0 +1,66 @@
+========== Stage 3 全部 21 个 Pass 单独运行命令 ==========
+
+# 1. 批量Gather/Scatter标准化
+bazel-bin/xla/hlo/tools/hlo-opt --passes=batched_gather_scatter_normalizer xla/tools/data/stage3_demo/01_batched_gather_scatter_normalizer.hlo
+
+# 2. 结果类型转换(插入Convert)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=result_caster xla/tools/data/stage3_demo/02_result_caster.hlo
+
+# 3. Dot算子规范化(第1次)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=dot_decomposer xla/tools/data/stage3_demo/03_dot_decomposer.hlo
+
+# 4. Dot操作数精度提升(bf16->f32)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=operand_upcaster xla/tools/data/stage3_demo/04_operand_upcaster.hlo
+
+# 5. 随机数生成展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=rng-expander xla/tools/data/stage3_demo/05_rng_expander.hlo
+
+# 6. 随机位生成器展开(Philox)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=rng-bit-generator-expander xla/tools/data/stage3_demo/06_rng_bit_generator_expander.hlo
+
+# 7. 零尺寸HLO消除
+bazel-bin/xla/hlo/tools/hlo-opt --passes=zero_sized_hlo_elimination xla/tools/data/stage3_demo/07_zero_sized_hlo_elimination.hlo
+
+# 8. 动态索引拆分(向量->标量)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=dynamic-index-splitter xla/tools/data/stage3_demo/08_dynamic_index_splitter.hlo
+
+# 9. 条件分支转Select(控制流->数据流)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=conditional-to-select xla/tools/data/stage3_demo/09_conditional_to_select.hlo
+
+# 10. Map内联展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=map-inline xla/tools/data/stage3_demo/10_map_inliner.hlo
+
+# 11. TopK分解(iota+sort+slice) -- 变化最显著
+bazel-bin/xla/hlo/tools/hlo-opt --passes=topk-decomposer xla/tools/data/stage3_demo/11_topk_decomposer.hlo
+
+# 12. 复杂比较展开(TOTALORDER)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=comparison-expander xla/tools/data/stage3_demo/12_comparison_expander.hlo
+
+# 13. Cholesky分解展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=cholesky_expander xla/tools/data/stage3_demo/13_cholesky_expander.hlo
+
+# 14. QR分解展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=qr_expander xla/tools/data/stage3_demo/14_qr_expander.hlo
+
+# 15. 特征值分解展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=eigh_expander xla/tools/data/stage3_demo/15_eigh_expander.hlo
+
+# 16. 三角求解展开
+bazel-bin/xla/hlo/tools/hlo-opt --passes=triangular_solve_expander xla/tools/data/stage3_demo/16_triangular_solve_expander.hlo
+
+# 17. AllToAll通信分解
+bazel-bin/xla/hlo/tools/hlo-opt --passes=all_to_all_decomposer xla/tools/data/stage3_demo/17_all_to_all_decomposer.hlo
+
+# 18. 随机舍入转换分解
+bazel-bin/xla/hlo/tools/hlo-opt --passes=stochastic_convert_decomposer xla/tools/data/stage3_demo/18_stochastic_convert_decomposer.hlo
+
+# 19. Call内联(函数内联)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=call-inliner xla/tools/data/stage3_demo/19_call_inliner.hlo
+
+# 20. 批Dot退化维度消除
+bazel-bin/xla/hlo/tools/hlo-opt --passes=batch-dot-simplification xla/tools/data/stage3_demo/20_batch_dot_simplification.hlo
+
+# 21. Dot算子规范化(第2次,修复BatchDotSimplification产生的新非规范Dot)
+bazel-bin/xla/hlo/tools/hlo-opt --passes=dot_decomposer xla/tools/data/stage3_demo/21_dot_decomposer.hlo
+
+========== 共 21 条命令，复制需要的行到终端运行 ==========

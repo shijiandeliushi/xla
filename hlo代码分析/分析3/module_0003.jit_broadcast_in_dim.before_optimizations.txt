@@ -1,0 +1,7 @@
+HloModule jit_broadcast_in_dim, entry_computation_layout={(f32[])->f32[32,512,1024]{2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.3 (Arg_0.1: f32[]) -> f32[32,512,1024] {
+  %Arg_0.1 = f32[] parameter(0), metadata={op_name="args[0]"}
+  ROOT %broadcast.2 = f32[32,512,1024]{2,1,0} broadcast(%Arg_0.1), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/jit(main)/broadcast_in_dim" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=76}
+}
+

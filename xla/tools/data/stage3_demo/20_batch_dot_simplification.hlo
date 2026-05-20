@@ -1,0 +1,12 @@
+HloModule demo
+
+// BatchDotSimplification:
+// 消除批量 Dot 中 size=1 的退化 batch 维度
+// reshape 去掉退化维度 → 非batch dot → reshape 恢复退化维度
+ENTRY main {
+  a = f32[1,9,3] parameter(0)
+  b = f32[1,3,7] parameter(1)
+  ROOT dot = f32[1,9,7] dot(a, b),
+    lhs_batch_dims={0}, rhs_batch_dims={0},
+    lhs_contracting_dims={2}, rhs_contracting_dims={1}
+}

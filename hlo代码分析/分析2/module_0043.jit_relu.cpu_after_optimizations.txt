@@ -1,0 +1,14 @@
+HloModule jit_relu, is_scheduled=true, entry_computation_layout={(f32[64,256]{1,0})->f32[64,256]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0: f32[64,256]) -> f32[64,256] {
+  %param_0 = f32[64,256]{1,0} parameter(0)
+  %constant.0 = f32[] constant(0)
+  %broadcast.0 = f32[64,256]{1,0} broadcast(%constant.0), dimensions={}, metadata={op_name="jit(relu)/jit(main)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+  ROOT %maximum.0 = f32[64,256]{1,0} maximum(%param_0, %broadcast.0), metadata={op_name="jit(relu)/jit(main)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+
+ENTRY %main.5 (Arg_0.1: f32[64,256]) -> f32[64,256] {
+  %Arg_0.1 = f32[64,256]{1,0} parameter(0), metadata={op_name="x"}
+  ROOT %broadcast_maximum_fusion = f32[64,256]{1,0} fusion(%Arg_0.1), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(relu)/jit(main)/max" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2202/your_flax_model.py" source_line=17}
+}
+

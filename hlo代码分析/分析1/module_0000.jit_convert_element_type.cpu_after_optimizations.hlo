@@ -1,7 +1,0 @@
-HloModule jit_convert_element_type, entry_computation_layout={(f32[])->f32[]}, allow_spmd_sharding_propagation_to_output={true}
-
-ENTRY main.2 {
-  Arg_0.1 = f32[] parameter(0), sharding={replicated}
-  ROOT copy = f32[] copy(Arg_0.1)
-}
-

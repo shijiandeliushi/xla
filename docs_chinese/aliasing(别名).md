@@ -1,3 +1,5 @@
+> 本文翻译自 docs/aliasing.md
+
 # XLA 中的别名机制
 
 本文档介绍了 XLA 的别名 API，该 API 允许在构建 XLA 程序时指定输入和输出缓冲区之间的别名关系。

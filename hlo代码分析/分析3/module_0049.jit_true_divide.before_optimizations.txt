@@ -1,0 +1,11 @@
+HloModule jit_true_divide, entry_computation_layout={(f32[32,16,512,512]{3,2,1,0}, f32[32,16,512,1]{3,2,1,0})->f32[32,16,512,512]{3,2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.7 (Arg_0.1: f32[32,16,512,512], Arg_1.2: f32[32,16,512,1]) -> f32[32,16,512,512] {
+  %Arg_0.1 = f32[32,16,512,512]{3,2,1,0} parameter(0), metadata={op_name="x1"}
+  %Arg_1.2 = f32[32,16,512,1]{3,2,1,0} parameter(1), metadata={op_name="x2"}
+  %broadcast.3 = f32[32,16,512,1]{3,2,1,0} broadcast(%Arg_1.2), dimensions={0,1,2,3}, metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+  %reshape.4 = f32[32,16,512]{2,1,0} reshape(%broadcast.3), metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+  %broadcast.5 = f32[32,16,512,512]{3,2,1,0} broadcast(%reshape.4), dimensions={0,1,2}, metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+  ROOT %divide.6 = f32[32,16,512,512]{3,2,1,0} divide(%Arg_0.1, %broadcast.5), metadata={op_name="jit(true_divide)/jit(main)/div" source_file="/home/xianghonghui/xla/hlo\344\273\243\347\240\201\345\210\206\346\236\220/\345\210\206\346\236\2203/heavy_model.py" source_line=35}
+}
+

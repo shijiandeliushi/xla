@@ -1,0 +1,8 @@
+HloModule demo
+
+// AllToAllDecomposer:
+// 将数组形式的 AllToAll 分解为 tuple 形式或最小 rank 形式
+ENTRY main {
+  p0 = f32[4,8] parameter(0)
+  ROOT a2a = f32[4,8] all-to-all(p0), replica_groups={{0,1},{2,3}}, dimensions={1}
+}
