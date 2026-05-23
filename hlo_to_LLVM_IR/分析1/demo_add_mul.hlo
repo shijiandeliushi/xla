@@ -1,0 +1,13 @@
+HloModule demo_add_mul
+
+// 一个简单的逐元素计算：对两个 4x4 矩阵先相加，再乘以 2.0
+// f32[4,4] → p0 + p1 → × 2.0 → 输出
+
+ENTRY main {
+  p0 = f32[4,4] parameter(0)
+  p1 = f32[4,4] parameter(1)
+  two = f32[] constant(2.0)
+  broadcast = f32[4,4] broadcast(two), dimensions={}
+  add = f32[4,4] add(p0, p1)
+  ROOT mul = f32[4,4] multiply(add, broadcast)
+}
