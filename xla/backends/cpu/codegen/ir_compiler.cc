@@ -231,6 +231,19 @@ IrCompiler::InferTargetMachine(
                               ? CpuTargetFromMaxFeature(*max_cpu_feature)
                               : absl::string_view(llvm::sys::getHostCPUName());
 
+  // 如果运行在飞腾派上，LLVM 可能将 host CPU 报告为 "generic"。
+  // 此时使用飞腾派专用的 CPU model 以获得更好的 NEON 指令调度。
+  if (!result.num_filtered_features) {
+    if (IsPhytiumCpu() || cpu == "generic") {
+      absl::string_view phytium_cpu = GetPhytiumCpuModel();
+      if (cpu == "generic" || cpu.empty()) {
+        VLOG(1) << "检测到飞腾派 CPU，使用 -mcpu=" << phytium_cpu
+                << " 替代 -mcpu=" << cpu;
+        cpu = phytium_cpu;
+      }
+    }
+  }
+
   absl::call_once(initialize_llvm_flag, InitializeLLVMTarget);
   std::unique_ptr<llvm::TargetMachine> target_machine(
       llvm::EngineBuilder()
