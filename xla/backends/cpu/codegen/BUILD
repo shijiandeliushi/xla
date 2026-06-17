@@ -397,6 +397,16 @@ xla_cc_test(
     ],
 )
 
+xla_cc_test(
+    name = "cpu_features_test",
+    srcs = ["cpu_features_test.cc"],
+    deps = [
+        ":cpu_features",
+        "@com_google_absl//absl/strings:string_view",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
 cc_library(
     name = "vector_ir_builder",
     srcs = ["vector_ir_builder.cc"],

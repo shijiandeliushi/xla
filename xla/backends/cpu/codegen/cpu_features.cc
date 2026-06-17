@@ -73,6 +73,37 @@ absl::string_view CpuTargetFromMaxFeature(CPUFeature max_feature) {
   }
 }
 
+bool IsPhytiumCpu() {
+  // 通过 ARM MIDR 检测飞腾派处理器。
+  // Phytium implementer ID = 0x48。
+  // FTC664 part ID = 0x664, FTC310 part ID = 0x310。
+  //
+  // 主检测路径：检查 LLVM 是否原生识别飞腾派。
+  absl::string_view host_cpu = llvm::sys::getHostCPUName();
+
+  if (absl::StrContains(absl::AsciiStrToLower(host_cpu), "phytium")) {
+    return true;
+  }
+
+  // 回退路径：如果 LLVM 返回 "generic"，需通过 /proc/cpuinfo 进一步确认。
+  // 当 LLVM 尚未包含飞腾派 CPU model 时，host CPU 名称可能是 "generic"。
+  // 可在飞腾派实机上进一步完善此处的检测逻辑。
+  if (host_cpu == "generic") {
+    return false;  // 待飞腾派实机测试后细化
+  }
+
+  return false;
+}
+
+absl::string_view GetPhytiumCpuModel() {
+  // 当前 LLVM 中最接近 FTC664/FTC310 的 CPU model 是 neoverse-n1。
+  // FTC664: ARMv8-A, 4发射, NEON 128-bit向量
+  // neoverse-n1: ARMv8.2-A, 4发射, NEON 128-bit向量
+  //
+  // 未来如果 LLVM 添加原生飞腾派支持，改为返回 "ftc664"。
+  return "neoverse-n1";
+}
+
 std::optional<CPUFeature> CpuFeatureFromString(absl::string_view cpu_feature) {
   if (cpu_feature.empty()) return std::nullopt;
 

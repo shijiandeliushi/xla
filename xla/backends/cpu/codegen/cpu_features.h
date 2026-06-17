@@ -59,6 +59,14 @@ DetectedMachineAttributes DetectMachineAttributes(
 std::vector<std::string> DetectMachineAttributes()
     ABSL_DEPRECATED("Use DetectMachineAttributes defined above instead.");
 
+// Returns true if the current CPU is a Phytium processor (FTC66x/FTC86x).
+// Detection is based on ARM MIDR: implementer = 0x48 (Phytium).
+bool IsPhytiumCpu();
+
+// Returns the recommended LLVM CPU model for Phytium processors.
+// Currently returns "neoverse-n1" as the closest LLVM-supported equivalent.
+absl::string_view GetPhytiumCpuModel();
+
 }  // namespace xla::cpu
 
 #endif  // XLA_BACKENDS_CPU_CODEGEN_CPU_FEATURES_H_
